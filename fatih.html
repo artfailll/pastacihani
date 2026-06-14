@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yönetim · Pastacihanı</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{--rose:#C25B7C;--rose-deep:#8E3B57;--cream:#FBF6F2;--ink:#2A1E22;--line:#ecd9df;--ok:#1f9d57}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:linear-gradient(180deg,#fff,var(--cream));color:var(--ink);padding:20px 14px}
+  .wrap{max-width:620px;margin:0 auto}
+  h1{font-size:1.35rem;margin:0 0 6px}
+  .tabs{display:flex;gap:8px;margin:16px 0 18px}
+  .tab{flex:1;text-align:center;padding:11px;border:1px solid var(--line);border-radius:12px;background:#fff;font-weight:600;font-size:.9rem;cursor:pointer}
+  .tab.on{background:var(--rose);color:#fff;border-color:var(--rose)}
+  label{display:block;font-weight:600;font-size:.85rem;margin:13px 0 6px}
+  select,input,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;background:#fff}
+  textarea{min-height:54px;resize:vertical}
+  .cnt{font-size:.72rem;color:#b09aa1;text-align:right;margin-top:4px}
+  .btn{margin-top:16px;width:100%;padding:14px;border:0;border-radius:14px;background:var(--rose);color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+  .btn[disabled]{opacity:.6}
+  .btn.sec{background:#fff;color:var(--rose-deep);border:1.5px solid var(--rose)}
+  .drop{margin-top:8px;border:2px dashed var(--line);border-radius:14px;padding:16px;text-align:center;color:#9a8087;background:#fff;font-size:.84rem}
+  .log{margin-top:12px;font-size:.85rem;white-space:pre-wrap;color:var(--rose-deep)}
+  .hint{font-size:.76rem;color:#9a8087;margin-top:6px}
+  .gate{max-width:340px;margin:60px auto;text-align:center}
+  .panel{display:none}.panel.on{display:block}
+  /* yüklenen kartı */
+  .upcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:12px;display:flex;gap:12px}
+  .upcard img{width:84px;height:84px;object-fit:cover;border-radius:10px;flex:0 0 auto}
+  .upcard .body{flex:1;min-width:0}
+  .upcard .cap{font-size:.78rem;background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:8px;white-space:pre-wrap;max-height:96px;overflow:auto}
+  .row{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+  .mini{font-size:.78rem;font-weight:600;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:pointer;text-decoration:none;color:var(--ink)}
+  .mini.ig{background:#E1306C;color:#fff;border-color:#E1306C}
+  .mini.del{background:#fff;color:#c0392b;border-color:#e7c3bd}
+  .mini.ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+  /* yönet listesi */
+  .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+  .mcell{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+  .mcell img{width:100%;aspect-ratio:1;object-fit:cover}
+  .mcell .meta{padding:6px 8px;font-size:.7rem}
+  .mcell .meta b{color:var(--rose-deep)}
+  .mcell .x{position:absolute;top:6px;right:6px;background:rgba(192,57,43,.92);color:#fff;border:0;width:26px;height:26px;border-radius:50%;font-size:14px;cursor:pointer}
+  #app{display:none}
+</style>
+</head>
+<body>
+<div class="gate" id="gate">
+  <h1>🔒 Yönetim Girişi</h1>
+  <input type="password" id="pw" placeholder="Şifre">
+  <button class="btn" onclick="checkPw()">Gir</button>
+</div>
+
+<div class="wrap" id="app">
+  <h1>🎂 Galeri Yönetimi</h1>
+  <div class="tabs">
+    <div class="tab on" data-t="up" onclick="tab('up')">➕ Yükle</div>
+    <div class="tab" data-t="mng" onclick="tab('mng')">🗂️ Yönet / Sil</div>
+  </div>
+
+  <!-- YÜKLE -->
+  <div class="panel on" id="p-up">
+    <label>Kategori</label>
+    <select id="cat">
+      <option value="dogumgunu">Doğum Günü</option><option value="nisan">Nişan</option>
+      <option value="soz">Söz</option><option value="dugun">Düğün</option>
+      <option value="babyshower">Baby Shower</option><option value="yildonumu">Yıldönümü</option>
+      <option value="diger">Diğer</option>
+    </select>
+    <label>Ürün kodu (müşteri bununla arar — örn. DG-001)</label>
+    <input id="code" placeholder="DG-001" maxlength="20">
+    <label>Pazarlama açıklaması (resmin altında + Instagram metni)</label>
+    <textarea id="desc" maxlength="80" placeholder="örn. Pembe çikolatalı, çiçek süslemeli doğum günü pastası"></textarea>
+    <div class="cnt"><span id="cc">0</span>/80</div>
+    <label style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-top:10px">
+      <input type="checkbox" id="feat" style="width:auto"> ⭐ Galeride öne çıkar (en üstte göster)
+    </label>
+    <label>Fotoğraf(lar)</label>
+    <input type="file" id="file" accept="image/*" multiple>
+    <div class="drop">Birden fazla foto seçersen kod/açıklama hepsine aynı yazılır 📷</div>
+    <button class="btn" id="up">Yükle</button>
+    <div class="log" id="log"></div>
+    <div id="ups"></div>
+  </div>
+
+  <!-- YÖNET -->
+  <div class="panel" id="p-mng">
+    <p class="hint">Yüklediğin tüm fotoğraflar. Sil butonu son 10 dk içinde yüklenenleri anında siler; eskileri silmek için aşağıdaki Cloudinary butonunu kullan (en güvenlisi).</p>
+    <button class="btn sec" id="loadAll">Fotoğrafları Yükle / Yenile</button>
+    <a class="btn" style="display:block;text-align:center;text-decoration:none" href="https://console.cloudinary.com/console/media_library" target="_blank" rel="noopener">Cloudinary'de Yönet (sil/düzenle) →</a>
+    <div class="log" id="mlog"></div>
+    <div class="mgrid" id="mgrid"></div>
+  </div>
+</div>
+
+<script>
+/* ===== AYARLAR ===== */
+const CLOUD_NAME    = "do7gjdvb0";
+const UPLOAD_PRESET = "folder";
+const SIFRE         = "eloşsare2026";
+/* =================== */
+const IG_URL="https://www.instagram.com/pastacihani.online/";
+const $=id=>document.getElementById(id);
+$('desc')&&$('desc').addEventListener('input',e=>$('cc').textContent=e.target.value.length);
+function checkPw(){if($('pw').value===SIFRE){$('gate').style.display='none';$('app').style.display='block';}else alert('Şifre yanlış');}
+$('pw').addEventListener('keydown',e=>{if(e.key==='Enter')checkPw();});
+function tab(t){document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x.dataset.t===t));$('p-up').classList.toggle('on',t==='up');$('p-mng').classList.toggle('on',t==='mng');}
+
+function hexEncode(s){return Array.from(new TextEncoder().encode(s)).map(b=>b.toString(16).padStart(2,'0')).join('');}
+function hexDecode(h){try{return new TextDecoder().decode(new Uint8Array(h.match(/.{1,2}/g).map(x=>parseInt(x,16))));}catch(e){return"";}}
+function parseMeta(pid){const s=pid.split('/').pop();if(!s.startsWith('gd_'))return{code:"",desc:""};const b=s.slice(3).split('-')[0].split('x');return{code:(b[0]&&/^[0-9a-f]+$/i.test(b[0]))?hexDecode(b[0]):"",desc:(b[1]&&/^[0-9a-f]+$/i.test(b[1]))?hexDecode(b[1]):""};}
+function normCode(c){return(c||'').toLowerCase().replace(/[^a-z0-9]/g,'');}
+const CATNAME={dogumgunu:"Doğum Günü",nisan:"Nişan",soz:"Söz",dugun:"Düğün",babyshower:"Baby Shower",yildonumu:"Yıldönümü",diger:"Diğer"};
+
+const TAG1={dogumgunu:"#doğumgünüpastası",nisan:"#nişanpastası",soz:"#sözpastası",dugun:"#düğünpastası",babyshower:"#babyshower",yildonumu:"#yıldönümüpastası",diger:"#özelpasta"};
+function caption(cat,desc){
+  // max 5 hashtag: kategori + 4 sabit
+  const tags=`${TAG1[cat]||'#pasta'} #pastacihani #butikpasta #istanbulpasta #pastasipariş`;
+  return `${desc||'Pastacihanı butik tasarım pasta'} 🎂\n\nSipariş için DM ya da WhatsApp: 0554 810 63 01\n📍 İstanbul geneli teslimat\n\n${tags}`.trim();
+}
+
+async function uploadOne(file,cat,code,desc,feat){
+  const nc=normCode(code); let tags='galeri,'+cat+(nc?(','+nc):'')+(feat?',one':'');
+  const pid='gd_'+hexEncode(code)+'x'+hexEncode(desc)+'-'+Date.now()+Math.floor(Math.random()*1000);
+  const mk=(full)=>{const fd=new FormData();fd.append('file',file);fd.append('upload_preset',UPLOAD_PRESET);fd.append('tags',tags);if(full)fd.append('public_id',pid);return fd;};
+  for(const fd of [mk(true),mk(false)]){
+    try{const r=await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,{method:'POST',body:fd});const j=await r.json();if(j.secure_url)return j;}catch(e){}
+  }
+  return null;
+}
+
+$('up').onclick=async()=>{
+  const files=$('file').files,cat=$('cat').value,code=$('code').value.trim(),desc=$('desc').value.trim(),feat=$('feat').checked;
+  if(!files.length){$('log').textContent='Önce fotoğraf seç.';return;}
+  $('up').disabled=true;let ok=0;
+  for(let i=0;i<files.length;i++){
+    $('log').textContent=`Yükleniyor ${i+1}/${files.length}...`;
+    const j=await uploadOne(files[i],cat,code,desc,feat);
+    if(j){ok++;addUpCard(j,cat,desc);}
+  }
+  $('log').textContent=`✓ ${ok}/${files.length} yüklendi${code?' · kod: '+code:''}. Galeride birkaç dakikada görünür.`;
+  $('file').value='';$('desc').value='';$('code').value='';$('cc').textContent='0';$('feat').checked=false;$('up').disabled=false;
+};
+
+function addUpCard(j,cat,desc){
+  const cap=caption(cat,desc);
+  const card=document.createElement('div');card.className='upcard';
+  card.innerHTML=`<img src="${j.secure_url}" alt="">
+    <div class="body">
+      <div class="cap">${cap.replace(/</g,'&lt;')}</div>
+      <div class="row">
+        <button class="mini aibtn">🤖 AI Açıklama Yaz</button>
+        <button class="mini" data-cap="1">📋 Kopyala</button>
+        <button class="mini ig">📸 Post + Story At</button>
+        ${j.delete_token?`<button class="mini del" data-tok="${j.delete_token}">🗑 Sil</button>`:''}
+      </div>
+    </div>`;
+  let curCap=cap;
+  const capBox=card.querySelector('.cap');
+  card.querySelector('[data-cap]').onclick=(e)=>{navigator.clipboard.writeText(curCap);e.target.textContent='✓ Kopyalandı';e.target.classList.add('ok');};
+  // AI açıklama
+  card.querySelector('.aibtn').onclick=async(e)=>{
+    e.target.textContent='Yazılıyor…';e.target.disabled=true;
+    try{
+      const r=await fetch('/.netlify/functions/ai-caption',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({imageUrl:j.secure_url,category:cat})});
+      const d=await r.json();
+      if(d.caption){curCap=d.caption;capBox.textContent=d.caption;e.target.textContent='✓ AI Yazdı';e.target.classList.add('ok');}
+      else{e.target.textContent='Hata';e.target.disabled=false;}
+    }catch(err){e.target.textContent='Hata';e.target.disabled=false;}
+  };
+  // Instagram post + story
+  card.querySelector('.ig').onclick=(e)=>postToInstagram(e.target,j.secure_url,curCap,cat);
+  const del=card.querySelector('[data-tok]');
+  if(del)del.onclick=async()=>{del.textContent='Siliniyor…';const fd=new FormData();fd.append('token',del.dataset.tok);try{const r=await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/delete_by_token`,{method:'POST',body:fd});if(r.ok){card.style.opacity=.4;del.textContent='✓ Silindi';del.disabled=true;}else del.textContent='Silinemedi (süre doldu)';}catch(e){del.textContent='Hata';}};
+  $('ups').prepend(card);
+}
+
+// YÖNET — tüm fotoğrafları listele
+$('loadAll').onclick=async()=>{
+  $('mlog').textContent='Yükleniyor…';$('mgrid').innerHTML='';
+  try{
+    const res=await fetch(`https://res.cloudinary.com/${CLOUD_NAME}/image/list/galeri.json?ts=`+Date.now());
+    if(!res.ok)throw 0;
+    const items=((await res.json()).resources||[]).sort((a,b)=>(b.created_at||'').localeCompare(a.created_at||''));
+    if(!items.length){$('mlog').textContent='Henüz fotoğraf yok.';return;}
+    $('mlog').textContent=items.length+' fotoğraf:';
+    items.forEach(r=>{
+      const {code,desc}=parseMeta(r.public_id);
+      const cell=document.createElement('div');cell.className='mcell';
+      const u=`https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_300,c_fill/v${r.version}/${r.public_id}.${r.format}`;
+      cell.innerHTML=`<img src="${u}" alt=""><div class="meta">${code?`<b>${code}</b><br>`:''}${desc||''}</div><button class="x" title="Cloudinary'de sil">×</button>`;
+      cell.querySelector('.x').onclick=()=>{alert('Bu fotoğrafı silmek için açılan Cloudinary panelinde arama kutusuna kodu/adı yazıp fotoğrafı seç ve sil.');window.open('https://console.cloudinary.com/console/media_library','_blank');};
+      $('mgrid').appendChild(cell);
+    });
+  }catch(e){$('mlog').textContent='Liste alınamadı. Cloudinary Security → "Resource list" açık mı?';}
+};
+// Instagram'a otomatik post + story (token Netlify Function'da güvenli)
+async function postToInstagram(btn, imageUrl, cap, cat){
+  btn.textContent='Gönderiliyor…';btn.disabled=true;
+  try{
+    const res=await fetch('/.netlify/functions/instagram-post',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({imageUrl,caption:cap,category:cat})});
+    const d=await res.json();
+    if(d.success){btn.textContent='✓ Post + Story atıldı! Story\'yi Highlight\'a ekle 👆';btn.classList.add('ok');}
+    else{btn.textContent='Hata: '+(d.error||'?');btn.disabled=false;console.error(d);}
+  }catch(e){btn.textContent='Bağlantı hatası';btn.disabled=false;}
+}
+</script>
+</body>
+</html>

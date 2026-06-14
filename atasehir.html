@@ -1,0 +1,60 @@
+exports.handler = async (event) => {
+  if (event.httpMethod !== 'POST') return { statusCode: 405, body: 'Method not allowed' };
+  const token = process.env.INSTAGRAM_TOKEN;
+  if (!token) return { statusCode: 500, body: JSON.stringify({ error: 'Token yok' }) };
+
+  try {
+    const { imageUrl, caption, category } = JSON.parse(event.body);
+    if (!imageUrl) return { statusCode: 400, body: JSON.stringify({ error: 'imageUrl gerekli' }) };
+
+    // 1) Sayfa + Instagram hesap ID al
+    const pagesRes = await fetch(`https://graph.facebook.com/v19.0/me/accounts?access_token=${token}`);
+    const pagesData = await pagesRes.json();
+    if (!pagesData.data?.[0]) return { statusCode: 400, body: JSON.stringify({ error: 'Sayfa bulunamadı', d: pagesData }) };
+    const pageToken = pagesData.data[0].access_token;
+    const pageId = pagesData.data[0].id;
+
+    const igRes = await fetch(`https://graph.facebook.com/v19.0/${pageId}?fields=instagram_business_account&access_token=${pageToken}`);
+    const igData = await igRes.json();
+    if (!igData.instagram_business_account) return { statusCode: 400, body: JSON.stringify({ error: 'IG hesabı bağlı değil', d: igData }) };
+    const igId = igData.instagram_business_account.id;
+
+    const results = {};
+
+    // 2) NORMAL POST
+    const postContainer = await fetch(`https://graph.facebook.com/v19.0/${igId}/media`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ image_url: imageUrl, caption: caption || '', access_token: pageToken })
+    });
+    const postContainerData = await postContainer.json();
+    if (postContainerData.id) {
+      const publish = await fetch(`https://graph.facebook.com/v19.0/${igId}/media_publish`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ creation_id: postContainerData.id, access_token: pageToken })
+      });
+      const publishData = await publish.json();
+      results.post = publishData.id ? { success: true, id: publishData.id } : { success: false, error: publishData };
+    }
+
+    // 3) STORY
+    const storyCaption = category ? `${category} 🎂\n\nSipariş: wa.me/905548106301\n📍 İstanbul geneli teslimat` : caption || '';
+    const storyContainer = await fetch(`https://graph.facebook.com/v19.0/${igId}/media`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ image_url: imageUrl, media_type: 'STORIES', access_token: pageToken })
+    });
+    const storyContainerData = await storyContainer.json();
+    if (storyContainerData.id) {
+      const storyPublish = await fetch(`https://graph.facebook.com/v19.0/${igId}/media_publish`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ creation_id: storyContainerData.id, access_token: pageToken })
+      });
+      const storyData = await storyPublish.json();
+      results.story = storyData.id ? { success: true, id: storyData.id } : { success: false, error: storyData };
+    }
+
+    return { statusCode: 200, body: JSON.stringify({ success: true, results }) };
+
+  } catch (err) {
+    return { statusCode: 500, body: JSON.stringify({ error: err.message }) };
+  }
+};

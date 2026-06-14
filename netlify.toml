@@ -1,0 +1,103 @@
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/tasarla"
+  to = "/tasarla.html"
+  status = 200
+[[redirects]]
+  from = "/galeri"
+  to = "/galeri.html"
+  status = 200
+[[redirects]]
+  from = "/claudeninsahibiagritutaklimi"
+  to = "/claudeninsahibiagritutaklimi.html"
+  status = 200
+[[redirects]]
+  from = "/icerik"
+  to = "/icerik.html"
+  status = 200
+[[redirects]]
+  from = "/atasehir"
+  to = "/atasehir.html"
+  status = 200
+[[redirects]]
+  from = "/avcilar"
+  to = "/avcilar.html"
+  status = 200
+[[redirects]]
+  from = "/bakirkoy"
+  to = "/bakirkoy.html"
+  status = 200
+[[redirects]]
+  from = "/basaksehir"
+  to = "/basaksehir.html"
+  status = 200
+[[redirects]]
+  from = "/besiktas"
+  to = "/besiktas.html"
+  status = 200
+[[redirects]]
+  from = "/beylikduzu"
+  to = "/beylikduzu.html"
+  status = 200
+[[redirects]]
+  from = "/esenyurt"
+  to = "/esenyurt.html"
+  status = 200
+[[redirects]]
+  from = "/fatih"
+  to = "/fatih.html"
+  status = 200
+[[redirects]]
+  from = "/gaziosmanpasa"
+  to = "/gaziosmanpasa.html"
+  status = 200
+[[redirects]]
+  from = "/kadikoy"
+  to = "/kadikoy.html"
+  status = 200
+[[redirects]]
+  from = "/kagithane"
+  to = "/kagithane.html"
+  status = 200
+[[redirects]]
+  from = "/kartal"
+  to = "/kartal.html"
+  status = 200
+[[redirects]]
+  from = "/kucukcekmece"
+  to = "/kucukcekmece.html"
+  status = 200
+[[redirects]]
+  from = "/maltepe"
+  to = "/maltepe.html"
+  status = 200
+[[redirects]]
+  from = "/pendik"
+  to = "/pendik.html"
+  status = 200
+[[redirects]]
+  from = "/sariyer"
+  to = "/sariyer.html"
+  status = 200
+[[redirects]]
+  from = "/silivri"
+  to = "/silivri.html"
+  status = 200
+[[redirects]]
+  from = "/sisli"
+  to = "/sisli.html"
+  status = 200
+[[redirects]]
+  from = "/umraniye"
+  to = "/umraniye.html"
+  status = 200
+[[redirects]]
+  from = "/uskudar"
+  to = "/uskudar.html"
+  status = 200
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

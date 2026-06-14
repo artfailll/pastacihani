@@ -113,10 +113,12 @@ function hexDecode(h){try{return new TextDecoder().decode(new Uint8Array(h.match
 function parseMeta(pid){const s=pid.split('/').pop();if(!s.startsWith('gd_'))return{code:"",desc:""};const b=s.slice(3).split('-')[0].split('x');return{code:(b[0]&&/^[0-9a-f]+$/i.test(b[0]))?hexDecode(b[0]):"",desc:(b[1]&&/^[0-9a-f]+$/i.test(b[1]))?hexDecode(b[1]):""};}
 function normCode(c){return(c||'').toLowerCase().replace(/[^a-z0-9]/g,'');}
 const CATNAME={dogumgunu:"Doğum Günü",nisan:"Nişan",soz:"Söz",dugun:"Düğün",babyshower:"Baby Shower",yildonumu:"Yıldönümü",diger:"Diğer"};
-const TAGS={dogumgunu:"#doğumgünüpastası #birthdaycake",nisan:"#nişanpastası",soz:"#sözpastası",dugun:"#düğünpastası #weddingcake",babyshower:"#babyshower #babyshowerpastası",yildonumu:"#yıldönümüpastası",diger:"#özelpasta"};
 
+const TAG1={dogumgunu:"#doğumgünüpastası",nisan:"#nişanpastası",soz:"#sözpastası",dugun:"#düğünpastası",babyshower:"#babyshower",yildonumu:"#yıldönümüpastası",diger:"#özelpasta"};
 function caption(cat,desc){
-  return `${desc||'Pastacihanı butik tasarım pasta'} 🎂\n\nSipariş için DM ya da WhatsApp: 0554 810 63 01\n📍 İstanbul geneli teslimat\n\n#pastacihani #butikpasta #istanbulpasta #pastasipariş ${TAGS[cat]||''}`.trim();
+  // max 5 hashtag: kategori + 4 sabit
+  const tags=`${TAG1[cat]||'#pasta'} #pastacihani #butikpasta #istanbulpasta #pastasipariş`;
+  return `${desc||'Pastacihanı butik tasarım pasta'} 🎂\n\nSipariş için DM ya da WhatsApp: 0554 810 63 01\n📍 İstanbul geneli teslimat\n\n${tags}`.trim();
 }
 
 async function uploadOne(file,cat,code,desc,feat){
@@ -149,12 +151,27 @@ function addUpCard(j,cat,desc){
     <div class="body">
       <div class="cap">${cap.replace(/</g,'&lt;')}</div>
       <div class="row">
-        <button class="mini" data-cap="1">📋 Açıklamayı Kopyala</button>
-        <button class="mini ig" onclick="postToInstagram(this,j.secure_url,cap)">📸 Instagram'a Paylaş</button>
-        ${j.delete_token?`<button class="mini del" data-tok="${j.delete_token}">🗑 Sil (geri al)</button>`:''}
+        <button class="mini aibtn">🤖 AI Açıklama Yaz</button>
+        <button class="mini" data-cap="1">📋 Kopyala</button>
+        <button class="mini ig">📸 Post + Story At</button>
+        ${j.delete_token?`<button class="mini del" data-tok="${j.delete_token}">🗑 Sil</button>`:''}
       </div>
     </div>`;
-  card.querySelector('[data-cap]').onclick=(e)=>{navigator.clipboard.writeText(cap);e.target.textContent='✓ Kopyalandı';e.target.classList.add('ok');};
+  let curCap=cap;
+  const capBox=card.querySelector('.cap');
+  card.querySelector('[data-cap]').onclick=(e)=>{navigator.clipboard.writeText(curCap);e.target.textContent='✓ Kopyalandı';e.target.classList.add('ok');};
+  // AI açıklama
+  card.querySelector('.aibtn').onclick=async(e)=>{
+    e.target.textContent='Yazılıyor…';e.target.disabled=true;
+    try{
+      const r=await fetch('/.netlify/functions/ai-caption',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({imageUrl:j.secure_url,category:cat})});
+      const d=await r.json();
+      if(d.caption){curCap=d.caption;capBox.textContent=d.caption;e.target.textContent='✓ AI Yazdı';e.target.classList.add('ok');}
+      else{e.target.textContent='Hata';e.target.disabled=false;}
+    }catch(err){e.target.textContent='Hata';e.target.disabled=false;}
+  };
+  // Instagram post + story
+  card.querySelector('.ig').onclick=(e)=>postToInstagram(e.target,j.secure_url,curCap,cat);
   const del=card.querySelector('[data-tok]');
   if(del)del.onclick=async()=>{del.textContent='Siliniyor…';const fd=new FormData();fd.append('token',del.dataset.tok);try{const r=await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/delete_by_token`,{method:'POST',body:fd});if(r.ok){card.style.opacity=.4;del.textContent='✓ Silindi';del.disabled=true;}else del.textContent='Silinemedi (süre doldu)';}catch(e){del.textContent='Hata';}};
   $('ups').prepend(card);
@@ -179,18 +196,14 @@ $('loadAll').onclick=async()=>{
     });
   }catch(e){$('mlog').textContent='Liste alınamadı. Cloudinary Security → "Resource list" açık mı?';}
 };
-
-async function postToInstagram(btn, imageUrl, cap){
+// Instagram'a otomatik post + story (token Netlify Function'da güvenli)
+async function postToInstagram(btn, imageUrl, cap, cat){
   btn.textContent='Gönderiliyor…';btn.disabled=true;
   try{
-    const res=await fetch('/.netlify/functions/instagram-post',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({imageUrl,caption:cap,category:document.getElementById('cat').options[document.getElementById('cat').selectedIndex].text})
-    });
+    const res=await fetch('/.netlify/functions/instagram-post',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({imageUrl,caption:cap,category:cat})});
     const d=await res.json();
-    if(d.success){btn.textContent='✓ Post + Story Yayınlandı! Story\'yi Highlight\'a ekle 👆';btn.classList.add('ok');}
-    else{btn.textContent='Hata: '+(d.error||'bilinmiyor');btn.disabled=false;console.error(d);}
+    if(d.success){btn.textContent='✓ Post + Story atıldı! Story\'yi Highlight\'a ekle 👆';btn.classList.add('ok');}
+    else{btn.textContent='Hata: '+(d.error||'?');btn.disabled=false;console.error(d);}
   }catch(e){btn.textContent='Bağlantı hatası';btn.disabled=false;}
 }
 </script>

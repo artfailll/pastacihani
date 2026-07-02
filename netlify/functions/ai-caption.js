@@ -1,16 +1,26 @@
+// AI Caption: OpenAI ile fotoğrafa bakıp Instagram caption üretir
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') return { statusCode: 405, body: 'Method not allowed' };
   const key = process.env.OPENAI_API_KEY;
   if (!key) return { statusCode: 500, body: JSON.stringify({ error: 'API key yok' }) };
+
   try {
     const { imageUrl, category } = JSON.parse(event.body);
-    const prompt = `Sen Pastacihanı adlı İstanbul butik pasta markasının sosyal medya uzmanısın. Bu ${category||'pasta'} fotoğrafına bak, Instagram için Türkçe, samimi, iştah açıcı bir caption yaz. 2-3 cümle, emoji kullan, sonuna "Sipariş: 0554 810 63 01" ekle, EN FAZLA 5 hashtag. Sadece caption yaz.`;
+
+    const prompt = `Sen Pastacihanı adlı Silivri'de (İstanbul) butik pasta yapan, yalnızca Silivri ve çevresine (Kumburgaz'a kadar) teslimat yapan bir markanın sosyal medya uzmanısın. Bu ${category||'pasta'} fotoğrafına bak ve Instagram için Türkçe, samimi, iştah açıcı bir caption yaz. Kurallar: 2-3 cümle olsun, emoji kullan, sonuna "Sipariş: 0554 810 63 01" ekle, EN FAZLA 5 hashtag koy (en az biri #silivripasta olsun, geneli pasta ile ilgili). İstanbul genelinde teslimat yapıyormuş gibi ima etme — yalnızca Silivri ve çevresi vurgusu yap. Sadece caption'ı yaz, başka açıklama yapma.`;
+
     const res = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${key}` },
       body: JSON.stringify({
         model: 'gpt-4o-mini',
-        messages: [{ role: 'user', content: [{ type: 'text', text: prompt }, { type: 'image_url', image_url: { url: imageUrl } }] }],
+        messages: [{
+          role: 'user',
+          content: [
+            { type: 'text', text: prompt },
+            { type: 'image_url', image_url: { url: imageUrl } }
+          ]
+        }],
         max_tokens: 300
       })
     });

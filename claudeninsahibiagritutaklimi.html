@@ -117,8 +117,8 @@ const CATNAME={dogumgunu:"Doğum Günü",nisan:"Nişan",soz:"Söz",dugun:"Düğ�
 const TAG1={dogumgunu:"#doğumgünüpastası",nisan:"#nişanpastası",soz:"#sözpastası",dugun:"#düğünpastası",babyshower:"#babyshower",yildonumu:"#yıldönümüpastası",diger:"#özelpasta"};
 function caption(cat,desc){
   // max 5 hashtag: kategori + 4 sabit
-  const tags=`${TAG1[cat]||'#pasta'} #pastacihani #butikpasta #istanbulpasta #pastasipariş`;
-  return `${desc||'Pastacihanı butik tasarım pasta'} 🎂\n\nSipariş için DM ya da WhatsApp: 0554 810 63 01\n📍 İstanbul geneli teslimat\n\n${tags}`.trim();
+  const tags=`${TAG1[cat]||'#pasta'} #pastacihani #butikpasta #silivripasta #pastasipariş`;
+  return `${desc||'Pastacihanı butik tasarım pasta'} 🎂\n\nSipariş için DM ya da WhatsApp: 0554 810 63 01\n📍 Silivri ve çevresine teslimat (Kumburgaz'a kadar)\n\n${tags}`.trim();
 }
 
 async function uploadOne(file,cat,code,desc,feat){

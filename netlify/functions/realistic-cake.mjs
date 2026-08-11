@@ -1,6 +1,8 @@
 const CLOUD_NAME = 'do7gjdvb0';
 const UPLOAD_PRESET = 'folder';
 const MAX_BODY_BYTES = 4_500_000;
+const GENERATION_TIMEOUT_MS = 19_000;
+const UPLOAD_TIMEOUT_MS = 8_000;
 
 function response(status, body) {
   return Response.json(body, {
@@ -42,7 +44,7 @@ async function generateWithOpenAI({ apiKey, buffer, type, prompt }) {
     method: 'POST',
     headers: { Authorization: `Bearer ${apiKey}` },
     body: form,
-    signal: AbortSignal.timeout(110_000)
+    signal: AbortSignal.timeout(GENERATION_TIMEOUT_MS)
   });
   const data = await result.json();
   const image = data?.data?.[0]?.b64_json;
@@ -52,7 +54,8 @@ async function generateWithOpenAI({ apiKey, buffer, type, prompt }) {
 
 async function generateWithGemini({ apiKey, buffer, type, prompt }) {
   const baseUrl = (process.env.GOOGLE_GEMINI_BASE_URL || 'https://generativelanguage.googleapis.com').replace(/\/$/, '');
-  const result = await fetch(`${baseUrl}/v1beta/models/gemini-3.1-flash-image:generateContent`, {
+  const model = process.env.GEMINI_IMAGE_MODEL || 'gemini-3.1-flash-lite-image';
+  const result = await fetch(`${baseUrl}/v1beta/models/${model}:generateContent`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
     body: JSON.stringify({
@@ -67,7 +70,7 @@ async function generateWithGemini({ apiKey, buffer, type, prompt }) {
         responseModalities: ['TEXT', 'IMAGE']
       }
     }),
-    signal: AbortSignal.timeout(110_000)
+    signal: AbortSignal.timeout(GENERATION_TIMEOUT_MS)
   });
   const data = await result.json();
   const parts = data?.candidates?.[0]?.content?.parts || [];
@@ -91,6 +94,7 @@ export default async (request) => {
   if (!openaiKey && !geminiKey) return response(503, { error: 'Yapay zekâ servisi yapılandırılmadı' });
 
   try {
+    const startedAt = Date.now();
     const body = await request.json();
     const { buffer, type } = parseImage(body.imageDataUrl);
     const designSummary = String(body.designSummary || '').replace(/[\r\n<>]/g, ' ').slice(0, 500);
@@ -113,8 +117,13 @@ export default async (request) => {
       else throw new Error('Uygun görsel modeli bulunamadı');
     } catch (generationError) {
       console.error('realistic-cake generation:', generationError.message);
+      if (generationError?.name === 'TimeoutError') {
+        return response(504, { error: 'Görsel üretimi bu denemede uzun sürdü. Lütfen hemen tekrar deneyin.' });
+      }
       return response(502, { error: 'Gerçek pasta görseli şu anda üretilemedi. Lütfen biraz sonra tekrar deneyin.' });
     }
+
+    console.info('realistic-cake generated', { durationMs: Date.now() - startedAt });
 
     const cloudForm = new FormData();
     const outputExt = generated.mimeType.includes('png') ? 'png' : 'jpg';
@@ -124,7 +133,7 @@ export default async (request) => {
     cloudForm.append('tags', 'ai-tasarim');
 
     const uploaded = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
-      method: 'POST', body: cloudForm, signal: AbortSignal.timeout(25_000)
+      method: 'POST', body: cloudForm, signal: AbortSignal.timeout(UPLOAD_TIMEOUT_MS)
     });
     const cloud = await uploaded.json();
     if (!uploaded.ok || !cloud.secure_url) {
@@ -132,6 +141,7 @@ export default async (request) => {
       return response(502, { error: 'Görsel üretildi ancak kaydedilemedi. Lütfen tekrar deneyin.' });
     }
 
+    console.info('realistic-cake completed', { durationMs: Date.now() - startedAt });
     return response(200, { imageUrl: cloud.secure_url });
   } catch (error) {
     if (error?.name === 'TimeoutError') return response(504, { error: 'Görsel üretimi uzun sürdü. Lütfen tekrar deneyin.' });
@@ -144,7 +154,7 @@ export default async (request) => {
 export const config = {
   path: ['/api/realistic-cake', '/.netlify/functions/realistic-cake'],
   rateLimit: {
-    windowLimit: 1,
+    windowLimit: 2,
     windowSize: 60,
     aggregateBy: ['ip', 'domain']
   }

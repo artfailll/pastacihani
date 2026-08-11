@@ -1,6 +1,34 @@
 const { json, requireAdmin } = require('../lib/auth');
 const GRAPH_VERSION = 'v25.0';
 
+function normalizeCaption(value) {
+  const input = String(value || '').replace(/\u0000/g, '').trim();
+  const foundTags = input.match(/#[\p{L}\p{N}_]+/gu) || [];
+  const body = input
+    .replace(/#[\p{L}\p{N}_]+/gu, '')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+
+  const tags = ['#pastacihani'];
+  for (const tag of foundTags) {
+    const normalized = tag.toLocaleLowerCase('tr-TR');
+    if (normalized === '#pastacihani') continue;
+    if (!tags.some((existing) => existing.toLocaleLowerCase('tr-TR') === normalized)) tags.push(tag);
+    if (tags.length === 5) break;
+  }
+  for (const fallback of ['#silivripasta', '#butikpasta', '#ozeltasarimpasta', '#pastatasarimi']) {
+    if (tags.length === 5) break;
+    if (!tags.some((existing) => existing.toLocaleLowerCase('tr-TR') === fallback)) tags.push(fallback);
+  }
+
+  const tagLine = tags.join(' ');
+  const maxBodyLength = 2200 - tagLine.length - 2;
+  let safeBody = body.slice(0, maxBodyLength).trim();
+  if (body.length > maxBodyLength) safeBody = safeBody.replace(/\s+\S*$/, '').trimEnd() + '…';
+  return `${safeBody}${safeBody ? '\n\n' : ''}${tagLine}`;
+}
+
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') return json(405, { error: 'Yalnızca POST desteklenir' });
   const unauthorized = requireAdmin(event);
@@ -9,7 +37,7 @@ exports.handler = async (event) => {
   if (!token) return json(503, { error: 'Instagram bağlantısı yapılandırılmadı' });
 
   try {
-    const { imageUrl, caption, category } = JSON.parse(event.body || '{}');
+    const { imageUrl, caption } = JSON.parse(event.body || '{}');
     if (!/^https:\/\/res\.cloudinary\.com\/do7gjdvb0\//.test(imageUrl || '')) {
       return json(400, { error: 'Geçersiz görsel adresi' });
     }
@@ -32,9 +60,10 @@ exports.handler = async (event) => {
     const results = {};
 
     // 2) NORMAL POST
+    const publishCaption = normalizeCaption(caption);
     const postContainer = await fetch(`https://graph.facebook.com/${GRAPH_VERSION}/${igId}/media`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ image_url: imageUrl, caption: caption || '', access_token: pageToken })
+      body: JSON.stringify({ image_url: imageUrl, caption: publishCaption, access_token: pageToken })
     });
     const postContainerData = await postContainer.json();
     if (postContainerData.id) {
@@ -49,7 +78,7 @@ exports.handler = async (event) => {
     // 3) STORY
     const storyImageUrl = imageUrl.replace(
       '/image/upload/',
-      '/image/upload/w_1080,h_1920,c_pad,g_center,b_rgb:FBF4EC,q_auto:good,f_jpg/'
+      '/image/upload/w_1080,h_1920,c_pad,g_center,b_rgb:FBF4EC,e_vignette:12,q_auto:good,f_jpg/'
     );
     const storyContainer = await fetch(`https://graph.facebook.com/${GRAPH_VERSION}/${igId}/media`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },

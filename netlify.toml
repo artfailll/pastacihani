@@ -21,8 +21,37 @@
   from = "/silivri"
   to = "/silivri.html"
   status = 200
+[[redirects]]
+  from = "/dogum-gunu-pastasi-silivri"
+  to = "/dogum-gunu-pastasi-silivri.html"
+  status = 200
+[[redirects]]
+  from = "/nisan-soz-pastasi-silivri"
+  to = "/nisan-soz-pastasi-silivri.html"
+  status = 200
+[[redirects]]
+  from = "/dugun-pastasi-silivri"
+  to = "/dugun-pastasi-silivri.html"
+  status = 200
+[[redirects]]
+  from = "/pasta-fiyatlari-silivri"
+  to = "/pasta-fiyatlari-silivri.html"
+  status = 200
 
 [[headers]]
-  for = "/assets/*"
+  for = "/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

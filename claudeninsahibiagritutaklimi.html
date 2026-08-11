@@ -25,6 +25,9 @@
   .log{margin-top:12px;font-size:.85rem;white-space:pre-wrap;color:var(--rose-deep)}
   .hint{font-size:.76rem;color:#9a8087;margin-top:6px}
   .gate{max-width:340px;margin:60px auto;text-align:center}
+  .gate .log{min-height:22px}
+  .topline{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .logout{border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--rose-deep);padding:8px 11px;font-weight:650;cursor:pointer}
   .panel{display:none}.panel.on{display:block}
   /* yüklenen kartı */
   .upcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:12px;display:flex;gap:12px}
@@ -49,12 +52,13 @@
 <body>
 <div class="gate" id="gate">
   <h1>🔒 Yönetim Girişi</h1>
-  <input type="password" id="pw" placeholder="Şifre">
+  <input type="password" id="pw" placeholder="Şifre" autocomplete="current-password">
   <button class="btn" onclick="checkPw()">Gir</button>
+  <div class="log" id="gateLog" aria-live="polite"></div>
 </div>
 
 <div class="wrap" id="app">
-  <h1>🎂 Galeri Yönetimi</h1>
+  <div class="topline"><h1>🎂 Galeri Yönetimi</h1><button class="logout" type="button" id="logout">Çıkış</button></div>
   <div class="tabs">
     <div class="tab on" data-t="up" onclick="tab('up')">➕ Yükle</div>
     <div class="tab" data-t="mng" onclick="tab('mng')">🗂️ Yönet / Sil</div>
@@ -99,13 +103,29 @@
 /* ===== AYARLAR ===== */
 const CLOUD_NAME    = "do7gjdvb0";
 const UPLOAD_PRESET = "folder";
-const SIFRE         = "eloşsare2026";
 /* =================== */
 const IG_URL="https://www.instagram.com/pastacihani.online/";
 const $=id=>document.getElementById(id);
+const TOKEN_KEY='pastacihani_admin_session';
+let adminToken=sessionStorage.getItem(TOKEN_KEY)||'';
 $('desc')&&$('desc').addEventListener('input',e=>$('cc').textContent=e.target.value.length);
-function checkPw(){if($('pw').value===SIFRE){$('gate').style.display='none';$('app').style.display='block';}else alert('Şifre yanlış');}
+function showApp(){ $('gate').style.display='none';$('app').style.display='block'; }
+function authHeaders(extra){return Object.assign({'Authorization':`Bearer ${adminToken}`},extra||{});}
+async function checkPw(){
+  const password=$('pw').value;
+  const btn=$('gate').querySelector('.btn');
+  btn.disabled=true;$('gateLog').textContent='Giriş yapılıyor…';
+  try{
+    const r=await fetch('/.netlify/functions/admin-auth',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password})});
+    const d=await r.json();
+    if(!r.ok||!d.token)throw new Error(d.error||'Giriş yapılamadı');
+    adminToken=d.token;sessionStorage.setItem(TOKEN_KEY,adminToken);$('pw').value='';showApp();
+  }catch(e){$('gateLog').textContent=e.message||'Giriş yapılamadı';}
+  finally{btn.disabled=false;}
+}
 $('pw').addEventListener('keydown',e=>{if(e.key==='Enter')checkPw();});
+$('logout').addEventListener('click',()=>{sessionStorage.removeItem(TOKEN_KEY);adminToken='';location.reload();});
+if(adminToken)showApp();
 function tab(t){document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x.dataset.t===t));$('p-up').classList.toggle('on',t==='up');$('p-mng').classList.toggle('on',t==='mng');}
 
 function hexEncode(s){return Array.from(new TextEncoder().encode(s)).map(b=>b.toString(16).padStart(2,'0')).join('');}
@@ -164,10 +184,10 @@ function addUpCard(j,cat,desc){
   card.querySelector('.aibtn').onclick=async(e)=>{
     e.target.textContent='Yazılıyor…';e.target.disabled=true;
     try{
-      const r=await fetch('/.netlify/functions/ai-caption',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({imageUrl:j.secure_url,category:cat})});
+      const r=await fetch('/.netlify/functions/ai-caption',{method:'POST',headers:authHeaders({'Content-Type':'application/json'}),body:JSON.stringify({imageUrl:j.secure_url,category:cat})});
       const d=await r.json();
       if(d.caption){curCap=d.caption;capBox.textContent=d.caption;e.target.textContent='✓ AI Yazdı';e.target.classList.add('ok');}
-      else{e.target.textContent='Hata';e.target.disabled=false;}
+      else{if(r.status===401){sessionStorage.removeItem(TOKEN_KEY);location.reload();return;}e.target.textContent='Hata';e.target.disabled=false;}
     }catch(err){e.target.textContent='Hata';e.target.disabled=false;}
   };
   // Instagram post + story
@@ -200,10 +220,10 @@ $('loadAll').onclick=async()=>{
 async function postToInstagram(btn, imageUrl, cap, cat){
   btn.textContent='Gönderiliyor…';btn.disabled=true;
   try{
-    const res=await fetch('/.netlify/functions/instagram-post',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({imageUrl,caption:cap,category:cat})});
+    const res=await fetch('/.netlify/functions/instagram-post',{method:'POST',headers:authHeaders({'Content-Type':'application/json'}),body:JSON.stringify({imageUrl,caption:cap,category:cat})});
     const d=await res.json();
     if(d.success){btn.textContent='✓ Post + Story atıldı! Story\'yi Highlight\'a ekle 👆';btn.classList.add('ok');}
-    else{btn.textContent='Hata: '+(d.error||'?');btn.disabled=false;console.error(d);}
+    else{if(res.status===401){sessionStorage.removeItem(TOKEN_KEY);location.reload();return;}btn.textContent='Hata: '+(d.error||'?');btn.disabled=false;console.error(d);}
   }catch(e){btn.textContent='Bağlantı hatası';btn.disabled=false;}
 }
 </script>

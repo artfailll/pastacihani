@@ -17,13 +17,16 @@ exports.handler = async (event) => {
     // 1) Sayfa + Instagram hesap ID al
     const pagesRes = await fetch(`https://graph.facebook.com/${GRAPH_VERSION}/me/accounts?access_token=${token}`);
     const pagesData = await pagesRes.json();
-    if (!pagesData.data?.[0]) return { statusCode: 400, body: JSON.stringify({ error: 'Sayfa bulunamadı', d: pagesData }) };
+    if (pagesData.error?.code === 190) {
+      return json(401, { error: 'Instagram bağlantısının süresi dolmuş. Meta erişim anahtarını yenileyin.' });
+    }
+    if (!pagesData.data?.[0]) return json(400, { error: 'Bağlı Facebook sayfası bulunamadı' });
     const pageToken = pagesData.data[0].access_token;
     const pageId = pagesData.data[0].id;
 
     const igRes = await fetch(`https://graph.facebook.com/${GRAPH_VERSION}/${pageId}?fields=instagram_business_account&access_token=${pageToken}`);
     const igData = await igRes.json();
-    if (!igData.instagram_business_account) return { statusCode: 400, body: JSON.stringify({ error: 'IG hesabı bağlı değil', d: igData }) };
+    if (!igData.instagram_business_account) return json(400, { error: 'Facebook sayfasına bağlı Instagram işletme hesabı bulunamadı' });
     const igId = igData.instagram_business_account.id;
 
     const results = {};

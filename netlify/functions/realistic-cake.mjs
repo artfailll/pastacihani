@@ -1,16 +1,13 @@
-const CLOUD_NAME = 'do7gjdvb0';
-const UPLOAD_PRESET = 'folder';
+import crypto from 'node:crypto';
+import { getStore } from '@netlify/blobs';
+
 const MAX_BODY_BYTES = 4_500_000;
-const GENERATION_TIMEOUT_MS = 19_000;
-const UPLOAD_TIMEOUT_MS = 8_000;
+const JOB_ID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
 
 function response(status, body) {
   return Response.json(body, {
     status,
-    headers: {
-      'Cache-Control': 'no-store',
-      'X-Content-Type-Options': 'nosniff'
-    }
+    headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' }
   });
 }
 
@@ -21,66 +18,11 @@ function isSameOrigin(request) {
   try { return new URL(origin).host === host; } catch (_) { return false; }
 }
 
-function parseImage(dataUrl) {
+function validateImage(dataUrl) {
   const match = /^data:image\/(png|jpeg);base64,([A-Za-z0-9+/=]+)$/.exec(dataUrl || '');
   if (!match) throw new Error('Görsel biçimi desteklenmiyor');
-  const buffer = Buffer.from(match[2], 'base64');
-  if (!buffer.length || buffer.length > 3_200_000) throw new Error('Görsel boyutu geçersiz');
-  return { buffer, type: match[1] === 'png' ? 'image/png' : 'image/jpeg' };
-}
-
-async function generateWithOpenAI({ apiKey, buffer, type, prompt }) {
-  const form = new FormData();
-  form.append('model', 'gpt-image-2');
-  form.append('image[]', new Blob([buffer], { type }), `pastacihani-tasarim.${type === 'image/png' ? 'png' : 'jpg'}`);
-  form.append('prompt', prompt);
-  form.append('size', '1024x1024');
-  form.append('quality', 'medium');
-  form.append('output_format', 'jpeg');
-  form.append('output_compression', '88');
-
-  const baseUrl = (process.env.OPENAI_BASE_URL || 'https://api.openai.com').replace(/\/$/, '');
-  const result = await fetch(`${baseUrl}/v1/images/edits`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${apiKey}` },
-    body: form,
-    signal: AbortSignal.timeout(GENERATION_TIMEOUT_MS)
-  });
-  const data = await result.json();
-  const image = data?.data?.[0]?.b64_json;
-  if (!result.ok || !image) throw new Error(`OpenAI:${result.status}:${data?.error?.code || data?.error?.type || 'no_image'}`);
-  return { image, mimeType: 'image/jpeg' };
-}
-
-async function generateWithGemini({ apiKey, buffer, type, prompt }) {
-  const baseUrl = (process.env.GOOGLE_GEMINI_BASE_URL || 'https://generativelanguage.googleapis.com').replace(/\/$/, '');
-  const model = process.env.GEMINI_IMAGE_MODEL || 'gemini-3.1-flash-lite-image';
-  const result = await fetch(`${baseUrl}/v1beta/models/${model}:generateContent`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
-    body: JSON.stringify({
-      contents: [{
-        role: 'user',
-        parts: [
-          { text: prompt },
-          { inline_data: { mime_type: type, data: buffer.toString('base64') } }
-        ]
-      }],
-      generationConfig: {
-        responseModalities: ['TEXT', 'IMAGE']
-      }
-    }),
-    signal: AbortSignal.timeout(GENERATION_TIMEOUT_MS)
-  });
-  const data = await result.json();
-  const parts = data?.candidates?.[0]?.content?.parts || [];
-  const imagePart = [...parts].reverse().find((part) => part.inlineData?.data || part.inline_data?.data);
-  const inline = imagePart?.inlineData || imagePart?.inline_data;
-  if (!result.ok || !inline?.data) {
-    const detail = String(data?.error?.message || data?.error?.status || data?.promptFeedback?.blockReason || 'no_image').slice(0, 300);
-    throw new Error(`Gemini:${result.status}:${detail}`);
-  }
-  return { image: inline.data, mimeType: inline.mimeType || inline.mime_type || 'image/png' };
+  const bytes = Buffer.from(match[2], 'base64').length;
+  if (!bytes || bytes > 3_200_000) throw new Error('Görsel boyutu geçersiz');
 }
 
 export default async (request) => {
@@ -88,66 +30,45 @@ export default async (request) => {
   if (!isSameOrigin(request)) return response(403, { error: 'Geçersiz istek kaynağı' });
   const contentLength = Number(request.headers.get('content-length') || 0);
   if (contentLength > MAX_BODY_BYTES) return response(413, { error: 'Tasarım görseli çok büyük' });
+  if (!process.env.OPENAI_API_KEY && !process.env.GEMINI_API_KEY) {
+    return response(503, { error: 'Yapay zekâ servisi yapılandırılmadı' });
+  }
 
-  const openaiKey = process.env.OPENAI_API_KEY || '';
-  const geminiKey = process.env.GEMINI_API_KEY || '';
-  if (!openaiKey && !geminiKey) return response(503, { error: 'Yapay zekâ servisi yapılandırılmadı' });
-
+  const store = getStore({ name: 'realistic-cake-jobs', consistency: 'strong' });
+  let jobId = '';
   try {
-    const startedAt = Date.now();
     const body = await request.json();
-    const { buffer, type } = parseImage(body.imageDataUrl);
+    validateImage(body.imageDataUrl);
     const designSummary = String(body.designSummary || '').replace(/[\r\n<>]/g, ' ').slice(0, 500);
+    jobId = crypto.randomUUID();
+    if (!JOB_ID_RE.test(jobId)) throw new Error('İş kimliği oluşturulamadı');
 
-    const prompt = [
-      'Transform this 3D cake design into a photorealistic product photograph of a real, professionally handmade celebration cake.',
-      'Preserve the exact cake shape, number of tiers, proportions, icing colors, decorations, topper, candles, fruit, flowers, drip details and any short cake inscription visible in the reference.',
-      'Use realistic edible materials, subtle handmade imperfections, natural buttercream or fondant texture and accurate shadows.',
-      'Place the cake centered on a simple elegant cake stand against a warm cream studio background, straight-on three-quarter product photography, soft natural light, premium bakery aesthetic.',
-      'Do not add people, hands, packaging, logos, watermarks, extra text, extra decorations or extra cake tiers.',
-      designSummary ? `Design notes: ${designSummary}` : ''
-    ].filter(Boolean).join(' ');
+    await store.setJSON(jobId, {
+      status: 'queued',
+      imageDataUrl: body.imageDataUrl,
+      designSummary,
+      createdAt: Date.now()
+    }, { metadata: { createdAt: Date.now() } });
 
-    let generated;
-    try {
-      // Kişisel OpenAI anahtarı varsa GPT Image 2; Netlify'ın ağ geçidi anahtarıysa
-      // görüntü destekli Gemini yedeği kullanılır. İki durumda da sırlar yalnızca sunucudadır.
-      if (openaiKey.startsWith('sk-')) generated = await generateWithOpenAI({ apiKey: openaiKey, buffer, type, prompt });
-      else if (geminiKey) generated = await generateWithGemini({ apiKey: geminiKey, buffer, type, prompt });
-      else throw new Error('Uygun görsel modeli bulunamadı');
-    } catch (generationError) {
-      console.error('realistic-cake generation:', generationError.message);
-      if (generationError?.name === 'TimeoutError') {
-        return response(504, { error: 'Görsel üretimi bu denemede uzun sürdü. Lütfen hemen tekrar deneyin.' });
-      }
-      return response(502, { error: 'Gerçek pasta görseli şu anda üretilemedi. Lütfen biraz sonra tekrar deneyin.' });
-    }
-
-    console.info('realistic-cake generated', { durationMs: Date.now() - startedAt });
-
-    const cloudForm = new FormData();
-    const outputExt = generated.mimeType.includes('png') ? 'png' : 'jpg';
-    cloudForm.append('file', new Blob([Buffer.from(generated.image, 'base64')], { type: generated.mimeType }), `gercek-pasta.${outputExt}`);
-    cloudForm.append('upload_preset', UPLOAD_PRESET);
-    cloudForm.append('folder', 'ai-designs');
-    cloudForm.append('tags', 'ai-tasarim');
-
-    const uploaded = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
-      method: 'POST', body: cloudForm, signal: AbortSignal.timeout(UPLOAD_TIMEOUT_MS)
+    const workerUrl = new URL('/api/realistic-cake-worker', request.url);
+    const queued = await fetch(workerUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Origin: new URL(request.url).origin },
+      body: JSON.stringify({ jobId }),
+      signal: AbortSignal.timeout(8_000)
     });
-    const cloud = await uploaded.json();
-    if (!uploaded.ok || !cloud.secure_url) {
-      console.error('realistic-cake Cloudinary:', uploaded.status, cloud?.error?.message);
-      return response(502, { error: 'Görsel üretildi ancak kaydedilemedi. Lütfen tekrar deneyin.' });
+    if (queued.status !== 202) {
+      await store.delete(jobId);
+      console.error('realistic-cake queue:', queued.status);
+      return response(502, { error: 'Görsel üretimi başlatılamadı. Lütfen tekrar deneyin.' });
     }
 
-    console.info('realistic-cake completed', { durationMs: Date.now() - startedAt });
-    return response(200, { imageUrl: cloud.secure_url });
+    return response(202, { jobId });
   } catch (error) {
-    if (error?.name === 'TimeoutError') return response(504, { error: 'Görsel üretimi uzun sürdü. Lütfen tekrar deneyin.' });
+    if (jobId) await store.delete(jobId).catch(() => {});
     if (/Görsel/.test(error?.message || '')) return response(400, { error: error.message });
-    console.error('realistic-cake:', error);
-    return response(500, { error: 'Görsel üretilirken beklenmeyen bir hata oluştu' });
+    console.error('realistic-cake start:', error?.message || error);
+    return response(500, { error: 'Görsel üretimi başlatılamadı. Lütfen tekrar deneyin.' });
   }
 };
 

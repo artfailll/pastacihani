@@ -5,7 +5,6 @@ import auth from '../lib/auth.js';
 const { requireAdmin } = auth;
 const JOB_ID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
 const IMAGE_URL_RE = /^https:\/\/res\.cloudinary\.com\/do7gjdvb0\/image\/upload\//;
-const VIDEO_URL_RE = /^https:\/\/res\.cloudinary\.com\/do7gjdvb0\/video\/upload\/[^?#]+\.mp4$/;
 
 function response(status, body) {
   return Response.json(body, { status, headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' } });
@@ -26,13 +25,11 @@ export default async (request) => {
   try {
     const body = await request.json();
     if (!IMAGE_URL_RE.test(body.imageUrl || '')) return response(400, { error: 'Geçersiz görsel adresi' });
-    if (!VIDEO_URL_RE.test(body.videoUrl || '')) return response(400, { error: 'Geçersiz Reel video adresi' });
     jobId = crypto.randomUUID();
     if (!JOB_ID_RE.test(jobId)) throw new Error('İş kimliği oluşturulamadı');
     await store.setJSON(jobId, {
       status: 'queued',
       imageUrl: body.imageUrl,
-      videoUrl: body.videoUrl,
       caption: String(body.caption || '').slice(0, 5000),
       createdAt: Date.now()
     });

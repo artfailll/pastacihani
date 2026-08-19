@@ -1,6 +1,7 @@
 # Local and secret files
 .netlify/
 node_modules/
+deno.lock
 .DS_Store
 .env
 .env.*

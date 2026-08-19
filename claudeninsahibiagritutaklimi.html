@@ -198,11 +198,13 @@ function addUpCard(j,cat,desc){
   card.querySelector('.ig').onclick=async(e)=>{
     const btn=e.currentTarget;btn.textContent='Açıklama hazırlanıyor…';btn.disabled=true;
     if(!await ensureAiCaption()){btn.textContent='Açıklama hazırlanamadı';btn.disabled=false;return;}
+    let publishImage=j.secure_url;
     try{
-      btn.textContent='Reel videosu hazırlanıyor…';
-      const videoUrl=await createReelVideo(j.secure_url);
-      postToInstagram(btn,j.secure_url,videoUrl,curCap,cat);
-    }catch(err){btn.textContent='Video hazırlanamadı';btn.disabled=false;console.error(err);}
+      btn.textContent='Fotoğraf AI ile rötuşlanıyor…';
+      publishImage=await prepareInstagramArtwork(j.secure_url,cat);
+    }catch(err){console.warn('AI rötuş atlandı:',err);}
+    btn.textContent='Müzikli Reel hazırlanıyor…';
+    postToInstagram(btn,publishImage,curCap,cat);
   };
   const del=card.querySelector('[data-tok]');
   if(del)del.onclick=async()=>{del.textContent='Siliniyor…';const fd=new FormData();fd.append('token',del.dataset.tok);try{const r=await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/delete_by_token`,{method:'POST',body:fd});if(r.ok){card.style.opacity=.4;del.textContent='✓ Silindi';del.disabled=true;}else del.textContent='Silinemedi (süre doldu)';}catch(e){del.textContent='Hata';}};
@@ -228,44 +230,19 @@ $('loadAll').onclick=async()=>{
     });
   }catch(e){$('mlog').textContent='Liste alınamadı. Cloudinary Security → "Resource list" açık mı?';}
 };
-function loadImage(url){
-  return new Promise((resolve,reject)=>{const img=new Image();img.crossOrigin='anonymous';img.onload=()=>resolve(img);img.onerror=()=>reject(new Error('Fotoğraf açılamadı'));img.src=url;});
-}
-function reelMimeType(){
-  return ['video/mp4;codecs=avc1.42E01E','video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm'].find(t=>MediaRecorder.isTypeSupported(t))||'';
-}
-async function createReelVideo(imageUrl){
-  if(!window.MediaRecorder||!HTMLCanvasElement.prototype.captureStream)throw new Error('Bu tarayıcı video hazırlamayı desteklemiyor');
-  const img=await loadImage(imageUrl),logo=await loadImage('/brand-logo.jpeg').catch(()=>null);
-  const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
-  canvas.width=720;canvas.height=1280;
-  const stream=canvas.captureStream(30),mimeType=reelMimeType();
-  const recorder=new MediaRecorder(stream,mimeType?{mimeType,videoBitsPerSecond:3500000}:{videoBitsPerSecond:3500000});
-  const chunks=[];recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
-  const done=new Promise((resolve,reject)=>{recorder.onstop=()=>resolve(new Blob(chunks,{type:recorder.mimeType||mimeType||'video/webm'}));recorder.onerror=()=>reject(recorder.error||new Error('Video oluşturulamadı'));});
-  const duration=7000,start=performance.now();
-  function cover(alpha,blur){
-    const scale=Math.max(canvas.width/img.width,canvas.height/img.height),w=img.width*scale,h=img.height*scale;
-    ctx.save();ctx.globalAlpha=alpha;ctx.filter=blur?'blur(24px)':'';ctx.drawImage(img,(canvas.width-w)/2,(canvas.height-h)/2,w,h);ctx.restore();
+async function prepareInstagramArtwork(imageUrl,category){
+  const start=await fetch('/.netlify/functions/instagram-artwork',{method:'POST',headers:authHeaders({'Content-Type':'application/json'}),body:JSON.stringify({imageUrl,category})});
+  const queued=await start.json();
+  if(!start.ok||!queued.jobId)throw new Error(queued.error||'AI rötuş başlatılamadı');
+  for(let i=0;i<80;i++){
+    await new Promise(r=>setTimeout(r,3000));
+    const res=await fetch('/.netlify/functions/instagram-artwork-status',{method:'POST',headers:authHeaders({'Content-Type':'application/json'}),body:JSON.stringify({jobId:queued.jobId})});
+    const data=await res.json();
+    if(!res.ok)throw new Error(data.error||'AI rötuş durumu alınamadı');
+    if(data.status==='completed'&&data.imageUrl)return data.imageUrl;
+    if(data.status==='failed')throw new Error(data.error||'AI rötuş yapılamadı');
   }
-  function draw(now){
-    const p=Math.min(1,(now-start)/duration),zoom=1+.045*p;
-    ctx.fillStyle='#FBF4EC';ctx.fillRect(0,0,canvas.width,canvas.height);cover(.42,true);
-    const shade=ctx.createLinearGradient(0,0,0,canvas.height);shade.addColorStop(0,'rgba(42,30,34,.42)');shade.addColorStop(.34,'rgba(42,30,34,.04)');shade.addColorStop(1,'rgba(42,30,34,.55)');ctx.fillStyle=shade;ctx.fillRect(0,0,canvas.width,canvas.height);
-    const box=610*zoom,ratio=Math.min(box/img.width,box/img.height),w=img.width*ratio,h=img.height*ratio;
-    ctx.save();ctx.beginPath();ctx.roundRect(55,330,610,610,28);ctx.clip();ctx.drawImage(img,360-w/2,635-h/2,w,h);ctx.restore();
-    if(logo){ctx.save();ctx.beginPath();ctx.arc(360,150,62,0,Math.PI*2);ctx.clip();ctx.drawImage(logo,298,88,124,124);ctx.restore();ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=4;ctx.beginPath();ctx.arc(360,150,64,0,Math.PI*2);ctx.stroke();}
-    ctx.textAlign='center';ctx.fillStyle='#fff';ctx.font="700 37px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif";ctx.fillText('Hayalinizdeki pasta',360,1030);ctx.font="500 27px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif";ctx.fillText('Pastacihanı’nda gerçeğe dönüşüyor',360,1075);ctx.font="600 24px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif";ctx.fillText('Sipariş için DM veya WhatsApp',360,1170);ctx.font="500 21px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif";ctx.fillText('Silivri · 0554 810 63 01',360,1208);
-    if(p<1)requestAnimationFrame(draw);else recorder.stop();
-  }
-  recorder.start(500);requestAnimationFrame(draw);
-  const blob=await done;stream.getTracks().forEach(t=>t.stop());
-  const ext=blob.type.includes('mp4')?'mp4':'webm',fd=new FormData();
-  fd.append('file',blob,`pastacihani-reel.${ext}`);fd.append('upload_preset',UPLOAD_PRESET);fd.append('tags','instagram-reel,galeri-reel');
-  const upload=await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/video/upload`,{method:'POST',body:fd});
-  const data=await upload.json();if(!upload.ok||!data.secure_url)throw new Error(data.error?.message||'Video yüklenemedi');
-  const transformed=data.secure_url.replace('/video/upload/','/video/upload/w_720,h_1280,c_fill,g_center,vc_h264,q_auto:good,f_mp4/');
-  return transformed.replace(/\.[a-z0-9]+(?:\?.*)?$/i,'.mp4');
+  throw new Error('AI rötuş uzun sürdü');
 }
 async function waitForInstagramJob(jobId){
   for(let i=0;i<120;i++){
@@ -278,10 +255,10 @@ async function waitForInstagramJob(jobId){
   throw new Error('Instagram işlemi uzun sürdü. Biraz sonra tekrar kontrol edin.');
 }
 // Instagram'a otomatik Reel + Story (token Netlify Function'da güvenli)
-async function postToInstagram(btn, imageUrl, videoUrl, cap, cat){
+async function postToInstagram(btn, imageUrl, cap, cat){
   btn.textContent='Gönderiliyor…';btn.disabled=true;
   try{
-    const res=await fetch('/.netlify/functions/instagram-post',{method:'POST',headers:authHeaders({'Content-Type':'application/json'}),body:JSON.stringify({imageUrl,videoUrl,caption:cap,category:cat})});
+    const res=await fetch('/.netlify/functions/instagram-post',{method:'POST',headers:authHeaders({'Content-Type':'application/json'}),body:JSON.stringify({imageUrl,caption:cap,category:cat})});
     const d=await res.json();
     if(res.status===401){sessionStorage.removeItem(TOKEN_KEY);location.reload();return;}
     if(!res.ok||!d.jobId)throw new Error(d.error||'Paylaşım başlatılamadı');

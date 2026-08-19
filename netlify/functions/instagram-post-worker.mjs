@@ -2,6 +2,46 @@ import { getStore } from '@netlify/blobs';
 
 const GRAPH_VERSION = 'v26.0';
 const JOB_ID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
+const CLOUD_NAME = 'do7gjdvb0';
+const REEL_TEMPLATE = 'v1787165692/system/reel-template-v2.mp4';
+const BRAND_LOGO_LAYER = 'system:brand-logo-round-v1';
+
+function cloudinaryPublicId(imageUrl) {
+  const parsed = new URL(imageUrl);
+  if (parsed.protocol !== 'https:' || parsed.hostname !== 'res.cloudinary.com') throw new Error('Cloudinary:invalid_image');
+  const marker = `/${CLOUD_NAME}/image/upload/`;
+  const start = parsed.pathname.indexOf(marker);
+  if (start < 0) throw new Error('Cloudinary:invalid_image');
+  const rest = parsed.pathname.slice(start + marker.length);
+  const version = rest.match(/(?:^|\/)v\d+\/(.+)$/);
+  if (!version?.[1]) throw new Error('Cloudinary:image_version_missing');
+  const publicId = decodeURIComponent(version[1]).replace(/\.[a-z0-9]+$/i, '');
+  if (!publicId || !/^[\p{L}\p{N}_./-]+$/u.test(publicId)) throw new Error('Cloudinary:invalid_public_id');
+  return publicId.replaceAll('/', ':');
+}
+
+function buildReelVideoUrl(imageUrl) {
+  const photoLayer = cloudinaryPublicId(imageUrl);
+  const transformations = [
+    'c_fill,g_center,h_1280,w_720',
+    `l_${photoLayer}`,
+    'c_fill,g_center,h_720,w_610,r_32',
+    'fl_layer_apply,g_center,y_-15',
+    `l_${BRAND_LOGO_LAYER}`,
+    'c_fill,g_center,h_112,w_112',
+    'fl_layer_apply,g_north_west,x_38,y_38',
+    'q_auto:good,vc_h264,ac_aac,f_mp4'
+  ].join('/');
+  return `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/${transformations}/${REEL_TEMPLATE}`;
+}
+
+function buildStoryImageUrl(imageUrl) {
+  const logo = `l_${BRAND_LOGO_LAYER}/c_thumb,g_center,h_164,w_164,r_max/fl_layer_apply,g_north_east,x_48,y_58`;
+  return imageUrl.replace(
+    '/image/upload/',
+    `/image/upload/w_1080,h_1920,c_pad,g_center,b_rgb:24181E,e_vignette:12,q_auto:good,f_jpg/${logo}/`
+  );
+}
 
 function normalizeCaption(value) {
   const input = String(value || '').replace(/\u0000/g, '').trim();
@@ -70,7 +110,8 @@ async function runJob(jobId, store) {
 
   const token = process.env.INSTAGRAM_TOKEN;
   if (!token) throw new Error('Instagram:missing_token');
-  await waitForCloudinaryVideo(job.videoUrl);
+  const videoUrl = buildReelVideoUrl(job.imageUrl);
+  await waitForCloudinaryVideo(videoUrl);
 
   const pages = await graph(`me/accounts?access_token=${encodeURIComponent(token)}`);
   if (!pages.data?.[0]) throw new Error('Meta:no_page');
@@ -84,7 +125,7 @@ async function runJob(jobId, store) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       media_type: 'REELS',
-      video_url: job.videoUrl,
+      video_url: videoUrl,
       caption: normalizeCaption(job.caption),
       share_to_feed: true,
       access_token: pageToken
@@ -94,16 +135,14 @@ async function runJob(jobId, store) {
   await waitForContainer(reel.id, pageToken);
   const reelId = await publishContainer(igId, reel.id, pageToken);
 
-  const storyImageUrl = job.imageUrl.replace(
-    '/image/upload/',
-    '/image/upload/w_1080,h_1920,c_pad,g_center,b_rgb:FBF4EC,e_vignette:12,q_auto:good,f_jpg/'
-  );
+  const storyImageUrl = buildStoryImageUrl(job.imageUrl);
   const story = await graph(`${igId}/media`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ image_url: storyImageUrl, media_type: 'STORIES', access_token: pageToken })
   });
   if (!story.id) throw new Error('Meta:story_container_no_id');
+  await waitForContainer(story.id, pageToken);
   const storyId = await publishContainer(igId, story.id, pageToken);
 
   await store.setJSON(jobId, {

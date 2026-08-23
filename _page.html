@@ -506,11 +506,7 @@ body::after {
 /* ============================================================
    PRELOADER — sinematik perde
    ============================================================ */
-.preloader {
-  position: fixed; inset: 0; z-index: 2147483300; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-  clip-path: inset(0 0 0% 0); transition: clip-path .85s var(--ease-luxe) .1s; will-change: clip-path;
-}
+.preloader { display: none !important; }
 .preloader::before, .preloader::after {
   content: ""; position: absolute; inset: 0; background: var(--ink);
 }

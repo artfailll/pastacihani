@@ -30,6 +30,9 @@ export default async (request) => {
     await store.setJSON(jobId, {
       status: 'queued',
       imageUrl: body.imageUrl,
+      category: String(body.category || 'dogumgunu'),
+      montageStyle: String(body.montageStyle || 'cinematic'),
+      musicUrl: String(body.musicUrl || ''),
       caption: String(body.caption || '').slice(0, 5000),
       createdAt: Date.now()
     });

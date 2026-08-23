@@ -30,7 +30,8 @@
   .logout{border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--rose-deep);padding:8px 11px;font-weight:650;cursor:pointer}
   .panel{display:none}.panel.on{display:block}
   /* yüklenen kartı */
-  .upcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:12px;display:flex;gap:12px}
+  .upcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:12px;display:flex;flex-direction:column;gap:12px}
+  .upcard-top{display:flex;gap:12px}
   .upcard img{width:84px;height:84px;object-fit:cover;border-radius:10px;flex:0 0 auto}
   .upcard .body{flex:1;min-width:0}
   .upcard .cap{font-size:.78rem;background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:8px;white-space:pre-wrap;max-height:96px;overflow:auto}
@@ -39,6 +40,14 @@
   .mini.ig{background:#E1306C;color:#fff;border-color:#E1306C}
   .mini.del{background:#fff;color:#c0392b;border-color:#e7c3bd}
   .mini.ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+
+  /* Video Önizleme Modalı */
+  .vprev{margin-top:8px;padding:12px;border-radius:14px;background:#231117;color:#FFF8EF;display:none;text-align:center}
+  .vprev.on{display:block}
+  .vprev video{width:100%;max-height:360px;border-radius:10px;background:#000;margin-top:8px;object-fit:contain}
+  .vprev .vtitle{font-size:.85rem;font-weight:700;color:#F4D99E;display:flex;align-items:center;justify-content:center;gap:6px}
+  .vprev .pubbtn{margin-top:10px;width:100%;padding:12px;border:0;border-radius:12px;background:linear-gradient(135deg,#DDB977,#F4D99E);color:#231117;font-weight:800;font-size:.95rem;cursor:pointer}
+
   /* yönet listesi */
   .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
   .mcell{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
@@ -58,7 +67,7 @@
 </div>
 
 <div class="wrap" id="app">
-  <div class="topline"><h1>🎂 Galeri Yönetimi</h1><button class="logout" type="button" id="logout">Çıkış</button></div>
+  <div class="topline"><h1>🎂 Galeri & Medya Yönetimi</h1><button class="logout" type="button" id="logout">Çıkış</button></div>
   <div class="tabs">
     <div class="tab on" data-t="up" onclick="tab('up')">➕ Yükle</div>
     <div class="tab" data-t="mng" onclick="tab('mng')">🗂️ Yönet / Sil</div>
@@ -73,6 +82,13 @@
       <option value="babyshower">Baby Shower</option><option value="yildonumu">Yıldönümü</option>
       <option value="diger">Diğer</option>
     </select>
+    <label>Video Montaj & Edit Stili</label>
+    <select id="montageStyle">
+      <option value="cinematic">🎬 Sinematik Lüks (Işıltılı Çerçeve & Dairesel Logo)</option>
+      <option value="zoom">🔎 Detay Odak & Zoom (Pasta İşçiliği Odaklı)</option>
+      <option value="luxury_gold">✨ Altın Kaplama Lüks Çerçeve</option>
+      <option value="split">📱 Modern Story / Reel Split Kartı</option>
+    </select>
     <label>Ürün kodu (müşteri bununla arar — örn. DG-001)</label>
     <input id="code" placeholder="DG-001" maxlength="20">
     <label>Pazarlama açıklaması (resmin altında + Instagram metni)</label>
@@ -81,6 +97,8 @@
     <label style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-top:10px">
       <input type="checkbox" id="feat" style="width:auto"> ⭐ Galeride öne çıkar (en üstte göster)
     </label>
+    <label>🎵 Arka Plan Müziği (İsteğe Bağlı - Telefon/Dosyalardan MP3)</label>
+    <input type="file" id="musicFile" accept="audio/*">
     <label>Fotoğraf(lar)</label>
     <input type="file" id="file" accept="image/*" multiple>
     <div class="drop">Birden fazla foto seçersen kod/açıklama hepsine aynı yazılır 📷</div>
@@ -103,6 +121,8 @@
 /* ===== AYARLAR ===== */
 const CLOUD_NAME    = "do7gjdvb0";
 const UPLOAD_PRESET = "folder";
+const BRAND_LOGO_LAYER = "system:brand-logo-round-v1";
+const REEL_TEMPLATE = "v1787165692/system/reel-template-v2.mp4";
 /* =================== */
 const IG_URL="https://www.instagram.com/pastacihani.online/";
 const $=id=>document.getElementById(id);
@@ -136,9 +156,46 @@ const CATNAME={dogumgunu:"Doğum Günü",nisan:"Nişan",soz:"Söz",dugun:"Düğ�
 
 const TAG1={dogumgunu:"#doğumgünüpastası",nisan:"#nişanpastası",soz:"#sözpastası",dugun:"#düğünpastası",babyshower:"#babyshower",yildonumu:"#yıldönümüpastası",diger:"#özelpasta"};
 function caption(cat,desc){
-  // max 5 hashtag: kategori + 4 sabit
   const tags=`${TAG1[cat]||'#pasta'} #pastacihani #butikpasta #silivripasta #pastasipariş`;
   return `${desc||'Pastacihanı butik tasarım pasta'} 🎂\n\nSipariş için DM ya da WhatsApp: 0554 810 63 01\n📍 Silivri ve çevresine teslimat (Kumburgaz'a kadar)\n\n${tags}`.trim();
+}
+
+function getCloudinaryPublicId(imageUrl) {
+  const parsed = new URL(imageUrl);
+  const marker = `/${CLOUD_NAME}/image/upload/`;
+  const start = parsed.pathname.indexOf(marker);
+  if (start < 0) return '';
+  const rest = parsed.pathname.slice(start + marker.length);
+  const version = rest.match(/(?:^|\/)v\d+\/(.+)$/);
+  if (!version?.[1]) return '';
+  const publicId = decodeURIComponent(version[1]).replace(/\.[a-z0-9]+$/i, '');
+  return publicId.replaceAll('/', ':');
+}
+
+function generatePreviewVideoUrl(imageUrl, montageStyle = 'cinematic') {
+  const photoLayer = getCloudinaryPublicId(imageUrl);
+  if (!photoLayer) return imageUrl;
+
+  let photoTransformation = 'c_fill,g_center,h_720,w_610,r_32';
+  if (montageStyle === 'zoom') {
+    photoTransformation = 'c_fill,g_center,h_750,w_630,r_38,e_sharpen:80';
+  } else if (montageStyle === 'luxury_gold') {
+    photoTransformation = 'c_fill,g_center,h_710,w_600,r_36,b_rgb:DDB977';
+  } else if (montageStyle === 'split') {
+    photoTransformation = 'c_fill,g_center,h_700,w_590,r_24';
+  }
+
+  const transformations = [
+    'c_fill,g_center,h_1280,w_720',
+    `l_${photoLayer}`,
+    photoTransformation,
+    'fl_layer_apply,g_center,y_-15',
+    `l_${BRAND_LOGO_LAYER}`,
+    'c_fill,g_center,h_118,w_118',
+    'fl_layer_apply,g_north_west,x_40,y_40',
+    'q_auto:good,vc_h264,ac_aac,f_mp4'
+  ].join('/');
+  return `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/${transformations}/${REEL_TEMPLATE}`;
 }
 
 async function uploadOne(file,cat,code,desc,feat){
@@ -151,37 +208,73 @@ async function uploadOne(file,cat,code,desc,feat){
   return null;
 }
 
+async function uploadMusic(file) {
+  const fd = new FormData();
+  fd.append('file', file);
+  fd.append('upload_preset', UPLOAD_PRESET);
+  fd.append('resource_type', 'video');
+  try {
+    const r = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/video/upload`, { method: 'POST', body: fd });
+    const j = await r.json();
+    return j.secure_url || '';
+  } catch (e) {
+    return '';
+  }
+}
+
 $('up').onclick=async()=>{
   const files=$('file').files,cat=$('cat').value,code=$('code').value.trim(),desc=$('desc').value.trim(),feat=$('feat').checked;
+  const montageStyle = $('montageStyle').value;
+  const musicFile = $('musicFile').files[0];
   if(!files.length){$('log').textContent='Önce fotoğraf seç.';return;}
   $('up').disabled=true;let ok=0;
+  let musicUrl = '';
+  if (musicFile) {
+    $('log').textContent = 'Seçilen arka plan müziği yükleniyor…';
+    musicUrl = await uploadMusic(musicFile);
+  }
   for(let i=0;i<files.length;i++){
     $('log').textContent=`Yükleniyor ${i+1}/${files.length}...`;
     const j=await uploadOne(files[i],cat,code,desc,feat);
-    if(j){ok++;addUpCard(j,cat,desc);}
+    if(j){ok++;addUpCard(j,cat,desc,montageStyle,musicUrl);}
   }
   $('log').textContent=`✓ ${ok}/${files.length} yüklendi${code?' · kod: '+code:''}. Galeride birkaç dakikada görünür.`;
-  $('file').value='';$('desc').value='';$('code').value='';$('cc').textContent='0';$('feat').checked=false;$('up').disabled=false;
+  $('file').value='';$('desc').value='';$('code').value='';$('musicFile').value='';$('cc').textContent='0';$('feat').checked=false;$('up').disabled=false;
 };
 
-function addUpCard(j,cat,desc){
+function addUpCard(j,cat,desc,montageStyle = 'cinematic',musicUrl = ''){
   const cap=caption(cat,desc);
   const card=document.createElement('div');card.className='upcard';
-  card.innerHTML=`<img src="${j.secure_url}" alt="">
-    <div class="body">
-      <div class="cap">${cap.replace(/</g,'&lt;')}</div>
-      <div class="row">
-        <button class="mini aibtn">🤖 Hikâyeli Açıklama Yaz</button>
-        <button class="mini" data-cap="1">📋 Kopyala</button>
-        <button class="mini ig">🎬 Reel + Story At</button>
-        ${j.delete_token?`<button class="mini del" data-tok="${j.delete_token}">🗑 Sil</button>`:''}
+  card.innerHTML=`
+    <div class="upcard-top">
+      <img src="${j.secure_url}" alt="">
+      <div class="body">
+        <div class="cap">${cap.replace(/</g,'&lt;')}</div>
+        <div class="row">
+          <button class="mini aibtn">🤖 Hikâyeli Açıklama Yaz</button>
+          <button class="mini" data-cap="1">📋 Kopyala</button>
+          <button class="mini ig">🎬 Video Önizle & Paylaş</button>
+          ${j.delete_token?`<button class="mini del" data-tok="${j.delete_token}">🗑 Sil</button>`:''}
+        </div>
       </div>
+    </div>
+    <div class="vprev">
+      <div class="vtitle">🎬 Video Önizleme Player (${montageStyle.toUpperCase()})</div>
+      <video controls playsinline preload="metadata"></video>
+      <button class="pubbtn" type="button">🚀 Önizleme Tamam, Instagram'a Gönder (Reel + Story)</button>
     </div>`;
+
   let curCap=cap;
   let aiCaptionReady=false;
+  let publishImage=j.secure_url;
   const capBox=card.querySelector('.cap');
+  const vprev = card.querySelector('.vprev');
+  const videoElem = card.querySelector('.vprev video');
+  const pubBtn = card.querySelector('.pubbtn');
+
   card.querySelector('[data-cap]').onclick=(e)=>{navigator.clipboard.writeText(curCap);e.target.textContent='✓ Kopyalandı';e.target.classList.add('ok');};
   const aiButton=card.querySelector('.aibtn');
+
   async function ensureAiCaption(){
     if(aiCaptionReady)return true;
     aiButton.textContent='Hikâye yazılıyor…';aiButton.disabled=true;
@@ -194,18 +287,31 @@ function addUpCard(j,cat,desc){
     aiButton.textContent='Tekrar Dene';aiButton.disabled=false;return false;
   }
   aiButton.onclick=ensureAiCaption;
-  // Instagram reel + story
+
+  // Instagram Video Önizleme & Paylaşım
   card.querySelector('.ig').onclick=async(e)=>{
-    const btn=e.currentTarget;btn.textContent='Açıklama hazırlanıyor…';btn.disabled=true;
+    const btn=e.currentTarget;btn.textContent='Hazırlanıyor…';btn.disabled=true;
     if(!await ensureAiCaption()){btn.textContent='Açıklama hazırlanamadı';btn.disabled=false;return;}
-    let publishImage=j.secure_url;
     try{
-      btn.textContent='Fotoğraf AI ile rötuşlanıyor…';
+      btn.textContent='AI ile Fotoğraf Rötuşlanıyor…';
       publishImage=await prepareInstagramArtwork(j.secure_url,cat);
     }catch(err){console.warn('AI rötuş atlandı:',err);}
-    btn.textContent='Müzikli Reel hazırlanıyor…';
-    postToInstagram(btn,publishImage,curCap,cat);
+
+    btn.textContent='Montajlı Video Oluşturuluyor…';
+    const videoPreviewUrl = generatePreviewVideoUrl(publishImage, montageStyle);
+    videoElem.src = videoPreviewUrl;
+    vprev.classList.add('on');
+    btn.textContent='✓ Montaj Hazırlandı';
+    btn.classList.add('ok');
+    btn.disabled=false;
   };
+
+  pubBtn.onclick = async () => {
+    pubBtn.textContent = 'Instagram’a Gönderiliyor…';
+    pubBtn.disabled = true;
+    await postToInstagram(pubBtn, publishImage, curCap, cat, montageStyle, musicUrl);
+  };
+
   const del=card.querySelector('[data-tok]');
   if(del)del.onclick=async()=>{del.textContent='Siliniyor…';const fd=new FormData();fd.append('token',del.dataset.tok);try{const r=await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/delete_by_token`,{method:'POST',body:fd});if(r.ok){card.style.opacity=.4;del.textContent='✓ Silindi';del.disabled=true;}else del.textContent='Silinemedi (süre doldu)';}catch(e){del.textContent='Hata';}};
   $('ups').prepend(card);
@@ -230,6 +336,7 @@ $('loadAll').onclick=async()=>{
     });
   }catch(e){$('mlog').textContent='Liste alınamadı. Cloudinary Security → "Resource list" açık mı?';}
 };
+
 async function prepareInstagramArtwork(imageUrl,category){
   const start=await fetch('/.netlify/functions/instagram-artwork',{method:'POST',headers:authHeaders({'Content-Type':'application/json'}),body:JSON.stringify({imageUrl,category})});
   const queued=await start.json();
@@ -244,6 +351,7 @@ async function prepareInstagramArtwork(imageUrl,category){
   }
   throw new Error('AI rötuş uzun sürdü');
 }
+
 async function waitForInstagramJob(jobId){
   for(let i=0;i<120;i++){
     await new Promise(r=>setTimeout(r,3000));
@@ -254,17 +362,17 @@ async function waitForInstagramJob(jobId){
   }
   throw new Error('Instagram işlemi uzun sürdü. Biraz sonra tekrar kontrol edin.');
 }
-// Instagram'a otomatik Reel + Story (token Netlify Function'da güvenli)
-async function postToInstagram(btn, imageUrl, cap, cat){
+
+async function postToInstagram(btn, imageUrl, cap, cat, montageStyle = 'cinematic', musicUrl = ''){
   btn.textContent='Gönderiliyor…';btn.disabled=true;
   try{
-    const res=await fetch('/.netlify/functions/instagram-post',{method:'POST',headers:authHeaders({'Content-Type':'application/json'}),body:JSON.stringify({imageUrl,caption:cap,category:cat})});
+    const res=await fetch('/.netlify/functions/instagram-post',{method:'POST',headers:authHeaders({'Content-Type':'application/json'}),body:JSON.stringify({imageUrl,caption:cap,category:cat,montageStyle,musicUrl})});
     const d=await res.json();
     if(res.status===401){sessionStorage.removeItem(TOKEN_KEY);location.reload();return;}
     if(!res.ok||!d.jobId)throw new Error(d.error||'Paylaşım başlatılamadı');
     btn.textContent='Instagram Reel\'i işliyor…';
     await waitForInstagramJob(d.jobId);
-    btn.textContent='✓ Reel + Story atıldı! Story\'yi Highlight\'a ekle 👆';btn.classList.add('ok');
+    btn.textContent='✓ Reel + Story Yayınlandı!';btn.classList.add('ok');
   }catch(e){btn.textContent='Hata: '+(e.message||'Bağlantı hatası');btn.disabled=false;console.error(e);}
 }
 </script>

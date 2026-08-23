@@ -6,9 +6,9 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #241018; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
-    #__bundler_loading { display: none !important; }
-    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 45%,#3D1726 0%,#1B0911 60%,#0C0307 100%); z-index: 9999; }
-    #__bundler_thumbnail svg { width: 100%; height: 100%; max-width: 520px; max-height: 400px; object-fit: contain; }
+    #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
+    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 45%,#713247 0,#34151f 52%,#170b0f 100%); z-index: 9999; }
+    #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
     #__bundler_placeholder { color: #999; font-size: 14px; }
   </style>
   <noscript>
@@ -23,13 +23,8 @@
   <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="plbg" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#3D1726" stop-opacity="0"></stop>
-        <stop offset="1" stop-color="#1B0911" stop-opacity="0"></stop>
-      </linearGradient>
-      <linearGradient id="goldText" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0" stop-color="#FFF3E0"></stop>
-        <stop offset="50%" stop-color="#F4D99E"></stop>
-        <stop offset="100%" stop-color="#DDB977"></stop>
+        <stop offset="0" stop-color="#FCF6EF"></stop>
+        <stop offset="1" stop-color="#F3E6D9"></stop>
       </linearGradient>
       <style>
         @keyframes plRise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
@@ -37,6 +32,7 @@
         @keyframes plDraw { from { transform:scaleX(0); } to { transform:scaleX(1); } }
         @keyframes plFlame{ 0%,100%{ transform:scaleY(1); opacity:1 } 45%{ transform:scaleY(1.22) translateY(-.6px); opacity:.82 } }
         @keyframes plDot  { 0%,72%,100%{ opacity:.16; transform:translateY(0) } 36%{ opacity:1; transform:translateY(-4px) } }
+        @keyframes plSheen{ 0%{ transform:translateX(-60px) } 100%{ transform:translateX(220px) } }
         .pl-cake  { animation:plPop .8s cubic-bezier(.18,.85,.25,1) both; transform-box:fill-box; transform-origin:center bottom; }
         .pl-flame { animation:plFlame 1s ease-in-out infinite .8s; transform-box:fill-box; transform-origin:center bottom; }
         .pl-word  { animation:plRise .9s cubic-bezier(.2,.8,.2,1) both .34s; transform-box:fill-box; transform-origin:center; }
@@ -51,30 +47,30 @@
     <rect width="480" height="360" fill="url(#plbg)"></rect>
 
     <g class="pl-cake">
-      <ellipse cx="240" cy="171" rx="72" ry="8.5" fill="#000" opacity=".25"></ellipse>
-      <rect x="190" y="131" width="100" height="38" rx="7" fill="#8E3B57"></rect>
-      <path d="M190 142c7 6 14 6 20 0s14 6 20 0 14 6 20 0 14 6 20 0v-11h-80z" fill="#DDB977"></path>
-      <rect x="207" y="104" width="66" height="30" rx="6" fill="#A84869"></rect>
-      <path d="M207 113c5 5 11 5 16 0s11 5 16 0 11 5 18 0v-9h-50z" fill="#F4D99E"></path>
-      <rect x="232" y="118" width="16" height="2.4" rx="1.2" fill="#DDB977" opacity=".9"></rect>
-      <rect x="238" y="86" width="3.4" height="20" rx="1.7" fill="#DDB977"></rect>
-      <g class="pl-flame"><path d="M239.7 86c4.2-3 4.6-7.6.0-11-1.8 2.4-3.4 3-3.4 6 0 2.9 1.6 4.4 3.4 5z" fill="#F4D99E"></path></g>
+      <ellipse cx="240" cy="171" rx="72" ry="8.5" fill="#2A1E22" opacity=".07"></ellipse>
+      <rect x="190" y="131" width="100" height="38" rx="7" fill="#F2BFC9"></rect>
+      <path d="M190 142c7 6 14 6 20 0s14 6 20 0 14 6 20 0 14 6 20 0v-11h-80z" fill="#FCEFF2"></path>
+      <rect x="207" y="104" width="66" height="30" rx="6" fill="#F6CED6"></rect>
+      <path d="M207 113c5 5 11 5 16 0s11 5 16 0 11 5 18 0v-9h-50z" fill="#FFF7F9"></path>
+      <rect x="232" y="118" width="16" height="2.4" rx="1.2" fill="#C2A062" opacity=".7"></rect>
+      <rect x="238" y="86" width="3.4" height="20" rx="1.7" fill="#C2A062"></rect>
+      <g class="pl-flame"><path d="M239.7 86c4.2-3 4.6-7.6.0-11-1.8 2.4-3.4 3-3.4 6 0 2.9 1.6 4.4 3.4 5z" fill="#E8A8B8"></path></g>
     </g>
 
     <g class="pl-word">
-      <text x="240" y="232" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="46" fill="url(#goldText)" letter-spacing="1">Pastacihanı<tspan font-size="28" fill="#DDB977">.com</tspan></text>
+      <text x="240" y="232" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="50" fill="#2A1E22" letter-spacing="0.5">Pastacihanı<tspan font-size="30" fill="#B0697F">.com</tspan></text>
     </g>
-    <rect class="pl-rule" x="198" y="246" width="84" height="2" rx="1" fill="#DDB977"></rect>
-    <text class="pl-tag" x="240" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#E8CFD7" letter-spacing="4.5">COUTURE PASTANE · SİLİVRİ</text>
+    <rect class="pl-rule" x="198" y="246" width="84" height="2" rx="1" fill="#C2A062"></rect>
+    <text class="pl-tag" x="240" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#8C757B" letter-spacing="5">COUTURE PASTANE · SİLİVRİ</text>
 
     <g transform="translate(0,4)">
-      <circle class="pl-d1" cx="228" cy="302" r="3.4" fill="#F4D99E"></circle>
-      <circle class="pl-d2" cx="240" cy="302" r="3.4" fill="#F4D99E"></circle>
-      <circle class="pl-d3" cx="252" cy="302" r="3.4" fill="#F4D99E"></circle>
+      <circle class="pl-d1" cx="228" cy="302" r="3.4" fill="#B0697F"></circle>
+      <circle class="pl-d2" cx="240" cy="302" r="3.4" fill="#B0697F"></circle>
+      <circle class="pl-d3" cx="252" cy="302" r="3.4" fill="#B0697F"></circle>
     </g>
   </svg>
 </div>
-  <div id="__bundler_loading" style="display:none"></div>
+  <div id="__bundler_loading">Unpacking...</div>
 
   <script>
 

@@ -10,9 +10,8 @@
     var meta = document.createElement('meta');
     meta.name = entry[0]; meta.content = entry[1]; document.head.appendChild(meta);
   });
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
-  }
+  if (!('serviceWorker' in navigator)) return;
+  navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
 
   var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
   var deferredPrompt = null;
@@ -68,10 +67,7 @@
     if (banner) banner.remove();
   });
 
-  // index.html/tasarla.html already provide the branded bundler splash. Do not
-  // stack a second full-screen PWA splash on top of that opening animation.
-  var siteOwnsSplash = !!document.getElementById('preloader') || !!document.getElementById('__bundler_thumbnail');
-  if (standalone && !siteOwnsSplash && !sessionStorage.getItem('pc_launch_seen')) {
+  if (standalone && !sessionStorage.getItem('pc_launch_seen')) {
     sessionStorage.setItem('pc_launch_seen', '1');
     var launch = document.createElement('div');
     launch.className = 'pc-launch';

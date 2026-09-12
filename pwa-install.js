@@ -10,12 +10,12 @@
     var meta = document.createElement('meta');
     meta.name = entry[0]; meta.content = entry[1]; document.head.appendChild(meta);
   });
-  if (!('serviceWorker' in navigator)) return;
-  navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+  }
 
   var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
   var deferredPrompt = null;
-  var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
   var style = document.createElement('style');
   style.textContent = [
     '.pc-install{position:fixed;z-index:2147483000;left:max(14px,env(safe-area-inset-left));right:max(14px,env(safe-area-inset-right));bottom:max(14px,calc(env(safe-area-inset-bottom) + 10px));max-width:520px;margin:auto;padding:14px;background:rgba(35,20,25,.96);color:#fff;border:1px solid rgba(222,185,119,.34);border-radius:22px;box-shadow:0 18px 60px rgba(20,8,12,.42);backdrop-filter:blur(18px);display:grid;grid-template-columns:54px 1fr auto;gap:12px;align-items:center;font:14px/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;transform:translateY(150%);opacity:0;transition:.55s cubic-bezier(.2,.8,.2,1)}',
@@ -25,16 +25,6 @@
     '@media(max-width:390px){.pc-install{grid-template-columns:48px 1fr}.pc-install img{width:48px;height:48px}.pc-install .pc-go{grid-column:1/-1;width:100%}}@media(prefers-reduced-motion:reduce){.pc-install,.pc-sheet,.pc-sheet>div,.pc-launch,.pc-launch>div{transition:none;animation:none}.pc-launch{display:none}}'
   ].join('');
   document.head.appendChild(style);
-
-  function instructions() {
-    var sheet = document.createElement('div');
-    sheet.className = 'pc-sheet';
-    sheet.innerHTML = '<div role="dialog" aria-modal="true" aria-label="Uygulama kurulum adımları"><h2>Pastacihanı’nı ana ekrana ekle</h2><p>Bir sonraki siparişinde siteyi uygulama gibi tek dokunuşla aç.</p><ol><li>Tarayıcının <b>Paylaş</b> simgesine dokun.</li><li><b>Ana Ekrana Ekle</b> seçeneğini seç.</li><li>Sağ üstten <b>Ekle</b> de.</li></ol><button type="button">Anladım</button></div>';
-    document.body.appendChild(sheet);
-    requestAnimationFrame(function () { sheet.classList.add('on'); });
-    function close() { sheet.classList.remove('on'); setTimeout(function () { sheet.remove(); }, 350); }
-    sheet.addEventListener('click', function (event) { if (event.target === sheet || event.target.tagName === 'BUTTON') close(); });
-  }
 
   function showInstall() {
     if (standalone || document.querySelector('.pc-install')) return;
@@ -52,7 +42,9 @@
         deferredPrompt = null;
         banner.remove();
       } else {
-        instructions();
+        // Browsers without beforeinstallprompt (notably iOS Safari) cannot
+        // start an install from JavaScript. Do not show a misleading guide.
+        banner.remove();
       }
     });
   }
@@ -67,14 +59,15 @@
     if (banner) banner.remove();
   });
 
-  if (standalone && !sessionStorage.getItem('pc_launch_seen')) {
+  // The site preloader is already the single loading screen on the main app.
+  // Only show the PWA launch animation on pages that do not have one.
+  var siteOwnsSplash = !!document.getElementById('preloader') || !!document.getElementById('__bundler_thumbnail');
+  if (standalone && !siteOwnsSplash && !sessionStorage.getItem('pc_launch_seen')) {
     sessionStorage.setItem('pc_launch_seen', '1');
     var launch = document.createElement('div');
     launch.className = 'pc-launch';
     launch.innerHTML = '<div><img src="/apple-touch-icon.png" alt="Pastacihanı"><b>Pastacihanı</b><small>Couture Pastane · Silivri</small></div>';
     document.body.appendChild(launch);
     setTimeout(function () { launch.remove(); }, 3100);
-  } else if (!standalone) {
-    setTimeout(showInstall, isIOS ? 1200 : 2600);
   }
 })();

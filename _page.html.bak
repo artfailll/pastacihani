@@ -1,0 +1,2246 @@
+<!DOCTYPE html>
+<html lang="tr"><head><style>#favoriler,#pastalar,#galeri{display:none!important}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silivri Pasta Siparişi | El Yapımı Doğum Günü & Düğün Pastası | Pastacihanı</title>
+<meta name="description" content="Silivri'nin en iyi butik pasta atölyesi. Doğum günü, nişan, söz, düğün ve baby shower pastalarını 3D ile tasarla; el yapımı, taze günlük üretim, kapına teslimat. WhatsApp: 0554 810 63 01">
+<link rel="canonical" href="https://pastacihani.com/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="keywords" content="silivri pasta, silivri pasta siparişi, silivri doğum günü pastası, silivri düğün pastası, silivri butik pasta, silivri pastane, kumburgaz pasta siparişi, selimpaşa pasta, değirmenköy pasta, gümüşyaka pasta, ortaköy silivri pasta, mimar sinan mahallesi pasta, özel tasarım pasta">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pastacihanı">
+<meta property="og:title" content="Silivri Pasta Siparişi | El Yapımı Butik Pasta | Pastacihanı">
+<meta property="og:description" content="Silivri'de el yapımı, size özel butik pasta tasarımı. Doğum günü, nişan, düğün pastalarını 3D ile tasarla — kapına teslim.">
+<meta property="og:url" content="https://pastacihani.com/">
+<meta property="og:image" content="https://res.cloudinary.com/do7gjdvb0/image/upload/f_auto,q_auto,w_1200,h_630,c_fill/v1782234535/gd_44473635x-1782234533848413.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Silivri Pasta Siparişi | Pastacihanı">
+<meta name="twitter:description" content="Silivri'de el yapımı butik pasta. 3D ile tasarla, kapına teslim.">
+<meta name="twitter:image" content="https://res.cloudinary.com/do7gjdvb0/image/upload/f_auto,q_auto,w_1200,h_630,c_fill/v1782234535/gd_44473635x-1782234533848413.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Bakery", "LocalBusiness"],
+      "@id": "https://pastacihani.com/#bakery",
+      "name": "Pastacihanı",
+      "alternateName": "Pastacihanı Silivri Butik Pasta",
+      "description": "Silivri merkez, Kumburgaz, Selimpaşa, Değirmenköy, Gümüşyaka ve Silivri'nin tüm mahalle ve köylerinde el yapımı, size özel butik couture pasta tasarımı. Doğum günü, nişan, söz, düğün, baby shower ve yıldönümü pastaları.",
+      "url": "https://pastacihani.com",
+      "telephone": "+905548106301",
+      "priceRange": "₺₺",
+      "currenciesAccepted": "TRY",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+      "image": [
+        "https://res.cloudinary.com/do7gjdvb0/image/upload/f_auto,q_auto,w_1200/v1782234535/gd_44473635x-1782234533848413.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Silivri",
+        "addressRegion": "İstanbul",
+        "postalCode": "34570",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.0724,
+        "longitude": 28.2469
+      },
+      "hasMap": "https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhvNGNqbDRiVFp5GAo",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "10:00", "closes": "18:00" }
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Silivri" },
+        { "@type": "Place", "name": "Piri Mehmet Paşa, Silivri" },
+        { "@type": "Place", "name": "Alibey, Silivri" },
+        { "@type": "Place", "name": "Yenimahalle, Silivri" },
+        { "@type": "Place", "name": "Cumhuriyet, Silivri" },
+        { "@type": "Place", "name": "Fatih (Kale), Silivri" },
+        { "@type": "Place", "name": "Mimar Sinan, Silivri" },
+        { "@type": "Place", "name": "Gazitepe, Silivri" },
+        { "@type": "Place", "name": "Fener, Silivri" },
+        { "@type": "Place", "name": "Selimpaşa, Silivri" },
+        { "@type": "Place", "name": "Değirmenköy Fevzipaşa, Silivri" },
+        { "@type": "Place", "name": "Değirmenköy İsmetpaşa, Silivri" },
+        { "@type": "Place", "name": "Kumburgaz (Kavaklı Hürriyet), Silivri" },
+        { "@type": "Place", "name": "Kumburgaz (Kavaklı İstiklal), Silivri" },
+        { "@type": "Place", "name": "Gümüşyaka, Silivri" },
+        { "@type": "Place", "name": "Ortaköy, Silivri" },
+        { "@type": "Place", "name": "Çanta Balaban, Silivri" },
+        { "@type": "Place", "name": "Çanta Sancaktepe, Silivri" },
+        { "@type": "Place", "name": "Akören, Silivri" },
+        { "@type": "Place", "name": "Alipaşa, Silivri" },
+        { "@type": "Place", "name": "Bekirli, Silivri" },
+        { "@type": "Place", "name": "Beyciler, Silivri" },
+        { "@type": "Place", "name": "Büyük Çavuşlu, Silivri" },
+        { "@type": "Place", "name": "Büyük Kılıçlı, Silivri" },
+        { "@type": "Place", "name": "Büyük Sinekli, Silivri" },
+        { "@type": "Place", "name": "Çayırdere, Silivri" },
+        { "@type": "Place", "name": "Çeltik, Silivri" },
+        { "@type": "Place", "name": "Danamandıra, Silivri" },
+        { "@type": "Place", "name": "Kadıköy, Silivri" },
+        { "@type": "Place", "name": "Kurfallı, Silivri" },
+        { "@type": "Place", "name": "Küçük Kılıçlı, Silivri" },
+        { "@type": "Place", "name": "Küçük Sinekli, Silivri" },
+        { "@type": "Place", "name": "Sayalar, Silivri" },
+        { "@type": "Place", "name": "Semizkumlar, Silivri" },
+        { "@type": "Place", "name": "Seymen, Silivri" },
+        { "@type": "Place", "name": "Yolçatı, Silivri" }
+      ],
+      "servesCuisine": ["Pasta", "Butik Pasta", "Doğum Günü Pastası", "Düğün Pastası"],
+      "sameAs": [
+        "https://www.instagram.com/pastacihani.online/",
+        "https://whatsapp.com/channel/0029Vb7OOj7AojYzuTV6T82y"
+      ],
+      "foundingDate": "2022",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "87",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://pastacihani.com/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Silivri'de pasta siparişi nasıl verilir?", "acceptedAnswer": { "@type": "Answer", "text": "Pastacihanı.com üzerindeki 3D tasarım aracıyla pastanızı kendiniz tasarlayabilir veya doğrudan WhatsApp'tan 0554 810 63 01 numarasına yazarak sipariş verebilirsiniz. Silivri merkez, Kumburgaz, Selimpaşa, Değirmenköy, Gümüşyaka ve Silivri'nin tüm mahalle ve köylerine teslimat yapıyoruz." } },
+        { "@type": "Question", "name": "Silivri'ye pasta teslimatı yapıyor musunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Evet, Silivri merkez dahil Silivri'nin tüm mahalle ve köylerine (Kumburgaz'a kadar) pasta teslimatı yapıyoruz. Teslimat detayları için WhatsApp'tan iletişime geçebilirsiniz." } },
+        { "@type": "Question", "name": "Kaç gün önceden sipariş vermeliyim?", "acceptedAnswer": { "@type": "Answer", "text": "Özel tasarım pastalar için en az 2-3 gün önceden sipariş vermenizi öneririz. Acil siparişler için WhatsApp'tan durumu birlikte değerlendiriyoruz." } },
+        { "@type": "Question", "name": "Glutensiz veya şekersiz pasta yapıyor musunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Evet, glutensiz ve şekersiz seçenekler sunabiliyoruz. Diyet gereksinimlerinizi sipariş sırasında belirtmeniz yeterli." } },
+        { "@type": "Question", "name": "Özel tasarım pasta yaptırabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Kesinlikle! 3D tasarım aracımızla renk, tema ve detayları kendiniz belirleyebilir ya da bize konseptinizi anlatabilirsiniz. Her pasta tamamen size özel tasarlanır." } }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pastacihani.com/#website",
+      "url": "https://pastacihani.com",
+      "name": "Pastacihanı",
+      "description": "Silivri ve çevresinde (Kumburgaz'a kadar) el yapımı butik pasta siparişi",
+      "inLanguage": "tr-TR",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://pastacihani.com/galeri?ara={search_term_string}" },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("d3a03332-2d98-4b94-9a28-16c0172709a4") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("a7b1845f-e7ab-4722-989c-88d90e233898") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("d3a03332-2d98-4b94-9a28-16c0172709a4") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("a7b1845f-e7ab-4722-989c-88d90e233898") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("d3a03332-2d98-4b94-9a28-16c0172709a4") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("a7b1845f-e7ab-4722-989c-88d90e233898") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("8cc5a5b7-35b5-4232-ad09-130ce0890a2d") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("f23d10dc-7dd2-4617-99e4-67a58baec6ab") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("8cc5a5b7-35b5-4232-ad09-130ce0890a2d") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("f23d10dc-7dd2-4617-99e4-67a58baec6ab") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("8cc5a5b7-35b5-4232-ad09-130ce0890a2d") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("f23d10dc-7dd2-4617-99e4-67a58baec6ab") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("8cc5a5b7-35b5-4232-ad09-130ce0890a2d") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("f23d10dc-7dd2-4617-99e4-67a58baec6ab") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("943fb210-b5bd-44c1-a2bc-4c4bf42f7561") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("b5833a08-4c1c-4068-8601-b008045b0fe2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("943fb210-b5bd-44c1-a2bc-4c4bf42f7561") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("b5833a08-4c1c-4068-8601-b008045b0fe2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("943fb210-b5bd-44c1-a2bc-4c4bf42f7561") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("b5833a08-4c1c-4068-8601-b008045b0fe2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>/* ============================================================
+   Pastacihanı — Editorial / Couture Patisserie Design System
+   ============================================================ */
+
+:root {
+  /* Palette — pastel base, dramatic contrast */
+  --cream: #FBF4EC;
+  --cream-2: #F4E9DC;
+  --paper: #FFFDFA;
+  --pink: #F7DCE2;
+  --pink-2: #F2BFC9;
+  --blue: #DCEEF5;
+  --blue-2: #B6D8E8;
+
+  /* Ink — warm espresso for drama */
+  --ink: #2A1E22;
+  --ink-2: #4A3a3f;
+  --ink-soft: #6E5C61;
+  --ink-faint: #A6969B;
+
+  /* Accents */
+  --rose: #B0697F;
+  --rose-deep: #934F66;
+  --gold: #C2A062;
+  --gold-soft: #DcC79A;
+
+  --wa: #25D366;
+  --wa-deep: #128C7E;
+
+  --line: rgba(42, 30, 34, 0.14);
+  --line-soft: rgba(42, 30, 34, 0.08);
+  --gold-line: rgba(194, 160, 98, 0.5);
+
+  --sh-sm: 0 6px 20px rgba(42, 30, 34, 0.06);
+  --sh-md: 0 22px 50px rgba(42, 30, 34, 0.10);
+  --sh-lg: 0 40px 90px rgba(42, 30, 34, 0.18);
+
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Jost", system-ui, sans-serif;
+
+  --maxw: 1320px;
+  --gut: clamp(22px, 6vw, 90px);
+  --nav-h: 84px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); -webkit-text-size-adjust: 100%; overflow-x: hidden; max-width: 100%; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.7;
+  font-weight: 300;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+}
+
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.04; letter-spacing: -0.01em; color: var(--ink); }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gut); }
+.section { padding-block: clamp(80px, 11vw, 168px); position: relative; }
+
+/* ---- Editorial primitives ---- */
+.kicker {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: var(--sans); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.34em; text-transform: uppercase; color: var(--rose);
+}
+.kicker::before { content: ""; width: 38px; height: 1px; background: var(--gold); }
+.kicker.solo::before { display: none; }
+.idx { font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--gold); }
+
+.display { font-size: clamp(2.8rem, 8vw, 7rem); font-weight: 500; line-height: 0.98; }
+.display .it { font-style: italic; color: var(--rose); }
+
+.lead { font-size: clamp(1.05rem, 1.5vw, 1.22rem); color: var(--ink-soft); font-weight: 300; max-width: 46ch; }
+
+.hr-gold { height: 1px; background: var(--gold-line); border: 0; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 11px;
+  padding: 16px 34px; border-radius: 0;
+  font-family: var(--sans); font-weight: 400; font-size: 0.86rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  transition: background .4s, color .4s, transform .4s, box-shadow .4s, border-color .4s;
+  border: 1px solid transparent;
+}
+.btn svg { width: 18px; height: 18px; }
+.btn-fill { background: var(--ink); color: var(--cream); }
+.btn-fill:hover { background: var(--rose-deep); transform: translateY(-2px); }
+.btn-line { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-line:hover { background: var(--ink); color: var(--cream); transform: translateY(-2px); }
+.btn-wa { background: var(--wa-deep); color: #fff; }
+.btn-wa:hover { background: #0e7268; transform: translateY(-2px); box-shadow: 0 18px 40px rgba(18,140,126,.34); }
+.btn-light { background: var(--cream); color: var(--ink); }
+.btn-light:hover { background: #fff; transform: translateY(-2px); }
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav { position: fixed; inset: 0 0 auto 0; z-index: 90; height: var(--nav-h); display: flex; align-items: center; transition: background .5s, box-shadow .5s, height .4s; }
+.nav.scrolled { background: rgba(251,244,236,0.82); backdrop-filter: blur(20px) saturate(1.3); -webkit-backdrop-filter: blur(20px) saturate(1.3); box-shadow: 0 1px 0 var(--line-soft); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.logo { font-family: var(--serif); font-size: 1.7rem; font-weight: 600; letter-spacing: 0.02em; color: var(--ink); }
+.logo .dot { color: var(--rose); }
+
+/* brand logo (gerçek marka görseli) */
+.brand { display: inline-flex; align-items: center; }
+.brand-img { height: 62px; width: auto; display: block; }
+@media (max-width: 600px) { .brand-img { height: 48px; } }
+.nav-links { display: flex; align-items: center; gap: 6px; }
+.nav-links a { padding: 9px 16px; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 400; color: var(--ink-soft); position: relative; transition: color .3s; }
+.nav-links a::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: 4px; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-cta { display: flex; align-items: center; gap: 14px; }
+.nav-cta .btn { padding: 12px 22px; }
+.hamburger { display: none; width: 46px; height: 46px; place-items: center; }
+.hamburger span, .hamburger span::before, .hamburger span::after { content: ""; display: block; width: 26px; height: 1.5px; background: var(--ink); transition: .3s; }
+.hamburger span { position: relative; }
+.hamburger span::before { position: absolute; top: -8px; } .hamburger span::after { position: absolute; top: 8px; }
+.nav.open .hamburger span { background: transparent; }
+.nav.open .hamburger span::before { top: 0; transform: rotate(45deg); }
+.nav.open .hamburger span::after { top: 0; transform: rotate(-45deg); }
+
+/* ============================================================
+   HERO — editorial split
+   ============================================================ */
+.hero { min-height: 100svh; display: flex; flex-direction: column; padding-top: var(--nav-h); position: relative; }
+.hero-grid { flex: 1; display: grid; grid-template-columns: 1.02fr 0.98fr; gap: clamp(30px, 5vw, 84px); align-items: center; align-content: center; width: 100%; padding-block: clamp(24px, 4vh, 48px); }
+.hero-copy .kicker { margin-bottom: 26px; }
+.hero-copy h1 { font-size: clamp(3rem, 7.6vw, 6.6rem); margin-bottom: 28px; }
+.hero-copy .lead { margin-bottom: 38px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+.hero-figure { position: relative; aspect-ratio: 4/5; }
+.hero-figure .frame { position: absolute; inset: 24px -24px -24px 24px; border: 1px solid var(--gold-line); z-index: 0; }
+.hero-figure .shot { position: absolute; inset: 0; overflow: hidden; z-index: 1; box-shadow: var(--sh-lg); }
+.hero-figure .shot img { width: 100%; height: 100%; object-fit: cover; }
+.hero-figure .tag { position: absolute; z-index: 2; bottom: -14px; left: -34px; background: var(--cream); padding: 16px 24px; box-shadow: var(--sh-md); }
+.hero-figure .tag .n { font-family: var(--serif); font-size: 2.2rem; font-weight: 600; color: var(--rose); line-height: 1; }
+.hero-figure .tag .t { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); }
+.hero-trust { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 0.76rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); border-top: 1px solid var(--line-soft); padding-top: 20px; padding-bottom: clamp(20px, 4vh, 40px); }
+.hero-trust .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+
+/* ============================================================
+   MANIFESTO — dark cinematic strip
+   ============================================================ */
+.manifesto { position: relative; color: var(--cream); background: var(--ink); overflow: hidden; }
+.manifesto .bg { position: absolute; inset: 0; z-index: 0; }
+.manifesto .bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.36; }
+.manifesto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(42,30,34,.88), rgba(42,30,34,.5)); z-index: 1; }
+.manifesto .wrap { position: relative; z-index: 2; text-align: center; }
+.manifesto .kicker { color: var(--gold-soft); justify-content: center; }
+.manifesto .kicker::before { background: var(--gold-soft); }
+.manifesto h2 { color: var(--cream); font-size: clamp(2rem, 4.6vw, 3.8rem); font-weight: 400; max-width: 18ch; margin: 28px auto 0; line-height: 1.16; }
+.manifesto h2 .it { font-style: italic; color: var(--gold-soft); }
+.manifesto .sign { margin-top: 36px; font-family: var(--serif); font-style: italic; font-size: 1.4rem; color: var(--gold-soft); }
+
+/* ============================================================
+   CATEGORIES
+   ============================================================ */
+.sec-head { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-bottom: clamp(40px, 6vw, 78px); }
+.sec-head .hl h2 { font-size: clamp(2.2rem, 5.2vw, 4.2rem); margin-top: 18px; }
+.sec-head .hl .kicker { margin-bottom: 4px; }
+.sec-head .meta { font-size: 0.95rem; color: var(--ink-soft); max-width: 32ch; text-align: right; padding-bottom: 8px; }
+
+.cat-stack { display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(14px, 1.6vw, 24px); }
+.cat-card { position: relative; overflow: hidden; cursor: pointer; min-height: 340px; display: flex; align-items: flex-end; }
+.cat-card:nth-child(1) { grid-column: span 4; min-height: 460px; }
+.cat-card:nth-child(2) { grid-column: span 2; min-height: 460px; }
+.cat-card:nth-child(3) { grid-column: span 2; }
+.cat-card:nth-child(4) { grid-column: span 2; }
+.cat-card:nth-child(5) { grid-column: span 2; }
+.cat-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; transition: transform 1s cubic-bezier(.2,.8,.2,1); }
+.cat-card:hover img { transform: scale(1.07); }
+.cat-card::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(30,20,23,.78) 0%, rgba(30,20,23,.18) 46%, transparent 72%); }
+.cat-body { position: relative; z-index: 2; padding: clamp(22px, 2.4vw, 36px); color: #fff; width: 100%; }
+.cat-body .ci { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--gold-soft); }
+.cat-body h3 { color: #fff; font-size: clamp(1.5rem, 2.4vw, 2.4rem); font-weight: 500; margin: 4px 0 6px; }
+.cat-body p { font-size: 0.9rem; opacity: 0.88; font-weight: 300; max-width: 30ch; }
+.cat-go { display: inline-flex; align-items: center; gap: 9px; margin-top: 16px; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.cat-go svg { width: 18px; height: 18px; transition: transform .35s; }
+.cat-card:hover .cat-go svg { transform: translateX(6px); }
+
+/* Products view */
+.products-view { display: none; }
+.products-view.active { display: block; }
+.cat-default.hidden { display: none; }
+.prod-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 30px; }
+.prod-top h2 { font-size: clamp(2rem, 4.6vw, 3.6rem); }
+.prod-top .kicker { margin-bottom: 10px; }
+.back-btn { display: inline-flex; align-items: center; gap: 9px; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); padding: 11px 20px; border: 1px solid var(--line); transition: all .3s; }
+.back-btn:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.back-btn svg { width: 16px; height: 16px; }
+
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 44px; border-bottom: 1px solid var(--line-soft); padding-bottom: 18px; }
+.tab { padding: 10px 20px; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); position: relative; transition: color .3s; }
+.tab::after { content: ""; position: absolute; left: 50%; right: 50%; bottom: -19px; height: 2px; background: var(--rose); transition: all .35s; }
+.tab:hover { color: var(--ink); }
+.tab.active { color: var(--ink); }
+.tab.active::after { left: 0; right: 0; }
+
+.prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.6vw, 40px); }
+.prod-card { display: flex; flex-direction: column; }
+.prod-media { position: relative; aspect-ratio: 3/4; overflow: hidden; cursor: zoom-in; background: var(--cream-2); }
+.prod-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+.prod-card:hover .prod-media img { transform: scale(1.06); }
+.prod-media .zoom { position: absolute; top: 16px; right: 16px; width: 42px; height: 42px; border-radius: 50%; background: rgba(255,253,250,.9); display: grid; place-items: center; opacity: 0; transform: translateY(-6px); transition: .35s; z-index: 2; }
+.prod-card:hover .prod-media .zoom { opacity: 1; transform: none; }
+.prod-media .zoom svg { width: 18px; height: 18px; }
+.prod-info { padding-top: 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.prod-info h4 { font-size: 1.62rem; font-weight: 500; }
+.prod-info p { font-size: 0.92rem; color: var(--ink-soft); font-weight: 300; flex: 1; }
+.prod-info .order-btn { align-self: flex-start; margin-top: 10px; display: inline-flex; align-items: center; gap: 9px; font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); padding-bottom: 4px; border-bottom: 1px solid var(--ink); transition: color .3s, border-color .3s, gap .3s; }
+.prod-info .order-btn svg { width: 16px; height: 16px; color: var(--wa-deep); }
+.prod-info .order-btn:hover { color: var(--rose); border-color: var(--rose); gap: 14px; }
+
+/* ============================================================
+   CONFIGURATOR — dark stage
+   ============================================================ */
+.configurator { background: var(--ink); color: var(--cream); }
+.configurator .sec-head h2 { color: var(--cream); }
+.configurator .sec-head .kicker { color: var(--gold-soft); }
+.configurator .sec-head .kicker::before { background: var(--gold-soft); }
+.configurator .sec-head .meta { color: rgba(251,244,236,.62); }
+.cfg-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(30px, 4vw, 70px); align-items: start; }
+.cfg-panel { display: flex; flex-direction: column; gap: 32px; }
+.cfg-block .cfg-q { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+.cfg-block .cfg-q .qn { font-family: var(--serif); font-style: italic; color: var(--gold-soft); font-size: 1.1rem; }
+.cfg-block .cfg-q .qt { font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); }
+.cfg-block .cfg-q .opt { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: none; color: rgba(251,244,236,.5); }
+
+/* type cards */
+.type-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.type-card { position: relative; aspect-ratio: 1/1.05; overflow: hidden; border: 1px solid rgba(251,244,236,.16); transition: border-color .3s, transform .3s; }
+.type-card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.62; transition: opacity .35s, transform .6s; }
+.type-card .tl { position: absolute; inset: auto 0 0 0; padding: 10px; font-size: 0.74rem; letter-spacing: 0.04em; text-align: center; background: linear-gradient(to top, rgba(30,20,23,.85), transparent); z-index: 2; }
+.type-card:hover img { opacity: 0.85; transform: scale(1.05); }
+.type-card.sel { border-color: var(--gold); transform: translateY(-3px); }
+.type-card.sel img { opacity: 1; }
+.type-card.sel::after { content: "✓"; position: absolute; top: 8px; right: 10px; color: var(--gold-soft); z-index: 3; font-size: 0.9rem; }
+
+/* shape cards */
+.shape-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.shape-card { display: flex; flex-direction: column; align-items: center; gap: 9px; padding: 16px 8px 12px; border: 1px solid rgba(251,244,236,.18); color: rgba(251,244,236,.6); transition: border-color .3s, color .3s, transform .3s, background .3s; }
+.shape-card svg { width: 34px; height: 34px; display: block; }
+.shape-card .sl { font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.shape-card:hover { border-color: var(--gold-soft); color: var(--cream); transform: translateY(-2px); }
+.shape-card.sel { border-color: var(--gold); color: var(--gold-soft); background: rgba(194,160,98,.08); }
+
+/* layer pills */
+.pill-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { padding: 12px 26px; border: 1px solid rgba(251,244,236,.22); font-size: 0.86rem; letter-spacing: 0.06em; color: rgba(251,244,236,.75); transition: all .3s; }
+.pill:hover { border-color: var(--gold-soft); color: var(--cream); transform: translateY(-2px); }
+.pill.sel { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+
+/* number field */
+.num-field { display: inline-flex; align-items: center; gap: 2px; border: 1px solid rgba(251,244,236,.22); }
+.num-field:focus-within { border-color: var(--gold-soft); }
+.num-step { width: 46px; height: 46px; display: grid; place-items: center; font-size: 1.4rem; color: var(--cream); transition: background .25s; font-weight: 300; }
+.num-step:hover { background: rgba(251,244,236,.1); }
+.num-field input { width: 78px; height: 46px; border: none; background: transparent; text-align: center; font-family: var(--serif); font-size: 1.5rem; color: var(--cream); -moz-appearance: textfield; }
+.num-field input:focus { outline: none; }
+.num-field input::-webkit-outer-spin-button, .num-field input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.num-suffix { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(251,244,236,.55); padding: 0 16px; }
+
+/* color swatches */
+.swatch-row { display: flex; flex-wrap: wrap; gap: 16px; }
+.swatch { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.swatch button { width: 46px; height: 46px; border-radius: 50%; border: 2px solid transparent; box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); transition: transform .25s, border-color .25s; position: relative; }
+.swatch button:hover { transform: scale(1.1); }
+.swatch.sel button { border-color: var(--gold-soft); transform: scale(1.08); }
+.swatch .sn { font-size: 0.64rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(251,244,236,.6); }
+.swatch.sel .sn { color: var(--gold-soft); }
+
+/* segmented (decor) */
+.seg { display: inline-flex; border: 1px solid rgba(251,244,236,.22); }
+.seg button { padding: 12px 20px; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(251,244,236,.65); border-right: 1px solid rgba(251,244,236,.16); transition: all .3s; }
+.seg button:last-child { border-right: none; }
+.seg button:hover { color: var(--cream); }
+.seg button.sel { background: var(--cream); color: var(--ink); }
+
+/* toggle + text */
+.toggle-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.tg { width: 54px; height: 28px; border-radius: 100px; background: rgba(251,244,236,.18); position: relative; transition: background .3s; flex: none; }
+.tg::after { content: ""; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: var(--cream); transition: transform .3s; }
+.tg.on { background: var(--gold); }
+.tg.on::after { transform: translateX(26px); }
+.cfg-text { flex: 1; min-width: 200px; background: transparent; border: none; border-bottom: 1px solid rgba(251,244,236,.3); color: var(--cream); font-family: var(--serif); font-size: 1.3rem; font-style: italic; padding: 8px 2px; transition: border-color .3s, opacity .3s; }
+.cfg-text::placeholder { color: rgba(251,244,236,.35); }
+.cfg-text:focus { outline: none; border-color: var(--gold-soft); }
+.cfg-text[disabled] { opacity: 0.3; pointer-events: none; }
+
+/* aroma chips */
+.chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.achip { padding: 10px 20px; border: 1px solid rgba(251,244,236,.22); border-radius: 100px; font-size: 0.82rem; color: rgba(251,244,236,.72); transition: all .28s; }
+.achip:hover { border-color: var(--gold-soft); color: var(--cream); }
+.achip.sel { background: var(--rose); border-color: var(--rose); color: #fff; }
+
+/* preview */
+.cfg-preview { position: sticky; top: calc(var(--nav-h) + 16px); }
+.cake-stage { aspect-ratio: 1/1; position: relative; overflow: hidden; cursor: grab; background: radial-gradient(circle at 50% 38%, #3a2b30 0%, #241a1d 64%, #1c1316 100%); border: 1px solid rgba(251,244,236,.1); }
+.cake-stage:active { cursor: grabbing; }
+.cake-stage canvas { width: 100% !important; height: 100% !important; display: block; }
+.cake-stage .drag-hint { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(251,244,236,.5); display: flex; align-items: center; gap: 7px; pointer-events: none; }
+.cfg-send { width: 100%; margin-top: 22px; padding: 19px; font-size: 0.9rem; }
+.cfg-hint { text-align: center; margin-top: 14px; font-size: 0.78rem; letter-spacing: 0.06em; color: rgba(251,244,236,.5); min-height: 18px; transition: color .3s; }
+.cfg-hint.warn { color: #F2BFC9; }
+
+/* ============================================================
+   GALLERY — editorial masonry
+   ============================================================ */
+.gal-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; gap: clamp(12px, 1.4vw, 22px); }
+.gal-item { position: relative; overflow: hidden; cursor: zoom-in; }
+.gal-item.tall { grid-row: span 2; }
+.gal-item.wide { grid-column: span 2; }
+.gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.8,.2,1); }
+.gal-item:hover img { transform: scale(1.08); }
+.gal-item .gov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(30,20,23,.6), transparent 55%); opacity: 0; transition: opacity .4s; display: flex; align-items: flex-end; padding: 22px; z-index: 2; }
+.gal-item:hover .gov { opacity: 1; }
+.gal-item .gt { color: #fff; font-family: var(--serif); font-size: 1.3rem; font-style: italic; }
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about-grid { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
+.about-figure { position: relative; aspect-ratio: 4/4.6; overflow: hidden; box-shadow: var(--sh-md); }
+.about-figure img { width: 100%; height: 100%; object-fit: cover; }
+.about-figure .badge { position: absolute; top: -1px; left: -1px; background: var(--cream); padding: 18px 26px; border-right: 1px solid var(--gold-line); border-bottom: 1px solid var(--gold-line); }
+.about-figure .badge .n { font-family: var(--serif); font-size: 2.4rem; font-weight: 600; color: var(--rose); line-height: 1; }
+.about-figure .badge .t { font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+.about-copy h2 { font-size: clamp(2rem, 4.4vw, 3.6rem); margin: 16px 0 22px; }
+.about-copy p { color: var(--ink-soft); margin-bottom: 18px; }
+.values { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 36px; padding-top: 36px; border-top: 1px solid var(--line-soft); }
+.value h4 { font-size: 1.3rem; font-weight: 500; display: flex; align-items: center; gap: 10px; }
+.value h4 .vi { color: var(--gold); font-family: var(--serif); font-style: italic; }
+.value p { font-size: 0.88rem; color: var(--ink-soft); margin-top: 4px; }
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.tcarousel { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.ttrack { display: flex; gap: 26px; width: max-content; animation: scrollX 52s linear infinite; }
+.tcarousel:hover .ttrack { animation-play-state: paused; }
+@keyframes scrollX { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.tcard { width: 400px; flex: none; background: var(--paper); padding: 38px; border: 1px solid var(--line-soft); display: flex; flex-direction: column; gap: 18px; }
+.tcard .stars { color: var(--gold); letter-spacing: 3px; }
+.tcard .tq { font-family: var(--serif); font-size: 1.32rem; line-height: 1.4; color: var(--ink); }
+.tcard .who { display: flex; align-items: center; gap: 14px; margin-top: auto; }
+.tcard .av { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-family: var(--serif); font-weight: 600; flex: none; }
+.tcard .nm { font-size: 0.95rem; font-weight: 400; }
+.tcard .mt { font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: stretch; }
+.contact-card { background: var(--paper); padding: clamp(32px, 4vw, 56px); border: 1px solid var(--line-soft); display: flex; flex-direction: column; }
+.contact-card h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 12px; }
+.contact-card .lead { margin-bottom: 34px; }
+.cinfo { display: flex; flex-direction: column; gap: 22px; margin-bottom: 36px; }
+.cinfo-row { display: flex; align-items: center; gap: 18px; }
+.cinfo-row .ci { width: 52px; height: 52px; border: 1px solid var(--gold-line); display: grid; place-items: center; color: var(--rose); flex: none; }
+.cinfo-row .ci svg { width: 22px; height: 22px; }
+.cinfo-row > span:not(.ci), .cinfo-row > a:not(.ci) { display: flex; flex-direction: column; gap: 3px; }
+.cinfo-row { color: inherit; text-decoration: none; }
+.cinfo-row .ck { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); }
+.cinfo-row .cv { font-size: 1.16rem; font-weight: 400; }
+.contact-card .btn-wa { margin-top: auto; }
+
+/* Instagram QR kartı */
+.ig-card { display: flex; align-items: center; gap: 18px; margin-top: 16px; padding: 16px; border: 1px solid var(--gold-line); background: #fff; text-decoration: none; color: inherit; transition: border-color .3s, box-shadow .3s, transform .3s; }
+.ig-card:hover { border-color: var(--gold); box-shadow: 0 14px 34px -22px rgba(42,30,34,.5); transform: translateY(-2px); }
+.ig-qr { flex: none; width: 108px; height: 108px; padding: 5px; border-radius: 6px; background: linear-gradient(135deg, #FEDA77, #F58529, #DD2A7B, #8134AF, #515BD4); display: grid; place-items: center; }
+.ig-qr-in { width: 100%; height: 100%; background: #fff; border-radius: 3px; display: grid; place-items: center; padding: 7px; }
+.ig-qr canvas { width: 100%; height: 100%; display: block; background: #fff; image-rendering: pixelated; }
+.ig-meta { display: flex; flex-direction: column; gap: 3px; }
+.ig-meta .ig-k { font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); }
+.ig-meta .ig-h { font-family: var(--serif); font-size: 1.32rem; font-weight: 600; color: var(--ink); line-height: 1.1; }
+.ig-meta .ig-p { font-size: 0.84rem; color: var(--ink-faint); line-height: 1.4; }
+.map-card { overflow: hidden; border: 1px solid var(--line-soft); min-height: 280px; }
+.map-card iframe { width: 100%; height: 100%; min-height: 420px; border: 0; display: block; filter: grayscale(0.3) sepia(0.1); }
+
+/* Statik konum kartı — iframe yerine her zaman çalışır */
+.map-card--static { min-height: 260px; }
+.map-static {
+  position: relative; width: 100%; min-height: 260px; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+  background: linear-gradient(135deg, var(--cream-soft, #F3E6D9) 0%, #ecddd3 100%);
+  overflow: hidden; padding: 40px 32px;
+}
+.map-grid-lines {
+  position: absolute; inset: 0; pointer-events: none; opacity: .35;
+  background-image: linear-gradient(rgba(42,30,34,.12) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(42,30,34,.12) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+.map-pin { position: relative; z-index: 1; width: 56px; }
+.map-pin svg { width: 100%; height: auto; display: block; }
+.map-info { position: relative; z-index: 1; text-align: center; }
+.map-city { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.map-detail { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
+.map-cta {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 6px; padding: 11px 22px;
+  font-family: var(--sans); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--rose-deep); border: 1px solid var(--gold-line);
+  background: rgba(251,244,236,.7); backdrop-filter: blur(4px);
+  transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+.map-cta svg { width: 16px; height: 16px; }
+.map-cta:hover { background: rgba(251,244,236,.95); border-color: var(--rose); transform: translateY(-2px); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer { background: var(--ink); color: rgba(251,244,236,.72); padding-block: clamp(60px, 8vw, 100px) 34px; }
+.footer .logo { color: var(--cream); }
+.foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 44px; padding-bottom: 48px; border-bottom: 1px solid rgba(251,244,236,.12); }
+.foot-about p { margin-top: 20px; font-size: 0.92rem; max-width: 32ch; font-weight: 300; }
+.foot-col h5 { color: var(--cream); font-family: var(--sans); font-weight: 400; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 18px; }
+.foot-col a, .foot-col p { display: block; font-size: 0.92rem; margin-bottom: 12px; color: rgba(251,244,236,.66); font-weight: 300; transition: color .3s; }
+.foot-col a:hover { color: var(--gold-soft); }
+.socials { display: flex; gap: 12px; margin-top: 6px; }
+.socials a { width: 44px; height: 44px; border: 1px solid rgba(251,244,236,.2); display: grid; place-items: center; transition: all .3s; }
+.socials a:hover { background: var(--rose); border-color: var(--rose); transform: translateY(-3px); }
+.socials svg { width: 18px; height: 18px; color: var(--cream); }
+.foot-bottom { padding-top: 26px; text-align: center; font-size: 0.78rem; letter-spacing: 0.08em; color: rgba(251,244,236,.45); }
+
+/* ============================================================
+   FLOATING WHATSAPP
+   ============================================================ */
+.wa-float { position: fixed; right: clamp(16px, 3vw, 32px); bottom: clamp(16px, 3vw, 32px); z-index: 80; width: 62px; height: 62px; border-radius: 50%; background: linear-gradient(135deg, #2ee06f, var(--wa-deep)); display: grid; place-items: center; box-shadow: 0 16px 38px rgba(18,140,126,.44); color: #fff; transition: transform .3s; }
+.wa-float:hover { transform: scale(1.08); }
+.wa-float svg { width: 32px; height: 32px; }
+.wa-float::before, .wa-float::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--wa); z-index: -1; animation: pulse 2.6s ease-out infinite; }
+.wa-float::after { animation-delay: 1.3s; }
+@keyframes pulse { 0% { transform: scale(1); opacity: .5; } 100% { transform: scale(1.95); opacity: 0; } }
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+.lightbox { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; padding: 4vw; }
+.lightbox.open { display: flex; }
+.lb-bg { position: absolute; inset: 0; background: rgba(26,17,20,.86); backdrop-filter: blur(16px); animation: lbFade .35s ease; }
+.lb-stage { position: relative; z-index: 2; max-width: min(900px, 92vw); max-height: 86vh; }
+.lb-frame { overflow: hidden; box-shadow: var(--sh-lg); animation: lbPop .42s cubic-bezier(.2,.9,.3,1.2); }
+.lb-frame img { display: block; max-width: 100%; max-height: 80vh; object-fit: contain; }
+.lb-caption { text-align: center; color: var(--gold-soft); margin-top: 18px; font-family: var(--serif); font-style: italic; font-size: 1.4rem; }
+.lb-close, .lb-nav { position: absolute; background: rgba(255,253,250,.94); color: var(--ink); display: grid; place-items: center; border-radius: 50%; transition: transform .25s, background .25s; }
+.lb-close { top: -20px; right: -20px; width: 48px; height: 48px; z-index: 5; }
+.lb-close:hover { transform: rotate(90deg); }
+.lb-close svg, .lb-nav svg { width: 22px; height: 22px; }
+.lb-nav { top: 50%; transform: translateY(-50%); width: 54px; height: 54px; }
+.lb-nav:hover { background: #fff; }
+.lb-nav.prev { left: -28px; } .lb-nav.next { right: -28px; }
+.lb-nav.hidden { display: none; }
+@keyframes lbFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes lbPop { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: none; } }
+
+/* ============================================================
+   REVEAL
+   ============================================================ */
+.reveal { transition: opacity 1s cubic-bezier(.2,.8,.2,1), transform 1s cubic-bezier(.2,.8,.2,1); }
+.anim .reveal { opacity: 0; transform: translateY(40px); }
+.reveal.in { opacity: 1; transform: none; }
+.no-anim .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1080px) {
+  .cat-stack { grid-template-columns: repeat(2, 1fr); }
+  .cat-card:nth-child(1), .cat-card:nth-child(2), .cat-card:nth-child(3), .cat-card:nth-child(4), .cat-card:nth-child(5) { grid-column: span 1; min-height: 360px; }
+  .gal-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 940px) {
+  :root { --nav-h: 70px; }
+  .nav-links, .nav-cta .btn { display: none; }
+  .hamburger { display: grid; }
+  .nav.open .nav-links { display: flex; flex-direction: column; align-items: stretch; gap: 0; position: absolute; top: var(--nav-h); left: 0; right: 0; background: rgba(251,244,236,.98); backdrop-filter: blur(20px); padding: 10px var(--gut) 26px; box-shadow: var(--sh-md); }
+  .nav.open .nav-links a { padding: 16px 0; font-size: 0.95rem; border-bottom: 1px solid var(--line-soft); }
+  .hero-grid, .cfg-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .hero-figure { width: min(420px, 82vw); max-width: 420px; margin: 8px auto 40px; order: -1; }
+  .hero-trust { position: static; margin-top: 40px; }
+  .hero { min-height: auto; padding-top: calc(var(--nav-h) + 40px); padding-bottom: 60px; }
+  .cfg-preview { position: static; }
+  .prod-grid { grid-template-columns: repeat(2, 1fr); }
+  .sec-head { grid-template-columns: 1fr; }
+  .sec-head .meta { text-align: left; }
+  /* segmented kontroller dar ekranda taşmasın */
+  .seg { display: flex; width: 100%; }
+  .seg button { flex: 1; text-align: center; padding-inline: 8px; }
+}
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .cat-stack, .prod-grid, .gal-grid { grid-template-columns: 1fr; }
+  .gal-grid { grid-auto-rows: 260px; }
+  .gal-item.tall, .gal-item.wide { grid-row: span 1; grid-column: span 1; }
+  .type-row { grid-template-columns: repeat(2, 1fr); }
+  .shape-row { grid-template-columns: repeat(4, 1fr); gap: 9px; }
+  .shape-card { padding: 13px 3px 10px; gap: 7px; }
+  .shape-card svg { width: 29px; height: 29px; }
+  .shape-card .sl { font-size: 0.58rem; letter-spacing: 0.02em; }
+  .seg button { padding: 13px 4px; font-size: 0.68rem; letter-spacing: 0.03em; min-height: 46px; }
+  .pill { padding: 11px 20px; }
+  .cfg-panel { gap: 26px; }
+  .num-field input { width: 64px; }
+  .num-suffix { padding: 0 12px; }
+  .values { grid-template-columns: 1fr; }
+  .hero-actions .btn { flex: 1; }
+  .tcard { width: 300px; padding: 28px; }
+  .lb-nav.prev { left: 4px; } .lb-nav.next { right: 4px; }
+  .lb-close { top: 6px; right: 6px; }
+  .hero-figure .tag { left: 0; }
+}
+</style>
+<style>/* ============================================================
+   Pastacihanı — Yeni Özellik Stilleri (features.css)
+   Mevcut tasarım dilini (couture / editorial) takip eder.
+   ============================================================ */
+
+/* ============================================================
+   PRELOADER
+   ============================================================ */
+.preloader {
+  position: fixed; inset: 0; z-index: 9999;
+  display: grid; place-items: center;
+  background: linear-gradient(150deg, var(--cream) 0%, var(--pink) 55%, var(--blue) 120%);
+  transition: opacity .7s ease, visibility .7s ease;
+}
+.preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+.pl-inner { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.pl-logo { font-family: var(--serif); font-size: clamp(2.6rem, 8vw, 4.4rem); font-weight: 600; color: var(--ink); letter-spacing: 0.01em; line-height: 1; animation: plFade .9s ease .1s; }
+.pl-logo .dot { color: var(--rose); font-size: 0.44em; font-weight: 500; letter-spacing: 0.01em; }
+.pl-rule { width: 0; height: 1px; background: var(--gold); margin: 13px auto; animation: plRule 1s cubic-bezier(.2,.8,.2,1) .35s both; }
+@keyframes plRule { from { width: 0; } to { width: 86px; } }
+.pl-sub { font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--rose); animation: plFade .9s ease .25s; }
+@keyframes plFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+/* zarif salınan pasta */
+.pl-cake { width: 60px; height: 60px; position: relative; animation: plBob 2.6s ease-in-out infinite; }
+.pl-cake svg { width: 100%; height: 100%; display: block; }
+@keyframes plBob { 0%,100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-8px) rotate(1.5deg); } }
+@media (prefers-reduced-motion: reduce) { .pl-cake { animation: none; } .pl-rule { animation: none; width: 86px; } }
+.pl-bar { width: 120px; height: 2px; background: rgba(42,30,34,.14); overflow: hidden; }
+.pl-bar i { display: block; height: 100%; width: 40%; background: var(--rose); animation: plBar 1.1s ease-in-out infinite; }
+@keyframes plBar { 0% { transform: translateX(-120%); } 100% { transform: translateX(320%); } }
+
+/* ============================================================
+   SEARCH BAR
+   ============================================================ */
+.searchwrap { margin-bottom: clamp(34px, 5vw, 60px); }
+.searchbar {
+  display: flex; align-items: center; gap: 12px;
+  max-width: 620px; margin: 0 auto;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: 100px; padding: 6px 8px 6px 22px;
+  box-shadow: var(--sh-sm); transition: border-color .3s, box-shadow .3s;
+}
+.searchbar:focus-within { border-color: var(--gold); box-shadow: 0 14px 40px -22px rgba(42,30,34,.5); }
+.searchbar .si { width: 22px; height: 22px; color: var(--rose); flex: none; }
+.searchbar input {
+  flex: 1; border: none; background: transparent; outline: none;
+  font-family: var(--sans); font-size: 1.02rem; font-weight: 300; color: var(--ink);
+  padding: 14px 0;
+}
+.searchbar input::placeholder { color: var(--ink-faint); }
+.searchbar .sclear {
+  width: 38px; height: 38px; border-radius: 50%; flex: none;
+  display: none; place-items: center; color: var(--ink-soft);
+  background: var(--cream-2); transition: background .25s, color .25s, transform .25s;
+}
+.searchbar .sclear svg { width: 16px; height: 16px; }
+.searchbar .sclear:hover { background: var(--ink); color: var(--cream); transform: rotate(90deg); }
+.searchbar.has-text .sclear { display: grid; }
+
+/* arama sonuç görünümü */
+.search-view { display: none; }
+.search-view.active { display: block; }
+.search-meta { margin-bottom: 30px; font-size: 1rem; color: var(--ink-soft); }
+.search-meta strong { color: var(--ink); font-weight: 500; }
+.search-empty { text-align: center; padding: clamp(40px, 7vw, 80px) 0; }
+.search-empty .se-ico { font-size: 2.6rem; margin-bottom: 16px; }
+.search-empty h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 12px; }
+.search-empty p { color: var(--ink-soft); max-width: 38ch; margin: 0 auto 26px; }
+
+/* ============================================================
+   ÜRÜN KARTI — kod & sipariş süresi rozetleri
+   ============================================================ */
+.prod-media .pcode {
+  position: absolute; top: 14px; right: 14px; z-index: 3;
+  background: var(--rose-deep); color: #fff;
+  font-family: var(--sans); font-size: 0.66rem; font-weight: 500;
+  letter-spacing: 0.12em; padding: 6px 11px; border-radius: 100px;
+  box-shadow: 0 6px 18px -8px rgba(42,30,34,.6);
+}
+.prod-card:hover .prod-media .zoom { transform: none; }
+.prod-media .zoom { top: auto; bottom: 14px; right: 14px; }
+.order-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  align-self: flex-start; margin-bottom: 2px;
+  font-size: 0.72rem; letter-spacing: 0.04em; color: var(--rose-deep);
+  background: var(--pink); padding: 5px 12px; border-radius: 100px;
+}
+.order-badge .ob-ic { font-size: 0.82rem; line-height: 1; }
+.cat-series { font-family: var(--serif); font-style: italic; font-size: 0.95rem; color: var(--gold); margin-left: 12px; }
+
+/* "yeni tasarımlar ekleniyor" kartı */
+.prod-soon {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; gap: 12px; padding: 36px 26px;
+  border: 1.5px dashed var(--gold-line); background: var(--cream-2);
+  aspect-ratio: 3/4; min-height: 320px;
+}
+.prod-soon .ps-mark { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 1.8rem; font-weight: 300; color: var(--rose); border: 1px solid var(--gold-line); }
+.prod-soon h4 { font-size: 1.4rem; font-weight: 500; }
+.prod-soon p { font-size: 0.9rem; color: var(--ink-soft); max-width: 30ch; }
+.prod-soon .order-btn { align-self: center; margin-top: 6px; display: inline-flex; align-items: center; gap: 9px; font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); padding-bottom: 4px; border-bottom: 1px solid var(--ink); transition: color .3s, border-color .3s, gap .3s; }
+.prod-soon .order-btn svg { width: 16px; height: 16px; color: var(--wa-deep); }
+.prod-soon .order-btn:hover { color: var(--rose); border-color: var(--rose); gap: 14px; }
+
+/* ============================================================
+   FAVORİLER — En çok tercih edilenler
+   ============================================================ */
+.fav-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 1.8vw, 24px); }
+.fav-card { position: relative; overflow: hidden; cursor: pointer; aspect-ratio: 3/3.7; background: var(--cream-2); }
+.fav-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.8,.2,1); }
+.fav-card:hover img { transform: scale(1.07); }
+.fav-card::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(30,20,23,.82) 0%, rgba(30,20,23,.12) 52%, transparent 78%); }
+.fav-card .fav-code { position: absolute; top: 12px; right: 12px; z-index: 3; background: var(--rose-deep); color: #fff; font-size: 0.62rem; letter-spacing: 0.1em; padding: 5px 10px; border-radius: 100px; }
+.fav-card .fav-body { position: relative; z-index: 2; margin-top: auto; padding: 18px; color: #fff; width: 100%; align-self: flex-end; }
+.fav-card { display: flex; align-items: flex-end; }
+.fav-card .fav-cat { font-family: var(--serif); font-style: italic; font-size: 0.84rem; color: var(--gold-soft); }
+.fav-card .fav-name { font-family: var(--serif); font-size: 1.28rem; font-weight: 500; line-height: 1.12; margin-top: 2px; }
+.fav-card .fav-go { display: inline-flex; align-items: center; gap: 7px; margin-top: 10px; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; }
+.fav-card .fav-go svg { width: 15px; height: 15px; transition: transform .3s; }
+.fav-card:hover .fav-go svg { transform: translateX(5px); }
+.sec-head .head-cta { display: inline-flex; align-items: center; gap: 9px; font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); padding-bottom: 4px; border-bottom: 1px solid var(--rose); transition: gap .3s, color .3s; align-self: end; white-space: nowrap; }
+.sec-head .head-cta:hover { gap: 14px; }
+.sec-head .head-cta svg { width: 16px; height: 16px; }
+
+/* ============================================================
+   HIZLI SİPARİŞ SİHİRBAZI
+   ============================================================ */
+.wizard-sec { background: linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%); }
+.wizard { background: var(--paper); border: 1px solid var(--line-soft); box-shadow: var(--sh-md); padding: clamp(28px, 4vw, 54px); max-width: 980px; margin: 0 auto; }
+.wiz-progress { display: flex; align-items: center; gap: 10px; margin-bottom: 36px; }
+.wiz-dot { display: flex; align-items: center; gap: 10px; }
+.wiz-dot .num { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; font-family: var(--serif); font-size: 1.05rem; color: var(--ink-faint); transition: all .35s; flex: none; }
+.wiz-dot .lbl { font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); transition: color .35s; }
+.wiz-dot.active .num { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.wiz-dot.active .lbl { color: var(--ink); }
+.wiz-dot.done .num { background: var(--rose); border-color: var(--rose); color: #fff; }
+.wiz-line { flex: 1; height: 1px; background: var(--line); min-width: 18px; }
+@media (max-width: 700px) { .wiz-dot .lbl { display: none; } }
+
+.wiz-step { display: none; animation: wizIn .45s ease both; }
+.wiz-step.active { display: block; }
+@keyframes wizIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.wiz-q { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 26px; }
+.wiz-opts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.wiz-opt { padding: 26px 16px; border: 1px solid var(--line); background: var(--cream); text-align: center; transition: all .3s; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.wiz-opt .wo-ic { font-size: 1.7rem; line-height: 1; }
+.wiz-opt .wo-t { font-size: 0.96rem; letter-spacing: 0.02em; color: var(--ink); }
+.wiz-opt:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: var(--sh-sm); }
+.wiz-opt.sel { border-color: var(--ink); background: var(--ink); }
+.wiz-opt.sel .wo-t { color: var(--cream); }
+.wiz-people { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.wiz-num { display: inline-flex; align-items: center; gap: 2px; border: 1px solid var(--line); }
+.wiz-num button { width: 52px; height: 56px; display: grid; place-items: center; font-size: 1.5rem; color: var(--ink); font-weight: 300; transition: background .25s; }
+.wiz-num button:hover { background: var(--cream-2); }
+.wiz-num input { width: 96px; height: 56px; border: none; background: transparent; text-align: center; font-family: var(--serif); font-size: 1.7rem; color: var(--ink); -moz-appearance: textfield; }
+.wiz-num input:focus { outline: none; }
+.wiz-num input::-webkit-outer-spin-button, .wiz-num input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.wiz-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.wiz-chip { padding: 11px 18px; border: 1px solid var(--line); border-radius: 100px; font-size: 0.86rem; color: var(--ink-soft); transition: all .3s; }
+.wiz-chip:hover { border-color: var(--gold); color: var(--ink); }
+.wiz-chip.sel { background: var(--rose); border-color: var(--rose); color: #fff; }
+.wiz-nav { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line-soft); }
+.wiz-back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); transition: color .3s; }
+.wiz-back svg { width: 16px; height: 16px; }
+.wiz-back:hover { color: var(--ink); }
+.wiz-back.hidden { visibility: hidden; }
+.wiz-result-head { text-align: center; margin-bottom: 34px; }
+.wiz-result-head .kicker { justify-content: center; margin-bottom: 12px; }
+.wiz-result-head h3 { font-size: clamp(1.7rem, 3.4vw, 2.6rem); }
+.wiz-result-head p { color: var(--ink-soft); margin-top: 8px; }
+.wiz-result-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+.wiz-restart { display: inline-flex; align-items: center; gap: 8px; font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); margin: 0 auto; }
+.wiz-cta-row { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+@media (max-width: 760px) { .wiz-opts, .wiz-result-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ============================================================
+   TESLİMAT BÖLGELERİ
+   ============================================================ */
+.delivery-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(20px, 3vw, 40px); align-items: stretch; }
+.delivery-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--line-soft); background: var(--paper); }
+.dz-row { display: flex; align-items: center; gap: 16px; padding: 22px clamp(18px, 2.4vw, 30px); border-bottom: 1px solid var(--line-soft); }
+.dz-row:last-child { border-bottom: none; }
+.dz-ic { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; flex: none; border: 1px solid var(--gold-line); color: var(--rose); }
+.dz-ic svg { width: 20px; height: 20px; }
+.dz-row.free .dz-ic { background: var(--wa); border-color: var(--wa); color: #fff; }
+.dz-txt { display: flex; flex-direction: column; }
+.dz-zone { font-size: 1.08rem; font-weight: 400; color: var(--ink); }
+.dz-note { font-size: 0.84rem; color: var(--ink-soft); }
+.dz-row.free .dz-note { color: var(--wa-deep); font-weight: 400; }
+.delivery-map { overflow: hidden; border: 1px solid var(--line-soft); min-height: 320px; position: relative; }
+.delivery-map iframe { width: 100%; height: 100%; min-height: 320px; border: 0; display: block; filter: grayscale(.3) sepia(.1); }
+@media (max-width: 820px) { .delivery-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   SSS — Akordeon
+   ============================================================ */
+.faq-wrap { max-width: 820px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item:first-child { border-top: 1px solid var(--line); }
+.faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 26px 4px; text-align: left; transition: color .3s; }
+.faq-q h4 { font-size: clamp(1.15rem, 2.1vw, 1.5rem); font-weight: 500; }
+.faq-q:hover h4 { color: var(--rose); }
+.faq-ic { width: 28px; height: 28px; flex: none; position: relative; }
+.faq-ic::before, .faq-ic::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--rose); transition: transform .35s; }
+.faq-ic::before { width: 16px; height: 1.5px; transform: translate(-50%,-50%); }
+.faq-ic::after { width: 1.5px; height: 16px; transform: translate(-50%,-50%); }
+.faq-item.open .faq-ic::after { transform: translate(-50%,-50%) scaleY(0); }
+.faq-a { overflow: hidden; max-height: 0; transition: max-height .4s ease; }
+.faq-a-in { padding: 0 4px 26px; color: var(--ink-soft); font-size: 1rem; max-width: 64ch; }
+
+/* ============================================================
+   GÜVEN ROZETLERİ
+   ============================================================ */
+.trust-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.trust-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; padding: 26px 16px; border: 1px solid var(--gold-line); background: var(--paper); transition: transform .3s, box-shadow .3s; }
+.trust-card:hover { transform: translateY(-4px); box-shadow: var(--sh-sm); }
+.trust-ic { font-size: 1.9rem; line-height: 1; }
+.trust-lbl { font-size: 0.86rem; color: var(--ink); letter-spacing: 0.01em; line-height: 1.35; }
+@media (max-width: 900px) { .trust-strip { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .trust-strip { grid-template-columns: 1fr; } }
+
+/* footer içindeki rozetler için ince varyant */
+.foot-trust { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 26px; }
+.foot-trust span { display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; color: rgba(251,244,236,.7); }
+.foot-trust span b { color: var(--gold-soft); font-weight: 400; }
+
+/* ============================================================
+   TESTIMONIALS — fotoğraflı kart
+   ============================================================ */
+.tcard .who .av { overflow: hidden; padding: 0; }
+.tcard .who .av img { width: 100%; height: 100%; object-fit: cover; }
+.tcard .thead { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tcard .tdate { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+
+/* ============================================================
+   FLOATING WHATSAPP — bildirim balonu + mobil ara
+   ============================================================ */
+.wa-bubble {
+  position: fixed; z-index: 81;
+  right: clamp(16px, 3vw, 32px);
+  bottom: calc(clamp(16px, 3vw, 32px) + 74px);
+  max-width: 230px; background: var(--paper); color: var(--ink);
+  padding: 12px 16px; border-radius: 16px 16px 4px 16px;
+  box-shadow: var(--sh-md); border: 1px solid var(--line-soft);
+  font-size: 0.86rem; line-height: 1.4;
+  opacity: 0; transform: translateY(10px) scale(.96); pointer-events: none;
+  transition: opacity .4s ease, transform .4s ease;
+}
+.wa-bubble.show { opacity: 1; transform: none; }
+.wa-bubble .wb-top { display: flex; align-items: center; gap: 8px; font-weight: 400; margin-bottom: 2px; }
+.wa-bubble .wb-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--wa); flex: none; box-shadow: 0 0 0 0 var(--wa); animation: wbPulse 2s infinite; }
+@keyframes wbPulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,.5);} 70% { box-shadow: 0 0 0 7px rgba(37,211,102,0);} 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0);} }
+.wa-bubble .wb-sub { color: var(--ink-soft); font-size: 0.8rem; }
+.wa-bubble .wb-close { position: absolute; top: 6px; right: 8px; font-size: 0.9rem; color: var(--ink-faint); line-height: 1; padding: 2px; }
+
+/* mobil "Hemen Ara" — header & hero */
+.btn-call { background: var(--rose); color: #fff; }
+.btn-call:hover { background: var(--rose-deep); transform: translateY(-2px); }
+.nav-call { display: none; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 50%; background: var(--rose); color: #fff; flex: none; transition: transform .3s, background .3s; }
+.nav-call svg { width: 20px; height: 20px; }
+.nav-call:hover { background: var(--rose-deep); transform: scale(1.06); }
+.hero-call { display: none; }
+@media (max-width: 940px) {
+  .nav-call { display: grid; }
+  .hero-call { display: inline-flex; }
+}
+
+/* sosyal medya — footer ekstra ikonlar zaten .socials altında */
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1080px) {
+  .fav-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .fav-grid { grid-template-columns: repeat(2, 1fr); }
+  .wiz-num input { width: 78px; }
+  .searchbar { padding-left: 16px; }
+  .wa-bubble { display: none !important; } /* mobilden balon kaldır, yeşil buton yeterli */
+}
+
+/* ============================================================
+   PASTA ATÖLYESİ TEASER (koyu konfigüratör bölümünde)
+   ============================================================ */
+.atelier-teaser {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(30px, 5vw, 80px);
+  align-items: center;
+}
+.atelier-teaser .at-copy h3 {
+  color: var(--cream);
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 26px;
+}
+.atelier-teaser .at-copy h3 .it { font-style: italic; color: var(--gold-soft); }
+.at-list { list-style: none; margin: 0 0 34px; padding: 0; display: flex; flex-direction: column; gap: 13px; }
+.at-list li {
+  position: relative;
+  padding-left: 26px;
+  color: rgba(251, 244, 236, 0.78);
+  font-size: 0.97rem;
+  font-weight: 300;
+}
+.at-list li::before {
+  content: "";
+  position: absolute; left: 0; top: 0.56em;
+  width: 12px; height: 1px;
+  background: var(--gold);
+}
+.at-cta { display: inline-flex; align-items: center; gap: 12px; }
+.at-cta svg { width: 18px; height: 18px; transition: transform .3s; }
+.at-cta:hover svg { transform: translateX(4px); }
+.at-visual {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(251, 244, 236, 0.16);
+}
+.at-visual img {
+  width: 100%; height: 100%;
+  aspect-ratio: 1 / 0.86;
+  object-fit: cover;
+  transition: transform .7s ease, opacity .4s;
+  opacity: 0.92;
+}
+.at-visual:hover img { transform: scale(1.04); opacity: 1; }
+.at-badge {
+  position: absolute; left: 16px; bottom: 16px;
+  padding: 9px 16px;
+  background: rgba(30, 20, 23, 0.78);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(194, 160, 98, 0.5);
+  color: var(--gold-soft);
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+@media (max-width: 880px) {
+  .atelier-teaser { grid-template-columns: 1fr; }
+  .at-visual { order: -1; max-width: 440px; }
+}
+</style>
+<!-- JS-referenced cake photos (registered so the offline bundler can inline them) -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* ============================================================
+   HERO YENİLEME (revamp) — artisanal luxury
+   ============================================================ */
+.hero { overflow: hidden; }
+
+/* Katmanlı arka plan: gül + altın ışıma, ince altın flourish */
+.hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.hero-bg .glow { position: absolute; border-radius: 50%; filter: blur(80px); }
+.glow-rose { width: 560px; height: 560px; background: radial-gradient(circle, rgba(176,105,127,.30), transparent 70%); top: -140px; left: -90px; }
+.glow-gold { width: 480px; height: 480px; background: radial-gradient(circle, rgba(194,160,98,.24), transparent 70%); bottom: -160px; right: 6%; }
+.hero-bg .flourish { position: absolute; width: 150px; height: 150px; top: 100px; right: 47%; color: var(--gold-line); opacity: .45; }
+.hero-grid, .hero-trust, .hero-scroll { position: relative; z-index: 1; }
+
+/* Kicker süsü */
+.hero-copy .kicker { display: inline-flex; align-items: center; gap: 10px; }
+.kicker .k-orn { width: 14px; height: 14px; color: var(--gold); flex: none; }
+
+/* Başlık: daha dramatik + altın yaldız vurgu + el çizimi swash */
+.hero-copy h1 { font-size: clamp(3.1rem, 8vw, 7rem); line-height: 1.03; letter-spacing: -0.012em; }
+.hero-copy h1 .it { font-style: italic; position: relative; display: inline-block;
+  background: linear-gradient(105deg, var(--gold) 0%, var(--rose-deep) 55%, var(--rose) 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--rose-deep); }
+.hero-copy h1 .it .swash { position: absolute; left: -2%; right: -2%; bottom: -0.22em; height: 0.3em; color: var(--gold); -webkit-text-fill-color: var(--gold); }
+.hero-copy h1 .it .swash svg { width: 100%; height: 100%; display: block; }
+.anim .hero-copy h1 .it .swash svg path { stroke-dasharray: 320; stroke-dashoffset: 320; animation: heroSwash 1.1s cubic-bezier(.2,.8,.2,1) .7s forwards; }
+@keyframes heroSwash { to { stroke-dashoffset: 0; } }
+
+/* Mikro güven satırı (yıldız) */
+.hero-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; font-size: 0.82rem; letter-spacing: 0.03em; color: var(--ink-soft); }
+.hero-meta .stars { color: var(--gold); letter-spacing: 3px; font-size: 0.92rem; }
+.hero-meta .sep-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex: none; }
+
+/* Çok yavaş ken-burns (22s, gidip-gel) */
+.hero-figure .shot { position: relative; }
+.hero-figure .shot img.kenburns { transform-origin: 50% 42%; will-change: transform; }
+.anim .hero-figure .shot img.kenburns { animation: heroKenBurns 22s ease-in-out infinite alternate; }
+@keyframes heroKenBurns { from { transform: scale(1); } to { transform: scale(1.08); } }
+.hero-figure .shot .vignette { position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(125% 95% at 50% 0%, transparent 52%, rgba(42,30,34,.26) 100%); }
+
+/* Derinlik: ikinci çerçeve */
+.hero-figure .frame-2 { position: absolute; inset: -16px 16px 34px -36px; border: 1px solid var(--line-soft); z-index: 0; }
+
+/* Köşe rozeti — local SEO: "Silivri · El Yapımı" */
+.hero-badge {
+  position: absolute; z-index: 3; top: 18px; right: -18px;
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--cream); color: var(--ink);
+  padding: 11px 19px; box-shadow: var(--sh-md);
+  font-family: var(--sans); font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  border: 1px solid var(--gold-line);
+}
+.hero-badge .d { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex: none; }
+
+/* Birincil buton: koyu + kayan altın parıltı */
+.btn-fill.btn-gold { background: linear-gradient(135deg, #2A1E22, #3a2a2f); border: 1px solid var(--gold-line); position: relative; overflow: hidden; }
+.btn-fill.btn-gold > svg { position: relative; z-index: 1; transition: transform .26s ease; }
+.btn-fill.btn-gold::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 30%, rgba(194,160,98,.55) 50%, transparent 70%); transform: translateX(-130%); transition: transform .8s ease; }
+.btn-fill.btn-gold:hover { background: linear-gradient(135deg, #3a2a2f, #2A1E22); }
+.btn-fill.btn-gold:hover::after { transform: translateX(130%); }
+.btn-fill.btn-gold:hover > svg { transform: translateX(4px); }
+
+/* Buton geçişleri 260ms (pahalı his) */
+.hero-actions .btn { transition: background .26s ease, color .26s ease, transform .26s ease, box-shadow .26s ease, border-color .26s ease; }
+
+/* Scroll ipucu */
+.hero-scroll { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 9px; font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-faint); }
+.hero-scroll .line { width: 1px; height: 44px; background: linear-gradient(var(--gold), transparent); transform-origin: top; }
+.anim .hero-scroll .line { animation: heroScroll 2.4s ease-in-out infinite; }
+@keyframes heroScroll { 0%,100% { transform: scaleY(.35); opacity: .5; } 50% { transform: scaleY(1); opacity: 1; } }
+
+@media (max-width: 940px) { .hero-scroll { display: none; } .hero-bg .flourish { display: none; } }
+@media (max-width: 600px) {
+  .hero-badge { right: 0; top: 12px; font-size: 0.62rem; padding: 8px 13px; letter-spacing: 0.12em; }
+  .hero-figure .frame-2 { inset: -10px 10px 24px -20px; }
+}
+/* Hareket azaltma tercihi */
+.no-anim .hero-figure .shot img.kenburns,
+.no-anim .hero-scroll .line,
+.no-anim .hero-copy h1 .it .swash svg path { animation: none !important; }
+.no-anim .hero-figure .shot img.kenburns { transform: none !important; }
+.no-anim .hero-copy h1 .it .swash svg path { stroke-dashoffset: 0 !important; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-figure .shot img.kenburns { animation: none !important; transform: none !important; }
+  .hero-scroll .line { animation: none !important; }
+  .hero-copy h1 .it .swash svg path { animation: none !important; stroke-dashoffset: 0 !important; }
+}
+</style>
+<style>
+/* ============================================================
+   HERO — 3D dönen pasta halkası (coverflow) + kampanya daveti
+   ============================================================ */
+.hero-ring-stage {
+  position: relative; perspective: 1600px; perspective-origin: 50% 46%;
+  height: clamp(380px, 50vw, 600px);
+}
+
+/* Altın spotlight — ön kartı aydınlatır */
+.hero-spot {
+  position: absolute; left: 50%; top: 50%; width: 70%; height: 80%;
+  transform: translate(-50%,-50%); z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 44%, rgba(194,160,98,.36) 0%, rgba(194,160,98,.10) 40%, transparent 70%),
+    radial-gradient(ellipse 45% 35% at 50% 70%, rgba(194,160,98,.14) 0%, transparent 60%);
+  filter: blur(6px);
+  animation: spotBreathe 7s ease-in-out infinite;
+}
+@keyframes spotBreathe { 0%,100%{opacity:.85;transform:translate(-50%,-50%) scale(1)} 50%{opacity:1;transform:translate(-50%,-50%) scale(1.06)} }
+
+/* Zemin yansıması */
+/* testimonial avatar harf */
+.av-init { display:inline-flex; align-items:center; justify-content:center; border-radius:50%; width:44px; height:44px; font-family:var(--sans); font-size:1.1rem; font-weight:700; color:#fff; flex:none; }
+/* fav-card iskelet */
+.fav-skel { background:linear-gradient(100deg,#f0e4e8,#f8f0f3,#f0e4e8); background-size:200% 100%; animation:wgShimmer 1.3s linear infinite; border-radius:12px; min-height:280px; }
+
+.hero-ring-floor {
+  position: absolute; bottom: -10px; left: 10%; right: 10%; height: 70px; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse 55% 100% at 50% 100%, rgba(194,160,98,.13) 0%, transparent 78%);
+  filter: blur(14px);
+  mask-image: linear-gradient(90deg, transparent, #fff 25%, #fff 75%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #fff 25%, #fff 75%, transparent);
+}
+
+.hero-ring {
+  position: absolute; inset: 0; transform-style: preserve-3d; will-change: transform;
+  animation: heroSpin 52s linear infinite;
+}
+.hero-ring-stage:hover .hero-ring { animation-play-state: paused; }
+@keyframes heroSpin { from { transform: rotateY(0deg); } to { transform: rotateY(-360deg); } }
+
+.hero-card {
+  position: absolute; top: 50%; left: 50%;
+  width: clamp(158px, 19vw, 230px); aspect-ratio: 4/5;
+  overflow: hidden; border-radius: 16px;
+  background: #160c05;
+  border: 1px solid rgba(194,160,98,.5);
+  box-shadow:
+    0 32px 60px rgba(0,0,0,.65),
+    0  2px  8px rgba(0,0,0,.4),
+    inset 0 0 0 1px rgba(255,255,255,.05);
+  backface-visibility: hidden;
+  transition: border-color .35s, box-shadow .35s;
+}
+/* cam parlaması */
+.hero-card::before {
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit;
+  background: linear-gradient(148deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 32%);
+}
+/* alt çizgi aksan */
+.hero-card::after {
+  content: ""; position: absolute; bottom: 0; left: 12%; right: 12%; height: 1.5px; z-index: 4;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0; transition: opacity .35s;
+}
+.hero-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .9s cubic-bezier(.15,.7,.15,1); }
+.hero-card:hover {
+  border-color: rgba(194,160,98,.9);
+  box-shadow: 0 36px 72px rgba(0,0,0,.7), 0 0 0 1px var(--gold), 0 0 40px rgba(194,160,98,.22);
+}
+.hero-card:hover img { transform: scale(1.08); }
+.hero-card:hover::after { opacity: 1; }
+/* kenarlarda yumuşak vinyet (derinlik hissi) */
+.hero-ring-stage::before, .hero-ring-stage::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 16%; z-index: 4; pointer-events: none;
+}
+.hero-ring-stage::before { left: 0; background: linear-gradient(90deg, var(--cream), transparent); }
+.hero-ring-stage::after { right: 0; background: linear-gradient(270deg, var(--cream), transparent); }
+.hero-ring-stage .hero-badge { z-index: 5; }
+
+/* Kampanya daveti çipleri */
+.hero-invite { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+.hero-invite .hi-label { font-size: 0.78rem; letter-spacing: 0.03em; color: var(--ink-soft); }
+.hi-chip {
+  display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  font-family: var(--sans); font-size: 0.78rem; font-weight: 500; color: var(--ink);
+  transition: border-color .26s ease, transform .26s ease, background .26s ease;
+}
+.hi-chip:hover { transform: translateY(-2px); border-color: var(--gold); background: rgba(194,160,98,.06); }
+.hi-chip svg { width: 16px; height: 16px; }
+.hi-chip.wa svg { color: #25D366; }
+.hi-chip.ig svg { color: #E1306C; }
+
+@media (max-width: 600px) {
+  .hero-ring-stage::before, .hero-ring-stage::after { width: 10%; }
+  .hero-invite { gap: 9px; }
+}
+.no-anim .hero-ring { animation: none !important; }
+@media (prefers-reduced-motion: reduce) { .hero-ring { animation: none !important; } }
+
+/* ---- HERO: kahve tane espresso arka plan ---- */
+.hero { background: #1C0D05; }
+.hero-bg-img { display: none; }
+
+/* kahve tane SVG doku (::before) */
+.hero-bg::before {
+  content: "";
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88'%3E%3Cellipse cx='44' cy='44' rx='17' ry='25' fill='none' stroke='rgba(200%2C150%2C80%2C0.14)' stroke-width='1.8'/%3E%3Cpath d='M44 19C56 32 56 56 44 69C32 56 32 32 44 19Z' fill='rgba(180%2C130%2C60%2C0.07)'/%3E%3C/svg%3E");
+  background-size: 88px 88px;
+  pointer-events: none;
+}
+
+/* koyu örtü: sol ağırlıklı → metin okunur, sağda ring görünür */
+.hero-bg-veil {
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(105deg, rgba(28,13,5,.96) 0%, rgba(28,13,5,.82) 42%, rgba(28,13,5,.32) 72%, rgba(28,13,5,.04) 100%),
+    linear-gradient(0deg,   rgba(28,13,5,.80) 0%, rgba(28,13,5,0)    40%);
+}
+
+/* hero copy: açık renkler dark arka plan üstünde */
+.hero-copy h1,
+.hero-copy .display      { color: var(--cream); }
+.hero-copy .lead         { color: rgba(251,244,236,.82); }
+.hero-copy .kicker       { color: var(--gold); }
+.hero-copy .kicker::before { background: var(--gold); }
+.hero-meta               { color: rgba(251,244,236,.78) !important; }
+.hero-meta .stars        { color: var(--gold) !important; }
+.hero-trust              { color: rgba(251,244,236,.58); }
+.hero-trust .sep         { background: rgba(251,244,236,.22) !important; }
+
+/* swash altın çizgi */
+.hero-copy h1 .it .swash svg { color: var(--gold-soft); }
+
+/* butonlar: dark arka planda net görünür */
+.hero .btn-fill.btn-gold {
+  background: var(--gold); color: #1C0D05; border-color: var(--gold);
+  font-weight: 600;
+}
+.hero .btn-fill.btn-gold:hover { background: #B8922A; border-color: #B8922A; transform: translateY(-2px); }
+.hero .btn-line {
+  background: transparent;
+  color: var(--cream);
+  border-color: rgba(251,244,236,.52);
+}
+.hero .btn-line:hover {
+  background: rgba(251,244,236,.10);
+  border-color: var(--cream);
+  transform: translateY(-2px);
+}
+
+/* kampanya chipleri dark modda */
+.hi-chip            { color: var(--cream); border-color: rgba(251,244,236,.26); }
+.hi-chip:hover      { background: rgba(194,160,98,.15); border-color: var(--gold); }
+.hi-label           { color: rgba(251,244,236,.60) !important; }
+
+/* ring kenar vinyet: dark'a güncelle */
+.hero-ring-stage::before { background: linear-gradient(90deg, #1C0D05, transparent); }
+.hero-ring-stage::after  { background: linear-gradient(270deg, #1C0D05, transparent); }
+.hero-badge { background: rgba(28,13,5,.72); color: var(--cream); border-color: rgba(194,160,98,.45); }
+
+/* hero kart etiket */
+.hero-card-label {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 3;
+  background: linear-gradient(0deg, rgba(22,10,4,.94) 0%, rgba(22,10,4,.4) 60%, rgba(22,10,4,0) 100%);
+  color: var(--cream); font-family: var(--sans); font-weight: 500; font-size: 0.66rem;
+  letter-spacing: 0.16em; text-transform: uppercase; text-align: center;
+  padding: 34px 8px 12px; pointer-events: none;
+}
+.hero-card-label .gör {
+  display: block; margin-top: 5px; color: var(--gold-soft); font-size: 0.58rem; letter-spacing: 0.22em;
+  opacity: 0; transform: translateY(4px); transition: opacity .3s ease, transform .3s ease;
+}
+.hero-card:hover .hero-card-label .gör { opacity: 1; transform: none; }
+.hero-card { text-decoration: none; }
+/* hero ring üst başlık çipi */
+.hero-ring-cap {
+  position: absolute; z-index: 6; left: 50%; top: 6px; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  font-family: var(--sans); font-size: 0.60rem; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--gold); background: rgba(16,7,2,.70); border: 1px solid rgba(194,160,98,.5);
+  padding: 7px 18px; border-radius: 999px; backdrop-filter: blur(10px);
+  box-shadow: 0 2px 16px rgba(0,0,0,.4), inset 0 0 0 1px rgba(194,160,98,.08);
+  pointer-events: none;
+}
+.hero-ring-cap .dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--gold);
+  box-shadow: 0 0 6px 2px rgba(194,160,98,.55);
+  animation: dotPulse 2.4s ease-in-out infinite;
+}
+@keyframes dotPulse { 0%,100%{opacity:.8;transform:scale(1)} 50%{opacity:1;transform:scale(1.25)} }
+
+/* görsel gelince serpme animasyonu gerek yok */
+.hero-fx { display: none; }
+
+/* ---- (kullanılmıyor) süzülen serpme taneleri ---- */
+.hero-fx-off { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.hero-fx .p { position: absolute; bottom: -40px; opacity: 0; will-change: transform, opacity; }
+.hero-fx .sprinkle { width: 13px; height: 5px; border-radius: 3px; }
+.hero-fx .dot { border-radius: 50%; filter: blur(0.5px); }
+@keyframes heroFloatUp {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+  12%  { opacity: var(--o, .5); }
+  88%  { opacity: var(--o, .5); }
+  100% { transform: translateY(calc(-100vh - 90px)) rotate(var(--r, 180deg)); opacity: 0; }
+}
+/* glow yumuşak nefes alsın */
+.hero-bg .glow { animation: heroGlowBreathe 9s ease-in-out infinite; }
+.hero-bg .glow-gold { animation-delay: -4.5s; }
+@keyframes heroGlowBreathe { 0%, 100% { opacity: .65; transform: scale(1); } 50% { opacity: .95; transform: scale(1.1); } }
+
+.no-anim .hero-fx, .no-anim .hero-bg .glow { animation: none !important; }
+.no-anim .hero-fx { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-fx { display: none; }
+  .hero-bg .glow { animation: none !important; }
+}
+</style>
+<style>
+/* ============================================================
+   SİHİRBAZ — galeriden örnek şeridi
+   ============================================================ */
+.wiz-gallery { margin-top: 26px; }
+.wiz-gallery-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+.wiz-gallery-head .wg-title { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); }
+.wiz-gallery-head .wg-more { font-size: 0.8rem; font-weight: 600; color: var(--rose); letter-spacing: .02em; transition: color .25s; }
+.wiz-gallery-head .wg-more:hover { color: var(--rose-deep); }
+.wiz-gallery-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.wg-cell { position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 10px; background: #efe0e5; cursor: pointer; display: block; }
+.wg-cell img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.wg-cell:hover img { transform: scale(1.08); }
+.wg-cell.more {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  background: linear-gradient(150deg, var(--ink), #3a2a2e); color: var(--cream);
+  font-family: var(--sans); font-size: 0.74rem; font-weight: 600; letter-spacing: .04em; padding: 8px;
+}
+.wg-cell.more span { line-height: 1.3; }
+.wg-cell.more .arr { display: block; font-size: 1.3rem; margin-bottom: 4px; color: var(--gold-soft); }
+.wg-skel { aspect-ratio: 1/1; border-radius: 10px; background: linear-gradient(100deg,#efe0e5,#f6ebef,#efe0e5); background-size: 200% 100%; animation: wgShimmer 1.3s linear infinite; }
+@keyframes wgShimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@media (max-width: 760px) { .wiz-gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+
+</style>
+<script>document.documentElement.classList.add("anim");</script>
+</head>
+<body>
+
+<!-- ============================ PRELOADER ============================ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pl-inner">
+    <div class="pl-cake">
+      <svg viewBox="0 0 64 64" fill="none">
+        <ellipse cx="32" cy="52" rx="22" ry="5" fill="#B0697F" opacity=".22"></ellipse>
+        <path d="M12 30c0-2 9-4 20-4s20 2 20 4v18c0 2-9 4-20 4s-20-2-20-4V30Z" fill="#F2BFC9"></path>
+        <path d="M12 30c0 2 9 4 20 4s20-2 20-4" stroke="#fff" stroke-width="1.5" opacity=".7"></path>
+        <path d="M12 38c4 3 10 3 13 0 3 3 9 3 13 0 3 3 9 3 14-1" stroke="#B6D8E8" stroke-width="3" stroke-linecap="round"></path>
+        <rect x="30.7" y="12" width="2.6" height="11" rx="1.3" fill="#C2A062"></rect>
+        <circle cx="32" cy="10" r="3" fill="#B0697F"></circle>
+      </svg>
+    </div>
+    <div>
+      <div class="pl-logo">Pastacihanı<span class="dot">.com</span></div>
+      <div class="pl-rule"></div>
+      <div class="pl-sub" style="text-align:center">Couture Pastane · Silivri</div>
+    </div>
+    <div class="pl-bar"><i></i></div>
+  </div>
+</div>
+
+<!-- ============================ HEADER ============================ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#anasayfa" class="logo brand" aria-label="Pastacihanı — anasayfa">
+      <img src="f7f763de-a45b-42a5-aa49-be90a356adab" alt="Pastacihanı — Couture Pastane" class="brand-img">
+    </a>
+    <nav class="nav-links">
+      <a href="#anasayfa">Anasayfa</a>
+      <a href="/galeri">Pastalarımız</a>
+      <a href="#tasarla">Tasarla</a>
+      <a href="/galeri">Galeri</a>
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-call" aria-label="Hemen Ara" href="tel:+905548106301"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></a>
+      <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/905548106301?text=Merhaba%20Pastacihan%C4%B1%2C%20pasta%20sipari%C5%9Fi%20vermek%20istiyorum%20%F0%9F%8E%82">WhatsApp'tan Sipariş</a>
+      <button class="hamburger" aria-label="Menü"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="anasayfa">
+  <div class="hero-bg" aria-hidden="true">
+    <img class="hero-bg-img" src="0e69ca4a-4926-4a10-a1fd-ad53b8645423" alt="" aria-hidden="true">
+    <span class="hero-bg-veil"></span>
+    <span class="glow glow-rose"></span>
+    <span class="glow glow-gold"></span>
+    <div class="hero-fx" id="heroFx" aria-hidden="true"><!-- süzülen serpme taneleri: main script doldurur --></div>
+    <svg class="flourish" viewBox="0 0 160 160" fill="none" stroke="currentColor" stroke-width="1"><path d="M4 156C4 72 72 4 156 4M30 156C30 87 87 30 156 30M58 156C58 102 102 58 156 58"/></svg>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="kicker reveal"><svg class="k-orn" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.39 6.96L21.6 9.2l-5.3 4.27L18.18 21 12 16.9 5.82 21l1.88-7.53L2.4 9.2l7.21-.24z"/></svg> El Yapımı Couture Pastane · Silivri</span>
+      <h1 class="reveal">Hayalinizdeki pastayı <span class="it">sanata<span class="swash"><svg viewBox="0 0 200 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 12C44 4 96 3 132 7c24 2.6 44 5 64 2"/></svg></span></span> dönüştürüyoruz</h1>
+      <p class="lead reveal">Doğum gününden düğüne; her pastayı premium malzeme, ince el işçiliği ve sinematik bir sunumla yalnızca size özel tasarlıyoruz.</p>
+      <div class="hero-meta reveal"><span class="stars">★★★★★</span><span class="sep-dot"></span>Silivri'de butik atölyemizde, el emeğiyle</div>
+      <div class="hero-actions reveal">
+        <a href="/tasarla" class="btn btn-fill btn-gold">3D ile Tasarla <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#sihirbaz" id="acilBtn" class="btn btn-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12z"/></svg> Acil Teslimat</a>
+      </div>
+      <div class="hero-invite reveal">
+        <span class="hi-label">Kampanya ve fırsatlar için:</span>
+        <a class="hi-chip wa" href="https://whatsapp.com/channel/0029Vb7OOj7AojYzuTV6T82y" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-6c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c2.1.8 2.1.6 2.5.5a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg> WhatsApp Kanalı</a>
+        <a class="hi-chip ig" href="https://www.instagram.com/pastacihani.online/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a>
+      </div>
+    </div>
+    <div class="hero-ring-stage reveal" aria-label="Pasta galerisi — sürekli dönen seçki">
+      <span class="hero-ring-cap"><span class="dot"></span>Galeriden seçkiler</span>
+      <span class="hero-spot" aria-hidden="true"></span>
+      <div class="hero-ring" id="heroRing"><!-- pasta kartları main script ile eklenir --></div>
+      <span class="hero-ring-floor" aria-hidden="true"></span>
+    </div>
+  </div>
+  <div class="wrap hero-trust reveal">
+    <span>2022'den beri</span><span class="sep"></span>
+    <span>İstanbul Silivri</span><span class="sep"></span>
+    <span>El yapımı, size özel tasarım</span>
+  </div>
+  <a href="#favoriler" class="hero-scroll reveal" aria-label="Aşağı kaydır"><span>Keşfet</span><span class="line"></span></a>
+</section>
+
+<!-- ============================ MANIFESTO ============================ -->
+<section class="manifesto section">
+  <div class="bg"><img src="3ada5ee5-12b3-4328-bf09-228d93c2646b" alt=""></div>
+  <div class="wrap">
+    <span class="kicker reveal">Felsefemiz</span>
+    <h2 class="reveal">Her pasta, kutlanmaya değer bir anın <span class="it">imzasıdır.</span></h2>
+    <div class="sign reveal">— Pastacihanı Atölyesi</div>
+  </div>
+</section>
+
+<!-- ============================ EN ÇOK TERCİH EDİLENLER ============================ -->
+<section class="section" id="favoriler">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="hl">
+        <span class="kicker">Müşteri Favorileri</span>
+        <h2>En Çok Tercih Edilenler</h2>
+      </div>
+      <a href="/galeri" class="head-cta" id="favSeeAll">Tümünü Gör
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+    <div class="fav-grid" id="favGrid"></div>
+  </div>
+</section>
+
+<!-- ============================ HIZLI SİPARİŞ SİHİRBAZI ============================ -->
+<section class="section wizard-sec" id="sihirbaz">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="hl">
+        <span class="kicker">3 Adımda</span>
+        <h2>Hızlı Sipariş Sihirbazı</h2>
+      </div>
+      <p class="meta">Birkaç soruyla size en uygun pastaları anında listeleyelim.</p>
+    </div>
+    <div class="wizard reveal" id="wizard">
+      <div class="wiz-progress">
+        <div class="wiz-dot active" data-step="1"><span class="num">1</span><span class="lbl">Tarih</span></div>
+        <span class="wiz-line"></span>
+        <div class="wiz-dot" data-step="2"><span class="num">2</span><span class="lbl">Kişi</span></div>
+        <span class="wiz-line"></span>
+        <div class="wiz-dot" data-step="3"><span class="num">3</span><span class="lbl">Tür</span></div>
+        <span class="wiz-line"></span>
+        <div class="wiz-dot" data-step="4"><span class="num">✓</span><span class="lbl">Sonuç</span></div>
+      </div>
+
+      <div class="wiz-step active" data-step="1">
+        <h3 class="wiz-q">Pasta hangi gün için?</h3>
+        <div class="wiz-opts" id="wizDay">
+          <button class="wiz-opt" data-val="Bugün"><span class="wo-ic">⚡</span><span class="wo-t">Bugün</span></button>
+          <button class="wiz-opt" data-val="Yarın"><span class="wo-ic">🌤️</span><span class="wo-t">Yarın</span></button>
+          <button class="wiz-opt" data-val="Hafta sonu"><span class="wo-ic">🎉</span><span class="wo-t">Hafta Sonu</span></button>
+          <button class="wiz-opt" data-val="İleri tarih"><span class="wo-ic">📅</span><span class="wo-t">İleri Tarih</span></button>
+        </div>
+      </div>
+
+      <div class="wiz-step" data-step="2">
+        <h3 class="wiz-q">Kaç kişilik olsun?</h3>
+        <div class="wiz-people">
+          <div class="wiz-num">
+            <button type="button" id="wizMinus" aria-label="Azalt">−</button>
+            <input type="number" id="wizPeople" min="1" max="500" step="1" value="10" inputmode="numeric" aria-label="Kişi sayısı">
+            <button type="button" id="wizPlus" aria-label="Artır">+</button>
+          </div>
+          <span class="meta" style="color:var(--ink-soft)">1 - 500 kişi arasında girebilirsiniz.</span>
+        </div>
+      </div>
+
+      <div class="wiz-step" data-step="3">
+        <h3 class="wiz-q">Hangi tür pasta?</h3>
+        <div class="wiz-chips" id="wizType">
+          <button class="wiz-chip" data-cat="dogumgunu">Doğum Günü</button>
+          <button class="wiz-chip" data-cat="nisan">Nişan</button>
+          <button class="wiz-chip" data-cat="soz">Söz</button>
+          <button class="wiz-chip" data-cat="dugun">Düğün</button>
+          <button class="wiz-chip" data-cat="babyshower">Baby Shower</button>
+          <button class="wiz-chip" data-cat="yildonumu">Yıldönümü</button>
+        </div>
+      </div>
+
+      <div class="wiz-step" data-step="4">
+        <div class="wiz-result-head">
+          <span class="kicker">Hazır</span>
+          <h3>Sana uygun pastalar</h3>
+          <p id="wizSummary"></p>
+        </div>
+        <div class="wiz-result-grid" id="wizResults"></div>
+        <div class="wiz-gallery" id="wizGalleryStrip" hidden>
+          <div class="wiz-gallery-head">
+            <span class="wg-title">Galeriden örnekler</span>
+            <a class="wg-more" id="wizGalleryMore" href="/galeri">Tüm galeri →</a>
+          </div>
+          <div class="wiz-gallery-grid" id="wizGalleryGrid" aria-label="Galeri örnekleri"></div>
+        </div>
+        <div class="wiz-cta-row">
+          <a class="btn btn-fill" id="wizGallery" href="/galeri">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="M21 15l-5-5L5 21"></path></svg>
+            Galeride Gör
+          </a>
+          <a class="btn btn-wa" id="wizWa" target="_blank" rel="noopener" href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.3-.9-2.8-1.2-4.5-4.1-4.6-4.3-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.6-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5c-.2.2-.3.3-.1.6.5.8 1 1.3 1.7 1.8.2.1.4.1.5 0l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.2.1.4.2.4.3.1.2.1.9-.1 1.6Z"></path></svg>
+            Tüm Seçeneklerle WhatsApp'tan İletişime Geç
+          </a>
+          <button class="wiz-restart" id="wizRestart">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8m0-5v5h5"></path></svg>
+            Baştan Başla
+          </button>
+        </div>
+      </div>
+
+      <div class="wiz-nav" id="wizNav">
+        <button class="wiz-back hidden" id="wizBack">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>
+          Geri
+        </button>
+        <button class="btn btn-fill" id="wizNext">Devam</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ KATEGORİLER ============================ -->
+<section class="section" id="pastalar">
+  <div class="wrap">
+    <!-- arama -->
+    <div class="searchwrap reveal">
+      <div class="searchbar" id="searchBar">
+        <svg class="si" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+        <input type="text" id="searchInput" placeholder="Pasta ara… (örn: çikolatalı, düğün, DLM-002)" autocomplete="off" aria-label="Pasta ara">
+        <button class="sclear" id="searchClear" aria-label="Aramayı temizle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+      </div>
+    </div>
+
+    <!-- arama sonuçları -->
+    <div class="search-view" id="searchView">
+      <div class="search-meta" id="searchMeta"></div>
+      <div class="prod-grid" id="searchGrid"></div>
+      <div class="search-empty" id="searchEmpty" style="display:none">
+        <div class="se-ico">🍰</div>
+        <h3>Aradığınız ürün bulunamadı</h3>
+        <p>Aklınızdaki tasarımı birlikte oluşturalım. Özel tasarım için WhatsApp'tan iletişime geçin.</p>
+        <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/905548106301?text=Merhaba%2C%20%C3%B6zel%20tasar%C4%B1m%20pasta%20yapt%C4%B1rmak%20istiyorum">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.3-.9-2.8-1.2-4.5-4.1-4.6-4.3-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.6-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5c-.2.2-.3.3-.1.6.5.8 1 1.3 1.7 1.8.2.1.4.1.5 0l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.2.1.4.2.4.3.1.2.1.9-.1 1.6Z"></path></svg>
+          WhatsApp'tan İletişime Geç
+        </a>
+      </div>
+    </div>
+
+    <!-- default -->
+    <div id="catDefault">
+      <div class="sec-head reveal">
+        <div class="hl">
+          <span class="kicker">Koleksiyon</span>
+          <h2>Pastalarımız</h2>
+        </div>
+        <p class="meta">İlgilendiğiniz koleksiyonu seçin; o kategoriye özel tasarımları keşfedin.</p>
+      </div>
+      <div class="cat-stack" id="catStack"></div>
+    </div>
+    <!-- products -->
+    <div class="products-view" id="productsView">
+      <div class="prod-top">
+        <div>
+          <span class="kicker">Koleksiyon</span>
+          <h2 id="prodTitle"></h2>
+        </div>
+        <button class="back-btn" id="backToCats">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>
+          Tüm Kategoriler
+        </button>
+      </div>
+      <div class="tabs" id="tabBar"></div>
+      <div class="prod-grid" id="prodGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PASTA ATÖLYESİ ============================ -->
+<section class="section configurator" id="tasarla">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="hl">
+        <span class="kicker">Atölye</span>
+        <h2>Pasta Atölyesi</h2>
+      </div>
+      <p class="meta">Hayalindeki pastayı 3D olarak tasarla, her detayını canlı gör, tek dokunuşla WhatsApp'tan sipariş et.</p>
+    </div>
+    <div class="atelier-teaser reveal">
+      <div class="at-copy">
+        <h3>Kendi pastanı <span class="it">üç boyutlu</span> tasarla</h3>
+        <ul class="at-list">
+          <li>Kat sayısı, şekil, kaplama ve 12 renk — ombre &amp; mermer dahil</li>
+          <li>Çikolata drip, şeker çiçekleri, meyve, makaron, altın yaprak…</li>
+          <li>Pasta üstü el yazısı, topper ve mumlar</li>
+          <li>Kat kat tat seçimi + gerçekçi dilim önizlemesi</li>
+        </ul>
+        <a class="btn btn-light at-cta" href="/tasarla">
+          Pasta Atölyesi'ni Aç
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+      <a class="at-visual" href="/tasarla" aria-label="Pasta Atölyesi'ni aç">
+        <img src="e0263c42-af2e-4e8c-9fb0-0b8c6bb2c978" alt="Drip pasta — Atölye örneği" loading="lazy">
+        <span class="at-badge">Canlı 3D Önizleme</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ GALERİ ============================ -->
+<section class="section" id="galeri">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="hl">
+        <span class="kicker">Portföy</span>
+        <h2>Öne Çıkan Çalışmalar</h2>
+      </div>
+      <p class="meta">Daha önce hayata geçirdiğimiz tasarımlardan bir seçki. Büyütmek için dokunun.</p>
+    </div>
+    <div class="gal-grid" id="galGrid"></div>
+  </div>
+</section>
+
+<!-- ============================ HAKKIMIZDA ============================ -->
+<section class="section" id="hakkimizda">
+  <div class="wrap about-grid">
+    <div class="about-figure reveal">
+      <img src="bdb5ae69-9050-4fb2-844a-63a6af57e29c" alt="Pastacihanı atölyesi">
+      <div class="badge"><div class="n">2022</div><div class="t">Bu yana</div></div>
+    </div>
+    <div class="about-copy reveal">
+      <span class="kicker">Hakkımızda</span>
+      <h2>Zarafet ve lezzetin buluştuğu atölye</h2>
+      <p>Pastacihanı, özel günleri unutulmaz kılan profesyonel bir pasta tasarım atölyesidir. Her pastayı kaliteli malzeme, titiz el işçiliği ve estetik bir sunum anlayışıyla hazırlıyoruz.</p>
+      <p>Doğum günlerinden düğünlere, kurumsal etkinliklerden en küçük kutlamalara kadar; hayalinizdeki tasarımı gerçeğe dönüştürmek için buradayız.</p>
+      <div class="values">
+        <div class="value"><h4><span class="vi">i.</span> Özel Tasarım</h4><p>Tamamen size özel, konseptinize göre kurgulanan pastalar.</p></div>
+        <div class="value"><h4><span class="vi">ii.</span> Premium Malzeme</h4><p>Yalnızca taze ve seçkin içerikler; lezzetten ödün yok.</p></div>
+        <div class="value"><h4><span class="vi">iii.</span> Zamanında Teslim</h4><p>Özel gününüze yetişmesi için sözümüzü tutarız.</p></div>
+        <div class="value"><h4><span class="vi">iv.</span> Silivri &amp; Çevresi</h4><p>Bölgemizde hızlı ve güvenli teslimat ağı.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ GÜVEN ROZETLERİ ============================ -->
+<section class="section" id="guven" style="padding-block:clamp(40px,6vw,80px)">
+  <div class="wrap">
+    <div class="trust-strip reveal" id="trustStrip"></div>
+  </div>
+</section>
+
+<!-- ============================ YORUMLAR ============================ -->
+<section class="section" id="yorumlar" style="overflow:hidden">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="hl">
+        <span class="kicker">Referanslar</span>
+        <h2>Müşterilerimiz Anlatıyor</h2>
+      </div>
+      <p class="meta">200+ mutlu müşteri · özel günlerin değişmeyen adresi.</p>
+    </div>
+  </div>
+  <div class="tcarousel"><div class="ttrack" id="tTrack"></div></div>
+</section>
+
+<!-- ============================ TESLİMAT BÖLGELERİ ============================ -->
+<section class="section" id="teslimat">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="hl">
+        <span class="kicker">Teslimat</span>
+        <h2>Nerelere Ulaşıyoruz?</h2>
+      </div>
+      <p class="meta">Silivri merkeze elden teslim; çevre bölgelere güvenli teslimat.</p>
+    </div>
+    <div class="delivery-grid reveal">
+      <div class="delivery-list" id="deliveryList"></div>
+      <div class="delivery-map delivery-map--static">
+        <div class="map-static">
+          <span class="map-pin" aria-hidden="true">
+            <svg viewBox="0 0 40 50" fill="none"><circle cx="20" cy="20" r="13" fill="#B0697F" opacity=".18"/><circle cx="20" cy="20" r="8" fill="#B0697F"/><path d="M20 32 Q20 45 20 48" stroke="#B0697F" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <div class="map-info">
+            <p class="map-city">Silivri, İstanbul</p>
+            <p class="map-detail">Pastacihanı · Google İşletme Profili</p>
+          </div>
+          <div class="map-grid-lines" aria-hidden="true"></div>
+          <a class="map-cta" href="https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhvNGNqbDRiVFp5GAo" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 7.1 12.3 7.8 12.9a.3.3 0 0 0 .4 0C12.9 22.3 20 15.4 20 10a8 8 0 0 0-8-8Z"/></svg>
+            Google'da Konumu Aç
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SSS ============================ -->
+<section class="section" id="sss">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="hl">
+        <span class="kicker">Yardım</span>
+        <h2>Sık Sorulan Sorular</h2>
+      </div>
+      <p class="meta">Aklınıza takılanlar; aradığınızı bulamazsanız bir mesaj uzağınızdayız.</p>
+    </div>
+    <div class="faq-wrap reveal" id="faqWrap"></div>
+  </div>
+</section>
+
+<!-- ============================ İLETİŞİM ============================ -->
+<section class="section" id="iletisim">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="hl">
+        <span class="kicker">İletişim</span>
+        <h2>Pastanızı Sipariş Edin</h2>
+      </div>
+      <p class="meta">En hızlı sipariş yöntemi WhatsApp. Bir mesaj uzağınızdayız.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h2>Bize Ulaşın</h2>
+        <p class="lead">Sorularınız ve siparişleriniz için her zaman buradayız.</p>
+        <div class="cinfo">
+          <a class="cinfo-row" href="tel:+905548106301">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></span>
+            <span><span class="ck">Telefon</span><span class="cv">0554 810 6301</span></span>
+          </a>
+          <div class="cinfo-row">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
+            <span><span class="ck">Konum</span><span class="cv">İstanbul / Silivri</span></span>
+          </div>
+          <a class="cinfo-row" href="https://www.instagram.com/pastacihani.online/" target="_blank" rel="noopener">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"></circle></svg></span>
+            <span><span class="ck">Instagram</span><span class="cv">@pastacihani.online</span></span>
+          </a>
+        </div>
+        <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/905548106301?text=Merhaba%20Pastacihan%C4%B1%2C%20sipari%C5%9F%20vermek%20istiyorum%20%F0%9F%8E%82">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.3-.9-2.8-1.2-4.5-4.1-4.6-4.3-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.6-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5c-.2.2-.3.3-.1.6.5.8 1 1.3 1.7 1.8.2.1.4.1.5 0l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.2.1.4.2.4.3.1.2.1.9-.1 1.6Z"></path></svg>
+          WhatsApp'tan Sipariş Ver
+        </a>
+        <a class="ig-card" href="https://www.instagram.com/pastacihani.online/" target="_blank" rel="noopener">
+          <span class="ig-qr"><span class="ig-qr-in"><canvas id="igQr"></canvas></span></span>
+          <span class="ig-meta">
+            <span class="ig-k">Instagram'da Takip Et</span>
+            <strong class="ig-h">@pastacihani.online</strong>
+            <span class="ig-p">Kameranı okut — son pasta tasarımlarımızı keşfet.</span>
+          </span>
+        </a>
+      </div>
+      <div class="map-card map-card--static reveal">
+        <div class="map-static">
+          <span class="map-pin" aria-hidden="true">
+            <svg viewBox="0 0 40 50" fill="none"><circle cx="20" cy="20" r="13" fill="#B0697F" opacity=".18"/><circle cx="20" cy="20" r="8" fill="#B0697F"/><path d="M20 32 Q20 45 20 48" stroke="#B0697F" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <div class="map-info">
+            <p class="map-city">Silivri, İstanbul</p>
+            <p class="map-detail">El yapımı butik pasta atölyesi</p>
+          </div>
+          <div class="map-grid-lines" aria-hidden="true"></div>
+          <a class="map-cta" href="https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhvNGNqbDRiVFp5GAo" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 7.1 12.3 7.8 12.9a.3.3 0 0 0 .4 0C12.9 22.3 20 15.4 20 10a8 8 0 0 0-8-8Z"/></svg>
+            Google Maps'te Aç
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="#anasayfa" class="logo">pastacihani<span class="dot">.com</span></a>
+        <p>2022'den beri özel anlara yakışan profesyonel, butik pasta tasarımları. İstanbul Silivri.</p>
+        <div class="foot-trust">
+          <span>🥇 <b>2022</b>'den beri</span>
+          <span>✓ <b>1000+</b> mutlu müşteri</span>
+          <span>🛡️ Gıda işletme belgeli</span>
+          <span>☪ Helal sertifikalı</span>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Sayfalar</h5>
+        <a href="#anasayfa">Anasayfa</a>
+        <a href="/galeri">Pastalarımız</a>
+        <a href="#tasarla">Pasta Tasarla</a>
+        <a href="/galeri">Galeri</a>
+      </div>
+      <div class="foot-col">
+        <h5>Kurumsal</h5>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#yorumlar">Yorumlar</a>
+        <a href="#iletisim">İletişim</a>
+      </div>
+      <div class="foot-col">
+        <h5>İletişim</h5>
+        <p>0554 810 6301</p>
+        <p>İstanbul / Silivri</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/pastacihani.online/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2 1.6 3.6 3.5 3.9v2.5c-1.3.1-2.5-.2-3.6-.8v5.7a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v2.6a3 3 0 1 0 2.1 2.9V3h2.7z"></path></svg></a>
+          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.5 2.1-.8 3.3-.2.9.5 1.7 1.4 1.7 1.7 0 2.9-2.2 2.9-4.7 0-1.9-1.3-3.4-3.7-3.4a4.3 4.3 0 0 0-4.5 4.3c0 .8.3 1.4.6 1.8.2.2.2.3.1.5l-.2.8c0 .3-.2.3-.5.2-1.2-.5-1.8-1.9-1.8-3.4 0-2.5 2.1-5.5 6.3-5.5 3.4 0 5.6 2.4 5.6 5 0 3.4-1.9 6-4.8 6-1 0-1.9-.5-2.2-1.1l-.6 2.4c-.2.8-.7 1.7-1 2.3A10 10 0 1 0 12 2z"></path></svg></a>
+          <a href="https://wa.me/905548106301" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.3-.9-2.8-1.2-4.5-4.1-4.6-4.3-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.6-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5c-.2.2-.3.3-.1.6.5.8 1 1.3 1.7 1.8.2.1.4.1.5 0l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.2.1.4.2.4.3.1.2.1.9-.1 1.6Z"></path></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2022 Pastacihanı — Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+
+<!-- ============================ FLOATING WHATSAPP ============================ -->
+<div class="wa-bubble" id="waBubble" role="status">
+  <button class="wb-close" id="waBubbleClose" aria-label="Kapat">×</button>
+  <div class="wb-top"><span class="wb-dot"></span><span id="waBubbleTitle">Online — şu an aktifiz</span></div>
+  <div class="wb-sub" id="waBubbleSub">Genelde 5 dakikada yanıt veriyoruz 🎂</div>
+</div>
+<a class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp'tan sipariş ver" href="https://wa.me/905548106301?text=Merhaba%20Pastacihan%C4%B1%2C%20pasta%20sipari%C5%9Fi%20vermek%20istiyorum%20%F0%9F%8E%82">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.3-.9-2.8-1.2-4.5-4.1-4.6-4.3-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.6-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5c-.2.2-.3.3-.1.6.5.8 1 1.3 1.7 1.8.2.1.4.1.5 0l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.2.1.4.2.4.3.1.2.1.9-.1 1.6Z"></path></svg>
+</a>
+
+<!-- ============================ LIGHTBOX ============================ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <div class="lb-bg" id="lbBg"></div>
+  <div class="lb-stage">
+    <button class="lb-close" id="lbClose" aria-label="Kapat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Önceki"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button>
+    <button class="lb-nav next" id="lbNext" aria-label="Sonraki"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
+    <div class="lb-frame" id="lbFrame"></div>
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+</div>
+
+<script src="38f00ad7-1a86-4ec8-9968-0dfb4b3c6d24"></script>
+<script src="cebf6828-c321-4da2-9dbd-d93e7edc9f4b"></script>
+<script src="2fa2de86-4aec-4a15-bb5b-fe72aca1c44f"></script>
+<script src="d9e00edc-cb00-4e84-bf3c-fc36c9fc6a3d"></script>
+
+<script>
+/* HERO 3D pasta halkası — galeri kategorilerinden gerçek Cloudinary görselleri */
+(function () {
+  var ring = document.getElementById("heroRing");
+  if (!ring || ring.children.length) return;
+
+  var CLOUD = "do7gjdvb0";
+  var CATS = [
+    { slug: "dogumgunu",  label: "Doğum Günü" },
+    { slug: "nisan",      label: "Nişan" },
+    { slug: "soz",        label: "Söz" },
+    { slug: "dugun",      label: "Düğün" },
+    { slug: "babyshower", label: "Baby Shower" },
+    { slug: "yildonumu",  label: "Yıldönümü" }
+  ];
+
+  var n = CATS.length, ang = 360 / n;
+
+  function coverUrl(r) {
+    return "https://res.cloudinary.com/" + CLOUD + "/image/upload/f_auto,q_auto,w_420,c_fill,ar_4:5/v" + r.version + "/" + r.public_id + "." + r.format;
+  }
+
+  function layout() {
+    var cards = ring.querySelectorAll(".hero-card");
+    if (!cards.length) return;
+    // 1.05 → kartlar birbirine yakın, dramatik coverflow görünümü
+    var r = Math.round((cards[0].offsetWidth || 190) * 1.05);
+    cards.forEach(function (c, i) {
+      c.style.transform = "translate(-50%,-50%) rotateY(" + (i * ang) + "deg) translateZ(" + r + "px)";
+    });
+  }
+
+  function addCard(cat, imgSrc) {
+    var c = document.createElement("a");
+    c.className = "hero-card";
+    c.href = "/galeri?kat=" + cat.slug;
+    c.setAttribute("aria-label", cat.label + " pastalarını gör");
+    if (imgSrc) {
+      var img = document.createElement("img");
+      img.decoding = "async";
+      img.alt = cat.label + " pasta tasarımı";
+      img.src = imgSrc;
+      c.appendChild(img);
+    }
+    var lbl = document.createElement("span");
+    lbl.className = "hero-card-label";
+    lbl.innerHTML = cat.label.replace(/[<>&]/g, "") + '<span class="gör">Galeride Gör →</span>';
+    c.appendChild(lbl);
+    ring.appendChild(c);
+  }
+
+  Promise.all(CATS.map(function (cat) {
+    return fetch("https://res.cloudinary.com/" + CLOUD + "/image/list/" + cat.slug + ".json?ts=" + Date.now())
+      .then(function (res) { return res.ok ? res.json() : { resources: [] }; })
+      .then(function (d) { return { cat: cat, res: (d.resources || [])[0] || null }; })
+      .catch(function () { return { cat: cat, res: null }; });
+  })).then(function (results) {
+    results.forEach(function (item) {
+      addCard(item.cat, item.res ? coverUrl(item.res) : "");
+    });
+    layout();
+    window.addEventListener("resize", layout);
+  });
+})();
+
+/* HERO arka plan — süzülen serpme/şeker taneleri (zarif, yavaş) */
+(function () {
+  var fx = document.getElementById("heroFx");
+  if (!fx || fx.querySelector(".p")) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var colors = ["#B0697F", "#C2A062", "#8E3B57", "#DcC79A"];
+  var N = window.innerWidth < 600 ? 14 : 22;
+  for (var i = 0; i < N; i++) {
+    var p = document.createElement("span");
+    var isSprinkle = Math.random() > 0.42;
+    p.className = "p " + (isSprinkle ? "sprinkle" : "dot");
+    var c = colors[i % colors.length];
+    p.style.left = (Math.random() * 100).toFixed(2) + "%";
+    p.style.background = c;
+    var dur = 13 + Math.random() * 15;
+    p.style.animation = "heroFloatUp " + dur.toFixed(1) + "s linear " + (-Math.random() * dur).toFixed(1) + "s infinite";
+    p.style.setProperty("--r", (Math.random() * 360 - 180).toFixed(0) + "deg");
+    p.style.setProperty("--o", (0.22 + Math.random() * 0.4).toFixed(2));
+    if (isSprinkle) {
+      p.style.transform = "rotate(" + (Math.random() * 180).toFixed(0) + "deg)";
+    } else {
+      var s = (4 + Math.random() * 9).toFixed(0);
+      p.style.width = s + "px"; p.style.height = s + "px";
+    }
+    fx.appendChild(p);
+  }
+})();
+
+/* HERO RING — fare + dokunmatik sürükleme (çark gibi döner, momentum ile yavaşlar) */
+(function () {
+  var ring  = document.getElementById("heroRing");
+  var stage = ring && ring.closest(".hero-ring-stage");
+  if (!ring || !stage) return;
+
+  var angle = 0, vel = 0;
+  var dragging = false, prevX = 0, prevT = 0;
+  var AUTO = -360 / 52000; // deg/ms — 52 saniyede tam tur
+
+  function draw() { ring.style.transform = "rotateY(" + angle.toFixed(3) + "deg)"; }
+
+  var rafPrev = 0;
+  function tick(ts) {
+    var dt = Math.min(ts - (rafPrev || ts), 60); rafPrev = ts;
+    if (!dragging) {
+      if (Math.abs(vel) > 0.004) {
+        vel *= Math.pow(0.982, dt); // sürtünme ile yavaşla
+        angle += vel * dt;
+      } else {
+        vel = 0;
+        angle += AUTO * dt; // oto-dönüş
+      }
+    }
+    draw();
+    requestAnimationFrame(tick);
+  }
+
+  function onDown(x) {
+    dragging = true; prevX = x; prevT = performance.now(); vel = 0;
+    stage.style.cursor = "grabbing";
+  }
+  function onMove(x) {
+    if (!dragging) return;
+    var t = performance.now(), dt = t - prevT;
+    var dx = x - prevX;
+    if (dt > 0) vel = (dx * 0.38) / dt;
+    angle += dx * 0.38;
+    prevX = x; prevT = t;
+    draw();
+  }
+  function onUp() {
+    if (!dragging) return;
+    dragging = false; stage.style.cursor = "grab";
+  }
+
+  /* mouse */
+  stage.addEventListener("mousedown", function (e) { e.preventDefault(); onDown(e.clientX); });
+  window.addEventListener("mousemove", function (e) { onMove(e.clientX); });
+  window.addEventListener("mouseup",   onUp);
+  /* touch */
+  stage.addEventListener("touchstart", function (e) { onDown(e.touches[0].clientX); }, { passive: true });
+  stage.addEventListener("touchmove",  function (e) {
+    if (dragging) { e.preventDefault(); onMove(e.touches[0].clientX); }
+  }, { passive: false });
+  stage.addEventListener("touchend", onUp);
+
+  /* CSS animasyonunu JS'e devret (kartlar yüklenince) */
+  function startLoop() {
+    if (!ring.children.length) { setTimeout(startLoop, 250); return; }
+    ring.style.animation = "none";
+    stage.style.cursor = "grab";
+    requestAnimationFrame(tick);
+  }
+  startLoop();
+})();
+
+</script>
+
+
+
+</body></html>

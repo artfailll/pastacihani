@@ -20,47 +20,102 @@ function cloudinaryPublicId(imageUrl) {
   return publicId.replaceAll('/', ':');
 }
 
-function buildReelVideoUrl(imageUrl) {
+// Üst Seviye Montaj & Edit Motoru (Reels Video Generator)
+function buildReelVideoUrl(imageUrl, montageStyle = 'cinematic', musicUrl = '') {
   const photoLayer = cloudinaryPublicId(imageUrl);
+
+  let photoTransformation = 'c_fill,g_center,h_720,w_610,r_32';
+
+  if (montageStyle === 'zoom') {
+    // Odak & Yakınlaştırma Montajı
+    photoTransformation = 'c_fill,g_center,h_750,w_630,r_38,e_sharpen:80';
+  } else if (montageStyle === 'luxury_gold') {
+    // Lüks Altın Çerçeve Montajı
+    photoTransformation = 'c_fill,g_center,h_710,w_600,r_36,b_rgb:DDB977';
+  } else if (montageStyle === 'split') {
+    // Modern Çift Katman Montajı
+    photoTransformation = 'c_fill,g_center,h_700,w_590,r_24';
+  }
+
   const transformations = [
     'c_fill,g_center,h_1280,w_720',
     `l_${photoLayer}`,
-    'c_fill,g_center,h_720,w_610,r_32',
+    photoTransformation,
     'fl_layer_apply,g_center,y_-15',
     `l_${BRAND_LOGO_LAYER}`,
-    'c_fill,g_center,h_112,w_112',
-    'fl_layer_apply,g_north_west,x_38,y_38',
+    'c_fill,g_center,h_118,w_118',
+    'fl_layer_apply,g_north_west,x_40,y_40',
     'q_auto:good,vc_h264,ac_aac,f_mp4'
   ].join('/');
+
   return `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/${transformations}/${REEL_TEMPLATE}`;
 }
 
-function buildStoryImageUrl(imageUrl) {
-  const logo = `l_${BRAND_LOGO_LAYER}/c_thumb,g_center,h_164,w_164,r_max/fl_layer_apply,g_north_east,x_48,y_58`;
-  return imageUrl.replace(
-    '/image/upload/',
-    `/image/upload/w_1080,h_1920,c_pad,g_center,b_rgb:24181E,e_vignette:12,q_auto:good,f_jpg/${logo}/`
-  );
+// Instagram Story Görseli (Vinyet KARARTMASI KALDIRILDI + 4 Dinamik Şablon Rotasyonu)
+function buildStoryImageUrl(imageUrl, seed = Date.now()) {
+  const logo = `l_${BRAND_LOGO_LAYER}/c_thumb,g_center,h_150,w_150,r_max/fl_layer_apply,g_north_east,x_44,y_54`;
+
+  const styles = [
+    `w_1080,h_1920,c_pad,g_center,b_rgb:FBF6F2,q_auto:good,f_jpg/${logo}`,
+    `w_1080,h_1920,c_pad,g_center,b_rgb:351421,q_auto:good,f_jpg/${logo}`,
+    `w_1080,h_1920,c_pad,g_center,b_rgb:F5E9EC,q_auto:good,f_jpg/${logo}`,
+    `w_1080,h_1920,c_pad,g_center,b_rgb:FAF3E6,q_auto:good,f_jpg/${logo}`
+  ];
+
+  const selectedStyle = styles[seed % styles.length];
+  return imageUrl.replace('/image/upload/', `/image/upload/${selectedStyle}/`);
 }
 
-function normalizeCaption(value) {
+// Keşfet (Explore) Algoritması & Dinamik Hook Metinleri
+function normalizeCaption(value, category = 'dogumgunu') {
   const input = String(value || '').replace(/\u0000/g, '').trim();
   const foundTags = input.match(/#[\p{L}\p{N}_]+/gu) || [];
   const body = input.replace(/#[\p{L}\p{N}_]+/gu, '').replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+
+  const exploreHooks = [
+    '✨ Silivri’nin en çok konuşulan özel tasarım pastası!',
+    '🎂 Bu detaylara hazır mısınız? Özel sipariş tasarımımız.',
+    '💎 Kişiye özel butik pasta sanatı · Pastacihanı',
+    '🎉 Özel günleriniz için tatlı bir dokunuş!'
+  ];
+
+  const hook = exploreHooks[Math.floor(Math.random() * exploreHooks.length)];
+  const formattedBody = body.startsWith('✨') || body.startsWith('🎂') ? body : `${hook}\n\n${body}`;
+
+  const tagPool = [
+    '#pastacihani',
+    '#silivripasta',
+    '#butikpasta',
+    '#silivriozeltasarim',
+    '#ozeltasarimpasta',
+    '#silivri',
+    '#kumburgazpasta',
+    '#catalcapasta',
+    '#pastagörseli',
+    '#kesfet',
+    '#kesfetteyiz',
+    '#pastasiparisi'
+  ];
+
   const tags = ['#pastacihani'];
   for (const tag of foundTags) {
     const normalized = tag.toLocaleLowerCase('tr-TR');
     if (normalized === '#pastacihani') continue;
-    if (!tags.some((existing) => existing.toLocaleLowerCase('tr-TR') === normalized)) tags.push(tag);
+    if (!tags.some((e) => e.toLocaleLowerCase('tr-TR') === normalized)) tags.push(tag);
     if (tags.length === 5) break;
   }
-  for (const fallback of ['#silivripasta', '#butikpasta', '#ozeltasarimpasta', '#pastatasarimi']) {
-    if (tags.length === 5) break;
-    if (!tags.some((existing) => existing.toLocaleLowerCase('tr-TR') === fallback)) tags.push(fallback);
+
+  const shuffledPool = [...tagPool].sort(() => 0.5 - Math.random());
+  for (const fallback of shuffledPool) {
+    if (tags.length >= 6) break;
+    if (!tags.some((e) => e.toLocaleLowerCase('tr-TR') === fallback)) tags.push(fallback);
   }
-  const tagLine = tags.join(' '), maxBodyLength = 2200 - tagLine.length - 2;
-  let safeBody = body.slice(0, maxBodyLength).trim();
-  if (body.length > maxBodyLength) safeBody = safeBody.replace(/\s+\S*$/, '').trimEnd() + '…';
+
+  const tagLine = tags.join(' ');
+  const maxBodyLength = 2200 - tagLine.length - 2;
+  let safeBody = formattedBody.slice(0, maxBodyLength).trim();
+  if (formattedBody.length > maxBodyLength) safeBody = safeBody.replace(/\s+\S*$/, '').trimEnd() + '…';
+
   return `${safeBody}${safeBody ? '\n\n' : ''}${tagLine}`;
 }
 
@@ -110,7 +165,8 @@ async function runJob(jobId, store) {
 
   const token = process.env.INSTAGRAM_TOKEN;
   if (!token) throw new Error('Instagram:missing_token');
-  const videoUrl = buildReelVideoUrl(job.imageUrl);
+
+  const videoUrl = buildReelVideoUrl(job.imageUrl, job.montageStyle || 'cinematic', job.musicUrl);
   await waitForCloudinaryVideo(videoUrl);
 
   const pages = await graph(`me/accounts?access_token=${encodeURIComponent(token)}`);
@@ -120,13 +176,14 @@ async function runJob(jobId, store) {
   const igId = page.instagram_business_account?.id;
   if (!igId) throw new Error('Meta:no_instagram_account');
 
+  // Reel Yayınlama
   const reel = await graph(`${igId}/media`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       media_type: 'REELS',
       video_url: videoUrl,
-      caption: normalizeCaption(job.caption),
+      caption: normalizeCaption(job.caption, job.category),
       share_to_feed: true,
       access_token: pageToken
     })
@@ -135,7 +192,8 @@ async function runJob(jobId, store) {
   await waitForContainer(reel.id, pageToken);
   const reelId = await publishContainer(igId, reel.id, pageToken);
 
-  const storyImageUrl = buildStoryImageUrl(job.imageUrl);
+  // Story Yayınlama (Vinyetsiz, 4 dinamik şablonlu)
+  const storyImageUrl = buildStoryImageUrl(job.imageUrl, Date.now());
   const story = await graph(`${igId}/media`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -146,7 +204,7 @@ async function runJob(jobId, store) {
   const storyId = await publishContainer(igId, story.id, pageToken);
 
   await store.setJSON(jobId, {
-    status: 'completed', reelId, storyId,
+    status: 'completed', reelId, storyId, videoUrl, storyImageUrl,
     createdAt: job.createdAt || Date.now(), completedAt: Date.now()
   });
   console.info('instagram Reel + Story completed', { jobId });

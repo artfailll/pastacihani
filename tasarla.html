@@ -6,7 +6,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #241018; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
-    #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
+    #__bundler_loading { position: fixed; bottom: 18px; right: 20px; font: 11px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: .08em; color: rgba(246,235,221,.72); background: rgba(36,16,24,.66); border: 1px solid rgba(221,185,119,.24); padding: 7px 11px; border-radius: 999px; z-index: 10000; }
     #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 45%,#713247 0,#34151f 52%,#170b0f 100%); z-index: 9999; }
     #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
     #__bundler_placeholder { color: #999; font-size: 14px; }
@@ -23,8 +23,9 @@
   <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="plbg" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#FCF6EF"></stop>
-        <stop offset="1" stop-color="#F3E6D9"></stop>
+        <stop offset="0" stop-color="#3D1B28"></stop>
+        <stop offset="0.55" stop-color="#2C121B"></stop>
+        <stop offset="1" stop-color="#170B0F"></stop>
       </linearGradient>
       <style>
         @keyframes plRise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
@@ -47,21 +48,21 @@
     <rect width="480" height="360" fill="url(#plbg)"></rect>
 
     <g class="pl-cake">
-      <ellipse cx="240" cy="171" rx="72" ry="8.5" fill="#2A1E22" opacity=".07"></ellipse>
-      <rect x="190" y="131" width="100" height="38" rx="7" fill="#F2BFC9"></rect>
-      <path d="M190 142c7 6 14 6 20 0s14 6 20 0 14 6 20 0 14 6 20 0v-11h-80z" fill="#FCEFF2"></path>
-      <rect x="207" y="104" width="66" height="30" rx="6" fill="#F6CED6"></rect>
+      <ellipse cx="240" cy="171" rx="72" ry="8.5" fill="#000000" opacity=".28"></ellipse>
+      <rect x="190" y="131" width="100" height="38" rx="7" fill="#8E3B57"></rect>
+      <path d="M190 142c7 6 14 6 20 0s14 6 20 0 14 6 20 0 14 6 20 0v-11h-80z" fill="#F6EBDD"></path>
+      <rect x="207" y="104" width="66" height="30" rx="6" fill="#B0697F"></rect>
       <path d="M207 113c5 5 11 5 16 0s11 5 16 0 11 5 18 0v-9h-50z" fill="#FFF7F9"></path>
       <rect x="232" y="118" width="16" height="2.4" rx="1.2" fill="#C2A062" opacity=".7"></rect>
       <rect x="238" y="86" width="3.4" height="20" rx="1.7" fill="#C2A062"></rect>
-      <g class="pl-flame"><path d="M239.7 86c4.2-3 4.6-7.6.0-11-1.8 2.4-3.4 3-3.4 6 0 2.9 1.6 4.4 3.4 5z" fill="#E8A8B8"></path></g>
+      <g class="pl-flame"><path d="M239.7 86c4.2-3 4.6-7.6.0-11-1.8 2.4-3.4 3-3.4 6 0 2.9 1.6 4.4 3.4 5z" fill="#F4D99E"></path></g>
     </g>
 
     <g class="pl-word">
-      <text x="240" y="232" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="50" fill="#2A1E22" letter-spacing="0.5">Pastacihanı<tspan font-size="30" fill="#B0697F">.com</tspan></text>
+      <text x="240" y="232" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="50" fill="#F6EBDD" letter-spacing="0.5">Pastacihanı<tspan font-size="30" fill="#DDB977">.com</tspan></text>
     </g>
     <rect class="pl-rule" x="198" y="246" width="84" height="2" rx="1" fill="#C2A062"></rect>
-    <text class="pl-tag" x="240" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#8C757B" letter-spacing="5">COUTURE PASTANE · SİLİVRİ</text>
+    <text class="pl-tag" x="240" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#E8D5B2" letter-spacing="5">COUTURE PASTANE · SİLİVRİ</text>
 
     <g transform="translate(0,4)">
       <circle class="pl-d1" cx="228" cy="302" r="3.4" fill="#B0697F"></circle>
@@ -70,7 +71,7 @@
     </g>
   </svg>
 </div>
-  <div id="__bundler_loading">Unpacking...</div>
+  <div id="__bundler_loading">Hazırlanıyor…</div>
 
   <script>
 
@@ -102,7 +103,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     let template = JSON.parse(templateEl.textContent);
 
     const uuids = Object.keys(manifest);
-    setStatus('Unpacking ' + uuids.length + ' assets...');
+    setStatus('Hazırlanıyor…');
 
     const blobUrls = {};
     await Promise.all(uuids.map(async (uuid) => {
@@ -162,7 +163,11 @@ document.addEventListener('DOMContentLoaded', async function() {
       JSON.stringify(resourceMap).split('</' + 'script>').join('<\\/' + 'script>') +
       ';</' + 'script>';
     const appMeta = '<meta name="theme-color" content="#8E3B57"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Pastacihanı">';
-    template = template.replace(/<\/head>/i, appMeta + '</head>');
+    // The bundle splash is the single opening screen. The page template also
+    // contains a legacy preloader; hiding it prevents a second flash after the
+    // bundle is unpacked (and lets the dark branded screen hand off cleanly).
+    const splashBridge = '<style id="pc-splash-bridge">html,body{background:#241018!important}#preloader{display:none!important}</style>';
+    template = template.replace(/<\/head>/i, splashBridge + appMeta + '</head>');
     template = template.replace(/<\/body>/i, '<script defer src="/pwa-install.js"></' + 'script></body>');
     // Inject after <head> so the DOCTYPE stays first; prepending the script
     // would push the parser into quirks mode. DOMParser always emits a <head>
@@ -181,6 +186,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // preserve ordering (React before ReactDOM before Babel before text/babel).
     const doc = new DOMParser().parseFromString(template, 'text/html');
     document.documentElement.replaceWith(doc.documentElement);
+    if (loading) loading.remove();
     const dead = Array.from(document.scripts);
     for (const old of dead) {
       const s = document.createElement('script');

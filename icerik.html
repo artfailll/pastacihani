@@ -53,7 +53,7 @@
 
   <div class="hint">
     <b>İpucu:</b> 3 farklı seçenek üretir. Beğendiğini <b>Kopyala</b>'ya basıp Instagram'a yapıştır.<br>
-    <b>Yapay zekâ modu (isteğe bağlı):</b> Daha yaratıcı, her seferinde farklı metin istersen Claude API'yi bağlayabilirsin — kurulum KURULUM.txt içinde. Bağlamazsan bu sayfa yine sorunsuz çalışır.
+    <b>Yapay zekâ modu:</b> Yönetim sayfasında fotoğrafı seçip “Hikâyeli Açıklama Yaz” düğmesiyle görsele özel AI metni üretebilirsin. Bu sayfa hızlı caption servisini kullanır.
   </div>
 </div>
 
@@ -93,7 +93,7 @@ const pick=a=>a[Math.floor(Math.random()*a.length)];
 function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 
 function templateCaptions(occ, notes){
-  const tags = shuffle(HASHTAGS[occ]||HASHTAGS.genel).slice(0,6).join(" ");
+  const tags = ["#pastacihani", ...shuffle(HASHTAGS[occ]||HASHTAGS.genel)].filter((tag, i, all)=>all.indexOf(tag)===i).slice(0,5).join(" ");
   const out=[];
   const opens=shuffle(OPEN[occ]||OPEN.genel), bodies=shuffle(BODY), ctas=shuffle(CTA);
   for(let i=0;i<3;i++){
@@ -126,7 +126,7 @@ document.getElementById('go').onclick=async()=>{
     const j=await r.json();
     if(j && j.text){
       const caps=j.text.split(/\n?---+\n?/).map(s=>s.trim()).filter(Boolean).slice(0,3);
-      if(caps.length){ render(caps); mode.textContent='✨ Yapay zekâ modu · Claude'; btn.disabled=false; btn.textContent='Caption Üret'; return; }
+      if(caps.length){ render(caps); mode.textContent=j.mode==='ai'?'✨ Yapay zekâ modu':'⚡ Hızlı caption servisi · ücretsiz'; btn.disabled=false; btn.textContent='Caption Üret'; return; }
     }
   }catch(e){}
   // Şablon moduna düş

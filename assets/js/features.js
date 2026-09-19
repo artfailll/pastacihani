@@ -324,27 +324,22 @@
     const subEl = $("#waBubbleSub");
     const closeBtn = $("#waBubbleClose");
     if (!bubble) return;
-    const msgs = [
-      { t: "Sipariş detaylarını paylaşın", s: "Tarih, kişi sayısı ve temanızı WhatsApp'tan yazın 🎂" },
-      { t: "Pastanızı birlikte tasarlayalım", s: "3D tasarımınızı veya beğendiğiniz görseli gönderin." },
-      { t: "Teslimat planını netleştirin", s: "Silivri ve çevresi için tarih ve bölgeyi belirtin." },
-    ];
-    let i = 0, dismissed = false, timer;
-    function show() {
-      if (dismissed) return;
-      titleEl.textContent = msgs[i].t;
-      subEl.textContent = msgs[i].s;
-      bubble.classList.add("show");
-      timer = setTimeout(() => {
-        bubble.classList.remove("show");
-        i = (i + 1) % msgs.length;
-        timer = setTimeout(show, 9000);
-      }, 6000);
-    }
+    // Mobilde içeriğin üstüne bindiği için gösterilmez (sabit WhatsApp düğmesi yeterli).
+    // Masaüstünde oturum başına yalnızca bir kez, sayfada biraz vakit geçirildikten sonra çıkar.
+    if (window.matchMedia("(max-width: 900px)").matches) { bubble.remove(); return; }
+    try { if (sessionStorage.getItem("pcBubble")) { bubble.remove(); return; } } catch (e) {}
+    const remember = () => { try { sessionStorage.setItem("pcBubble", "1"); } catch (e) {} };
+    titleEl.textContent = "Sipariş detaylarını paylaşın";
+    subEl.textContent = "Tarih, kişi sayısı ve temanızı WhatsApp'tan yazın 🎂";
+    let timer;
     closeBtn.addEventListener("click", (e) => {
       e.preventDefault(); e.stopPropagation();
-      dismissed = true; clearTimeout(timer); bubble.classList.remove("show");
+      clearTimeout(timer); bubble.classList.remove("show"); remember();
     });
-    setTimeout(show, 3600);
+    setTimeout(() => {
+      bubble.classList.add("show");
+      remember();
+      timer = setTimeout(() => bubble.classList.remove("show"), 7000);
+    }, 12000);
   })();
 })();

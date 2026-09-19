@@ -47,10 +47,9 @@
     const slug = CAT_SLUG[cat.id] || "dogumgunu";
     const placeholder = `https://res.cloudinary.com/${CLOUD_CAT}/image/upload/f_auto,q_auto,w_900,c_fill,ar_9:11/${slug}`;
     // Cloudinary tag'inden ilk görsel çek
-    fetch(`https://res.cloudinary.com/${CLOUD_CAT}/image/list/${slug}.json?ts=`+Date.now())
-      .then(r=>r.ok?r.json():{resources:[]})
-      .then(d=>{
-        const r=(d.resources||[]).sort((a,b)=>(b.created_at||"").localeCompare(a.created_at||""))[0];
+    window.cldList(slug)
+      .then(list=>{
+        const r=list.slice().sort((a,b)=>(b.created_at||"").localeCompare(a.created_at||""))[0];
         if(r){
           const img=card.querySelector("img");
           if(img) img.src=`https://res.cloudinary.com/${CLOUD_CAT}/image/upload/f_auto,q_auto,w_900,c_fill,ar_9:11/v${r.version}/${r.public_id}.${r.format}`;
@@ -437,25 +436,28 @@
     // Fisher-Yates karıştırma — her ziyarette farklı sıra
     function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
     Promise.all(GAL_CATS.map(slug =>
-      fetch(`https://res.cloudinary.com/${CLOUD}/image/list/${slug}.json?ts=`+Date.now())
-        .then(r=>r.ok?r.json():{resources:[]})
+      window.cldList(slug)
         // O kategorinin TÜM resimlerini karışık sırayla tut — kartlar bunlar arasında döner
-        .then(d=>({ slug, list:shuffle((d.resources||[]).slice()) }))
+        .then(l=>({ slug, list:shuffle(l.slice()) }))
         .catch(()=>({ slug, list:[] }))
     )).then(results=>{
-      galGrid.innerHTML="";
+      // Kartlar HTML'de önceden hazır (data-slug); yoksa oluşturulur. Böylece görseller JS'siz de görünür.
       results.forEach(({slug,list},cardIdx)=>{
         if(!list.length)return;
         const span=SPANS[GAL_CATS.indexOf(slug)]||"";
         const w=span==="wide"?900:560, h=span==="tall"?1100:span==="wide"?560:720;
         // kart tıklaması galeri sayfasındaki ilgili kategoriye götürür
-        const item=document.createElement("a");
-        item.href=`/galeri?kat=${slug}`;
-        item.setAttribute("aria-label",`${GAL_LABELS[slug]} pastalarını galeride gör`);
-        // NOT: reveal kullanma — sonradan JS ile eklenen kartlar gözlemciye bağlanmıyor, boş kalıyor
-        item.className="gal-item"+(span?" "+span:"");
-        item.innerHTML=`<img class="gal-ph" decoding="async" alt="${GAL_LABELS[slug]} pasta tasarımı" src="${cldGal(list[0],w,h)}"/><div class="gov"><span class="gt">${GAL_LABELS[slug]} · Galeride Gör →</span></div>`;
-        galGrid.appendChild(item);
+        let item=galGrid.querySelector(`[data-slug="${slug}"]`);
+        if(!item){
+          item=document.createElement("a");
+          item.dataset.slug=slug;
+          item.href=`/galeri?kat=${slug}`;
+          item.setAttribute("aria-label",`${GAL_LABELS[slug]} pastalarını galeride gör`);
+          // NOT: reveal kullanma — sonradan JS ile eklenen kartlar gözlemciye bağlanmıyor, boş kalıyor
+          item.className="gal-item"+(span?" "+span:"");
+          item.innerHTML=`<img class="gal-ph" decoding="async" loading="lazy" width="${w}" height="${h}" alt="${GAL_LABELS[slug]} pasta tasarımı — Pastacihanı Silivri" src="${cldGal(list[0],w,h)}"/><div class="gov"><span class="gt">${GAL_LABELS[slug]} · Galeride Gör →</span></div>`;
+          galGrid.appendChild(item);
+        }
 
         // ---- otomatik resim döngüsü: sabit kalmasın, o kategorinin diğer pastaları dönsün ----
         if(list.length>1){
@@ -560,9 +562,8 @@
     });
     // Her kategoriden ilk 2 görsel çek, toplamda 12 kart
     Promise.all(CATS.map(cat =>
-      fetch(`https://res.cloudinary.com/${CLOUD}/image/list/${cat.slug}.json?ts=` + Date.now())
-        .then(r => r.ok ? r.json() : { resources:[] })
-        .then(d => ({ cat, resources: (d.resources||[]).sort((a,b)=>(b.created_at||"").localeCompare(a.created_at||"")).slice(0,2) }))
+      window.cldList(cat.slug)
+        .then(l => ({ cat, resources: l.slice().sort((a,b)=>(b.created_at||"").localeCompare(a.created_at||"")).slice(0,2) }))
         .catch(() => ({ cat, resources:[] }))
     )).then(results => {
       grid.innerHTML = "";
@@ -588,7 +589,7 @@
   /* ============================================================ GÜVEN ROZETLERİ */
   (function renderTrust() {
     const strip = $("#trustStrip");
-    if (!strip || typeof TRUST_BADGES === "undefined") return;
+    if (!strip || strip.children.length || typeof TRUST_BADGES === "undefined") return; // HTML'de hazırsa dokunma
     TRUST_BADGES.forEach((b) => {
       const el = document.createElement("div");
       el.className = "trust-card";
@@ -600,7 +601,7 @@
   /* ============================================================ TESLİMAT BÖLGELERİ */
   (function renderDelivery() {
     const list = $("#deliveryList");
-    if (!list || typeof DELIVERY_ZONES === "undefined") return;
+    if (!list || list.children.length || typeof DELIVERY_ZONES === "undefined") return; // HTML'de hazırsa dokunma
     DELIVERY_ZONES.forEach((z) => {
       const el = document.createElement("div");
       el.className = "dz-row" + (z.free ? " free" : "");

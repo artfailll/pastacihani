@@ -1,0 +1,36 @@
+# Pastacihanı
+
+> Pastacihanı, İstanbul Silivri'de 2022'den beri el yapımı, siparişe özel butik pasta hazırlayan bir pasta atölyesidir. Doğum günü, nişan, söz, düğün, baby shower ve yıldönümü pastaları; 3D tasarım aracı veya WhatsApp ile sipariş; Silivri'nin tüm mahalle ve köylerine teslimat (merkeze elden, çevre bölgelere kurye ile).
+
+Önemli bilgiler:
+- Hizmet bölgesi: yalnızca Silivri ilçesi (İstanbul) — Silivri merkez, Selimpaşa, Kumburgaz, Değirmenköy, Gümüşyaka, Ortaköy, Çanta ve köyler. Başka ilçelere teslimat yapılmaz.
+- Sipariş: 3D pasta tasarım aracı (https://pastacihani.com/tasarla) veya WhatsApp / telefon: +90 554 810 63 01
+- Sipariş süresi: özel tasarım pastalar için en az 2-3 gün önce; acil talepler WhatsApp'tan değerlendirilir.
+- Özel beslenme: glutensiz, şekersiz ve vegan alternatifler sipariş sırasında belirtilerek hazırlanabilir.
+- Fiyat: sabit liste yoktur; kişi sayısı, kat, kaplama, süsleme ve teslimat bölgesine göre belirlenir.
+- Instagram: https://www.instagram.com/pastacihani.online/
+- Dil: Türkçe
+
+## Ana sayfalar
+- [Ana sayfa](https://pastacihani.com/): Pastacihanı tanıtımı, sipariş sihirbazı, teslimat bölgeleri ve sık sorulan sorular
+- [Silivri pasta teslimatı ve sipariş rehberi](https://pastacihani.com/silivri): Silivri'nin tüm mahalle ve köylerine teslimat, sipariş adımları, SSS
+- [Pasta galerisi](https://pastacihani.com/galeri): El yapımı pasta tasarımları; kategoriye veya ürün koduna göre arama
+- [3D pasta tasarım aracı](https://pastacihani.com/tasarla): Boyut, kaplama, renk, süsleme, yazı ve kat tatlarını seçerek pastayı 3D tasarlama ve WhatsApp'tan gönderme
+
+## Sipariş rehberleri
+- [Doğum günü pastası](https://pastacihani.com/dogum-gunu-pastasi-silivri): Kişi sayısı, tema ve teslimat planı
+- [Nişan ve söz pastası](https://pastacihani.com/nisan-soz-pastasi-silivri): Masa dekoruna uyumlu tasarım
+- [Düğün pastası](https://pastacihani.com/dugun-pastasi-silivri): Kat, kaplama, süsleme ve teslimat kontrol listesi
+- [Baby shower pastası](https://pastacihani.com/baby-shower-pastasi-silivri): Tema ve renklere göre tasarım
+- [Yıldönümü pastası](https://pastacihani.com/yildonumu-pastasi-silivri): İsim, yıl ve mesajla kişiselleştirme
+- [Pasta fiyatları rehberi](https://pastacihani.com/pasta-fiyatlari-silivri): Fiyatı hangi etkenler belirler
+
+## Teslimat bölgeleri
+- [Selimpaşa](https://pastacihani.com/selimpasa-pasta-siparisi)
+- [Kumburgaz](https://pastacihani.com/kumburgaz-pasta-siparisi)
+- [Değirmenköy](https://pastacihani.com/degirmenkoy-pasta-siparisi)
+- [Gümüşyaka ve Çanta](https://pastacihani.com/gumusyaka-canta-pasta-siparisi)
+
+## Optional
+- [Tam metin özet (llms-full.txt)](https://pastacihani.com/llms-full.txt)
+- [Site haritası](https://pastacihani.com/sitemap.xml)

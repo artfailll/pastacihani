@@ -1,16 +1,23 @@
 {
-  "name": "Pastacihanı",
+  "id": "/",
+  "name": "Pastacihanı — Silivri Butik Pasta",
   "short_name": "Pastacihanı",
-  "description": "Silivri'de özel tasarım butik pasta",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#241018",
-  "theme_color": "#8E3B57",
+  "description": "Silivri'de el yapımı butik pasta siparişi: 3D tasarla, WhatsApp'tan sipariş ver.",
+  "lang": "tr",
+  "dir": "ltr",
+  "start_url": "/?source=pwa",
   "scope": "/",
+  "display": "standalone",
   "orientation": "portrait-primary",
+  "background_color": "#211519",
+  "theme_color": "#8E3B57",
   "categories": ["food", "shopping", "lifestyle"],
   "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "3D Pasta Tasarla", "short_name": "Tasarla", "url": "/tasarla", "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Pasta Galerisi", "short_name": "Galeri", "url": "/galeri", "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }] }
   ]
 }

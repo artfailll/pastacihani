@@ -1,6 +1,32 @@
 [build]
   functions = "netlify/functions"
 
+# ---- Yayına ait olmayan dosyalar (kaynak kod, bağımlılık listeleri) dışarıya kapalı ----
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/scripts/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package-lock.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# ---- Temiz adresler (.html uzantısız) ----
 [[redirects]]
   from = "/tasarla"
   to = "/tasarla.html"
@@ -37,7 +63,104 @@
   from = "/pasta-fiyatlari-silivri"
   to = "/pasta-fiyatlari-silivri.html"
   status = 200
+[[redirects]]
+  from = "/baby-shower-pastasi-silivri"
+  to = "/baby-shower-pastasi-silivri.html"
+  status = 200
+[[redirects]]
+  from = "/yildonumu-pastasi-silivri"
+  to = "/yildonumu-pastasi-silivri.html"
+  status = 200
+[[redirects]]
+  from = "/selimpasa-pasta-siparisi"
+  to = "/selimpasa-pasta-siparisi.html"
+  status = 200
+[[redirects]]
+  from = "/kumburgaz-pasta-siparisi"
+  to = "/kumburgaz-pasta-siparisi.html"
+  status = 200
+[[redirects]]
+  from = "/degirmenkoy-pasta-siparisi"
+  to = "/degirmenkoy-pasta-siparisi.html"
+  status = 200
+[[redirects]]
+  from = "/gumusyaka-canta-pasta-siparisi"
+  to = "/gumusyaka-canta-pasta-siparisi.html"
+  status = 200
 
+# ---- Kopya adresleri tek adrese topla (SEO: aynı sayfa iki URL'de yayınlanmasın) ----
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/tasarla.html"
+  to = "/tasarla"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/galeri.html"
+  to = "/galeri"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/silivri.html"
+  to = "/silivri"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/dogum-gunu-pastasi-silivri.html"
+  to = "/dogum-gunu-pastasi-silivri"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/nisan-soz-pastasi-silivri.html"
+  to = "/nisan-soz-pastasi-silivri"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/dugun-pastasi-silivri.html"
+  to = "/dugun-pastasi-silivri"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/pasta-fiyatlari-silivri.html"
+  to = "/pasta-fiyatlari-silivri"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/baby-shower-pastasi-silivri.html"
+  to = "/baby-shower-pastasi-silivri"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/yildonumu-pastasi-silivri.html"
+  to = "/yildonumu-pastasi-silivri"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/selimpasa-pasta-siparisi.html"
+  to = "/selimpasa-pasta-siparisi"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/kumburgaz-pasta-siparisi.html"
+  to = "/kumburgaz-pasta-siparisi"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/degirmenkoy-pasta-siparisi.html"
+  to = "/degirmenkoy-pasta-siparisi"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/gumusyaka-canta-pasta-siparisi.html"
+  to = "/gumusyaka-canta-pasta-siparisi"
+  status = 301
+  force = true
+
+# ---- Güvenlik başlıkları ----
 [[headers]]
   for = "/*"
   [headers.values]
@@ -46,8 +169,40 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
+# ---- Önbellek: içerik-özetli dosyalar (adı içeriğe bağlı) 1 yıl, değişmez ----
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Betikler: her seferinde doğrula (ETag ile 304), eski betik + yeni HTML uyumsuzluğu olmasın
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 [[headers]]
   for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.jpeg"
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
@@ -55,3 +210,19 @@
   for = "/*.css"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+
+# ---- Yönetim / iç araç sayfaları: dizine girmesin ----
+[[headers]]
+  for = "/claudeninsahibiagritutaklimi*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+[[headers]]
+  for = "/icerik*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"

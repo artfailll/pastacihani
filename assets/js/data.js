@@ -8,6 +8,30 @@ const WA_NUMBER = "905548106301";
 const TEL_NUMBER = "+905548106301";
 const WA_GENERIC = "Merhaba Pastacihanı, pasta siparişi vermek istiyorum 🎂";
 
+/* Cloudinary etiket listeleri: tek istek + oturum önbelleği.
+   (Eskiden aynı 6 liste sayfa başına ~24 kez ve önbelleksiz indiriliyordu.)
+   5 dakikalık dilim: CDN önbelleğinden yararlanır, yeni yüklenen fotoğraflar en geç 5 dk'da görünür. */
+window.cldList = (function () {
+  var CLOUD = "do7gjdvb0", memo = {}, TTL = 3 * 60 * 1000;
+  return function (slug) {
+    if (memo[slug]) return memo[slug];
+    var key = "pc_cld_" + slug;
+    try {
+      var c = JSON.parse(sessionStorage.getItem(key) || "null");
+      if (c && Date.now() - c.t < TTL) return (memo[slug] = Promise.resolve(c.r));
+    } catch (e) {}
+    var bucket = Math.floor(Date.now() / 300000);
+    return (memo[slug] = fetch("https://res.cloudinary.com/" + CLOUD + "/image/list/" + slug + ".json?ts=" + bucket)
+      .then(function (r) { return r.ok ? r.json() : { resources: [] }; })
+      .then(function (d) {
+        var r = (d.resources || []).map(function (x) { return { public_id: x.public_id, version: x.version, format: x.format, created_at: x.created_at }; });
+        try { sessionStorage.setItem(key, JSON.stringify({ t: Date.now(), r: r })); } catch (e) {}
+        return r;
+      })
+      .catch(function () { delete memo[slug]; return []; }));
+  };
+})();
+
 /* Öne çıkan / editorial görseller (hepsi doğrulanmış pasta) */
 const HERO_IMG = "1535254973040-607b474cb50d";       // güllü katlı düğün pastası
 const MANIFESTO_IMG = "1606890737304-57a1ca8a5b62";  // orman meyveli naked pasta

@@ -28,9 +28,13 @@
     const pl = $("#preloader");
     if (!pl) return;
     const start = Date.now();
-    const MIN = 900;
+    const MIN = 1200;
     let hidden = false;
-    function kill() { pl.style.display = "none"; }
+    function kill() {
+      pl.style.display = "none";
+      document.documentElement.classList.remove("pl");
+      try { sessionStorage.setItem("pcSplash", "1"); } catch (e) {}
+    }
     function hide() {
       if (hidden) return; hidden = true;
       const wait = Math.max(0, MIN - (Date.now() - start));
@@ -40,7 +44,7 @@
         // CSS transition'ı donar ve "transitionend" hiç gelmez; bu yüzden
         // setTimeout ile (gizli sekmede bile çalışır) display:none'a zorla.
         pl.addEventListener("transitionend", kill, { once: true });
-        setTimeout(kill, 900);
+        setTimeout(kill, 1000);
       }, wait);
     }
     if (document.readyState === "complete") hide();
@@ -280,16 +284,17 @@
   /* ============================================================ SSS — Akordeon */
   (function faq() {
     const wrap = $("#faqWrap");
-    if (!wrap || typeof FAQS === "undefined") return;
-    FAQS.forEach((f, i) => {
-      const item = document.createElement("div");
-      item.className = "faq-item";
-      item.innerHTML = `
-        <button class="faq-q" aria-expanded="false">
-          <h4>${f.q}</h4>
-          <span class="faq-ic"></span>
-        </button>
-        <div class="faq-a"><div class="faq-a-in">${f.a}</div></div>`;
+    if (!wrap) return;
+    // Kalemler HTML'de önceden hazır (JS'siz de okunur). Yoksa veriden üret.
+    if (!wrap.querySelector(".faq-item") && typeof FAQS !== "undefined") {
+      FAQS.forEach((f) => {
+        const item = document.createElement("div");
+        item.className = "faq-item";
+        item.innerHTML = `<button class="faq-q" aria-expanded="false"><h4>${f.q}</h4><span class="faq-ic"></span></button><div class="faq-a"><div class="faq-a-in">${f.a}</div></div>`;
+        wrap.appendChild(item);
+      });
+    }
+    $$(".faq-item", wrap).forEach((item) => {
       const btn = item.querySelector(".faq-q");
       const ans = item.querySelector(".faq-a");
       btn.addEventListener("click", () => {
@@ -305,7 +310,6 @@
           }
         });
       });
-      wrap.appendChild(item);
     });
     window.addEventListener("resize", () => {
       const open = $(".faq-item.open .faq-a", wrap);

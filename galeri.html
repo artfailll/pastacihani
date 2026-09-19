@@ -92,6 +92,19 @@ header.nav{position:sticky;top:0;z-index:900;background:rgba(250,243,234,.85);ba
 .wa-btn{display:inline-flex;align-items:center;gap:9px;background:var(--wa-deep);color:#fff;padding:11px 22px;font-size:.76rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;transition:background .3s,transform .3s}
 .wa-btn:hover{background:#0B6B61;transform:translateY(-2px)}
 @media(max-width:800px){.nav-links{display:none}}
+.logo span{white-space:nowrap}.wa-btn{white-space:nowrap}
+@media(max-width:560px){
+  .nav-in{height:62px;gap:10px}
+  .logo{gap:8px;font-size:1.3rem;min-width:0}
+  .logo img{width:40px;height:40px}
+  .wa-btn{padding:10px 14px;font-size:.7rem;letter-spacing:.1em;gap:6px}
+}
+@media(max-width:400px){
+  .logo{font-size:1.15rem;gap:7px}
+  .logo img{width:36px;height:36px}
+  .wa-btn{padding:9px 12px;font-size:.66rem;letter-spacing:.08em}
+  .wa-x{display:none}
+}
 
 /* ---- INTRO ---- */
 .intro{padding:clamp(56px,8vw,110px) 0 30px;position:relative}
@@ -211,7 +224,7 @@ footer.gfoot a{color:var(--gold-soft)}
     <a href="/#hakkimizda">Hakkımızda</a>
     <a href="/#iletisim">İletişim</a>
   </nav>
-  <a class="wa-btn" href="https://wa.me/905548106301?text=Merhaba%20Pastacihan%C4%B1%2C%20pasta%20sipari%C5%9Fi%20vermek%20istiyorum%20%F0%9F%8E%82" target="_blank" rel="noopener">WhatsApp Sipariş</a>
+  <a class="wa-btn" href="https://wa.me/905548106301?text=Merhaba%20Pastacihan%C4%B1%2C%20pasta%20sipari%C5%9Fi%20vermek%20istiyorum%20%F0%9F%8E%82" target="_blank" rel="noopener">WhatsApp<span class="wa-x"> Sipariş</span></a>
 </div></header>
 
 <div class="wrap"><div class="intro">

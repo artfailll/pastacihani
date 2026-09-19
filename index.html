@@ -1824,6 +1824,35 @@ html.pl-skip .anim .hero .fade-seq { animation-delay: calc(.3s + var(--s, 0) * .
 .seo-note h3 { font-family: var(--serif); font-weight: 500; font-size: 1.35rem; margin: 34px 0 0; }
 .seo-note .see-also { margin-top: 22px; font-size: .95rem; }
 .seo-note .see-also a { margin-right: 14px; white-space: nowrap; }
+
+/* Hızlı sipariş sihirbazı — mobilde kompakt */
+@media (max-width: 760px) {
+  .wizard-sec.section { padding-block: 52px; }
+  .wizard-sec .sec-head { margin-bottom: 22px; gap: 10px; }
+  .wizard-sec .sec-head .hl { gap: 10px; }
+  .wizard-sec .sec-head h2 { font-size: 2rem; }
+  .wizard-sec .sec-head .meta { font-size: .9rem; }
+  .wizard { padding: 20px 16px 18px; }
+  .wizard::before, .wizard::after { width: 30px; height: 30px; }
+  .wiz-progress { margin-bottom: 18px; gap: 6px; }
+  .wiz-dot .num { width: 30px; height: 30px; font-size: .85rem; }
+  .wiz-line { top: 0; }
+  .wiz-q { font-size: 1.3rem; margin-bottom: 14px; }
+  .wiz-opts { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .wiz-opt { padding: 14px 8px; gap: 4px; }
+  .wiz-opt .wo-ic { font-size: 1.25rem; }
+  .wiz-opt .wo-t { font-size: .82rem; }
+  .wiz-chips { gap: 8px; }
+  .wiz-chip { padding: 9px 15px; font-size: .82rem; }
+  .wiz-num button { width: 46px; font-size: 1.3rem; }
+  .wiz-num input { width: 84px; font-size: 1.5rem; padding: 7px 0; }
+  .wiz-nav { margin-top: 18px; }
+  .wiz-result-head { margin-bottom: 16px; gap: 6px; }
+  .wiz-result-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }
+  .wiz-gallery { padding-top: 16px; margin-bottom: 16px; }
+  .wiz-gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .wiz-cta-row { gap: 10px; }
+}
 </style>
 
 <script>document.documentElement.classList.add("anim");</script>
